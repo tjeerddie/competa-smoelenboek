@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-
-<html lang="nl">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Competa-smoelenboek</title>
-</head>
-<body>
-    <div id="header">
-        <h1>Competa-smoelenboek</h1>
-    </div>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <meta name="author" content="Team InProgress">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smoelenboek</title>
+    <link rel="stylesheet" href="../../build/css/smoelenboek.min.css">
+  </head>
+  <body>
+      <div id="header">
+          <h1>Competa-smoelenboek</h1>
+      </div>

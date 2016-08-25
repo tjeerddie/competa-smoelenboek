@@ -5,13 +5,45 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+    clean: {
+      build: {
+        src: ['build/*']
+      },
+      afterMinifying: ['build/css/**/*.css',
+                       '!build/css/<%= pkg.name %>.min.css',
+                       'build/js/**/*.js',
+                       '!build/js/<%= pkg.name %>.min.js'
+                      ]
+    },
+    copy: {
+      options: {
+        force: true
+      },
+      main: {
+        expand: true,
+        cwd: 'app',
+        src: '**',
+        dest: 'build/',
+      },
+    },
+    // TODO: Fix imagemin
+    // imagemin: {
+    //   dynamic: {
+    //     files: [{
+    //       expand: true,
+    //       cwd: 'app/img',
+    //       src: ['**/*.{png,jpg,gif}'],
+    //       dest: 'dist/img'
+    //     }]
+    //   }
+    // },
     concat: {
       options: {
         separator: ';'
       },
       dist: {
-        src: ['app/js/**/*.js'],
-        dest: 'built/js/<%= pkg.name %>.js'
+        src: ['build/js/**/*.js'],
+        dest: 'build/js/<%= pkg.name %>.js'
       }
     },
     uglify: {
@@ -20,7 +52,7 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'built/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+          'build/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
         }
       }
     },
@@ -45,20 +77,32 @@ module.exports = function (grunt) {
 			}
 		},
     cssmin: {
+      options: {
+        shorthandCompacting: false,
+        roundingPrecision: -1
+      },
       target: {
-        files: [{
-          expand: true,
-          cwd: 'app/css',
-          src: ['*.css', '!*.min.css'],
-          dest: 'built/css',
-          ext: '.min.css'
-        }]
+        files: {
+          'build/css/<%= pkg.name %>.min.css': ['app/css/**/*.css']
+        }
+      }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 8080,
+          base: 'build',
+          livereload: false,
+          open: {
+            target: 'http//http://localhost:8080'
+          }
+        }
       }
     },
 		watch: {
       serve: {
         files: ['app/sass/**/*.{scss,sass}', '<%= jshint.files %>'],
-        tasks: ['css', 'js'],
+        tasks: ['css', 'js', 'build'],
         options: {
           livereload: true
         }
@@ -73,11 +117,13 @@ module.exports = function (grunt) {
 		}
 	});
 
-  // grunt.registerTask('build', ['']);
+  // TODO: Add imagemin to minifying task.
+  grunt.registerTask('minifying', ['cssmin', 'concat', 'uglify']);
+  grunt.registerTask('build', ['clean:build', 'copy:main', 'minifying', 'clean:afterMinifying']);
   grunt.registerTask('css', ['compass', 'cssmin']);
   grunt.registerTask('js', ['jshint', 'concat', 'uglify']);
-  grunt.registerTask('serve', ['css', 'js', 'watch:serve']);
+  grunt.registerTask('serve', ['build', 'css', 'js', 'connect:server', 'watch:serve']);
   grunt.registerTask('test', ['watch:test']);
 
-	grunt.registerTask('default', ['']);
+	grunt.registerTask('default', ['build']);
 };
