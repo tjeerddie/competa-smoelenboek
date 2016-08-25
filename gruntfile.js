@@ -87,10 +87,22 @@ module.exports = function (grunt) {
         }
       }
     },
+    connect: {
+      server: {
+        options: {
+          port: 8080,
+          base: 'build',
+          livereload: false,
+          open: {
+            target: 'http//http://localhost:8080'
+          }
+        }
+      }
+    },
 		watch: {
       serve: {
         files: ['app/sass/**/*.{scss,sass}', '<%= jshint.files %>'],
-        tasks: ['css', 'js'],
+        tasks: ['css', 'js', 'build'],
         options: {
           livereload: true
         }
@@ -105,12 +117,12 @@ module.exports = function (grunt) {
 		}
 	});
 
-  // TODO: Add image min to minifying.
+  // TODO: Add imagemin to minifying task.
   grunt.registerTask('minifying', ['cssmin', 'concat', 'uglify']);
   grunt.registerTask('build', ['clean:build', 'copy:main', 'minifying', 'clean:afterMinifying']);
   grunt.registerTask('css', ['compass', 'cssmin']);
   grunt.registerTask('js', ['jshint', 'concat', 'uglify']);
-  grunt.registerTask('serve', ['build', 'css', 'js', 'watch:serve']);
+  grunt.registerTask('serve', ['build', 'css', 'js', 'connect:server', 'watch:serve']);
   grunt.registerTask('test', ['watch:test']);
 
 	grunt.registerTask('default', ['build']);
