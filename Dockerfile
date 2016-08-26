@@ -5,4 +5,4 @@ RUN apt-get update -q
 RUN mkdir test
 ADD * test/
 
-EXPOSE -p 8080
+EXPOSE 8080
