@@ -2,6 +2,6 @@ FROM debian:latest
 MAINTAINER test@test.com
 
 RUN apt-get update -q
-ADD *
+ADD * test
 
 EXPOSE -p 8080
