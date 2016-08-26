@@ -7,12 +7,12 @@
 
 $config = array(
     "db" => array(
-        "db1" => array(
-            "dbname" => "database1",
-            "username" => "dbUser",
-            "password" => "pass",
+        "Database" => array(
+            "dbname" => "smoelenboek",
+            "username" => "root",
+            "password" => "",
             "host" => "localhost"
-        )
+        ),
     ),
     "urls" => array(
         "baseUrl" => "http://example.com"
@@ -41,4 +41,3 @@ ini_set("error_reporting", "true");
 error_reporting(E_ALL|E_STRCT);
 
 ?>
-TODO hier moet nog wat komen
