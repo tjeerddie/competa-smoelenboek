@@ -7,18 +7,12 @@
 
 $config = array(
     "db" => array(
-        "publicDatabase" => array(
-            "dbname" => "database1",
-            "username" => "dbUser",
-            "password" => "pass",
+        "Database" => array(
+            "dbname" => "smoelenboek",
+            "username" => "root",
+            "password" => "",
             "host" => "localhost"
         ),
-        "privateDatabase" => array(
-            "dbname" => "database1",
-            "username" => "dbUser",
-            "password" => "pass",
-            "host" => "localhost"
-        )
     ),
     "urls" => array(
         "baseUrl" => "http://example.com"
