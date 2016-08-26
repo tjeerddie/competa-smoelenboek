@@ -266,6 +266,25 @@ textarea {
   font: inherit;
 }
 
+/* line 1, ../sass/base/_default.scss */
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* line 6, ../sass/base/_default.scss */
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+/* line 12, ../sass/base/_default.scss */
+body {
+  min-height: 100%;
+  padding-left: 250px;
+}
+
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .grid__container {
   margin-left: auto;
@@ -1393,4 +1412,30 @@ textarea {
   .grid__column--pull-xl-12 {
     right: 100%;
   }
+}
+
+/* line 7, ../sass/abstracts/mixins/_bem.scss */
+.main {
+  margin-top: -21px;
+}
+
+/* line 7, ../sass/abstracts/mixins/_bem.scss */
+.navigation {
+  background-color: white;
+  position: fixed;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 60px;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: gray;
+  overflow-x: hidden;
+  z-index: 10;
+  transition: 1s;
+}
+/* line 31, ../sass/abstracts/mixins/_bem.scss */
+.navigation.is-open {
+  width: 250px;
 }
