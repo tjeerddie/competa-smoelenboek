@@ -21,9 +21,8 @@ module.exports = function (grunt) {
       },
       main: {
         expand: true,
-        cwd: 'app',
-        src: '**',
-        dest: 'build/',
+        src: ['src/*', '!src/sass/*'],
+        dest: 'dest/'
       },
     },
     // TODO: Fix imagemin
@@ -97,7 +96,7 @@ module.exports = function (grunt) {
       }
     },
 		watch: {
-      serve: {
+      server: {
         files: ['app/sass/**/*.{scss,sass}', '<%= jshint.files %>'],
         tasks: ['css', 'js', 'build'],
         options: {
@@ -119,7 +118,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', ['clean:build', 'copy:main', 'minifying', 'clean:afterMinifying']);
   grunt.registerTask('css', ['compass', 'cssmin']);
   grunt.registerTask('js', ['jshint', 'concat', 'uglify']);
-  grunt.registerTask('serve', ['build', 'css', 'js', 'connect:server', 'watch:serve']);
+  grunt.registerTask('serve', ['build', 'css', 'js', 'connect:server', 'watch:server']);
   grunt.registerTask('test', ['watch:test']);
 
 	grunt.registerTask('default', ['build']);
