@@ -1,14 +1,17 @@
 <?php
-    require_once("resources/controllers/controller.php");
+    require_once("resources/controllers/Controller.php");
     class Visitor extends Controller {
         private $model;
         private $view;
 
-        public function home () {
-            $model = $this->getModel("Model");
-            $view = $this->getView();
+        public function __construct(){
+            $this->model = $this->getModel("Model");
+            $this->view = $this->getView();
+        }
 
-            $view->template();
+        public function home () {
+            $this->view->setView("visitor", "home");
+            $this->view->show();
         }
     }
 ?>
