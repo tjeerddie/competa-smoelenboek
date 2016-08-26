@@ -2,8 +2,8 @@
     require_once("resources/config.php");
 
     if (isset($_GET['controller']) && isset($_GET['action'])) {
-        $controller = $_GET['controller'];
-        $action     = $_GET['action'];
+        $controller = filter_input(INPUT_GET,'controller', FILTER_SANITIZE_STRING);
+        $action     = filter_input(INPUT_GET,'action', FILTER_SANITIZE_STRING);
     } else {
         $controller = 'visitor';
         $action     = 'home';
@@ -11,17 +11,10 @@
 
     function call($controller, $action) {
         // require the file that matches the controller name
-        require_once('resources/controllers/' . $controller . 'Controller.php');
+        require_once('resources/controllers/' . $controller . '.php');
 
-        // create a new instance of the needed controller
-        switch($controller) {
-            case 'visitor':
-                $controller = new visitorController();
-                break;
-            case 'user':
-                $controller = new userController();
-                break;
-        }
+        //makes the controller
+        $controller = new $controller();
 
         // call the action
         $controller->{ $action }();
@@ -35,9 +28,9 @@
         if (in_array($action, $controllers[$controller])) {
             call($controller, $action);
         } else {
-            call('pages', 'error');
+            require_once("resources/view/templates/error.php");
         }
     } else {
-        call('pages', 'error');
+        require_once("resources/view/templates/error.php");
     }
 ?>
