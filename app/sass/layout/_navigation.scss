@@ -1,13 +1,16 @@
 @include block(navigation) {
   background: {
-    color: white;
+    color: $white;
   }
   position: fixed;
   width: 50px;
   height: 100%;
   top: 0;
   left: 0;
-  padding-top: 60px;
+  padding: {
+    top: 30px;
+    bottom: 30px
+  }
   border: {
     right: {
       width: 1px;
@@ -21,5 +24,81 @@
 
   @include state(open) {
     width: 250px;
+  }
+
+  @include element(logo) {
+    position: relative;;
+    width: 100%;
+    height: 75px;
+    margin: 0;
+  }
+
+  @include element(image) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @include element(list) {
+    position: relative;
+    width: 100%;
+    padding: {
+      left: 30px;
+      right: 30px;
+    }
+
+    &-item {
+      position: relative;
+      padding: {
+        top: 15px;
+        bottom: 15px;
+      }
+      text: {
+        align: center;
+      }
+      border: {
+        bottom: {
+          width: 1px;
+          style: solid;
+          color: $gray;
+        }
+      }
+
+      &:first-child {
+        border: {
+          top: {
+            width: 1px;
+            style: solid;
+            color: $gray;
+          }
+        }
+      }
+
+      &:last-child {
+        border: 0;
+      }
+    }
+  }
+
+  @include element(link) {
+      &:hover {
+      border: {
+        bottom: {
+          width: 3px;
+          style: solid;
+          color: lighten($link-hover-color, 10%);
+        }
+      }
+    }
+
+    @include modifier(active) {
+      border: {
+        bottom: {
+          width: 3px;
+          style: solid;
+          color: $link-hover-color;
+        }
+      }
+    }
   }
 }
