@@ -32,7 +32,7 @@ $config = array(
 */
 define("LIBRARY_PATH", realpath(dirname(__FILE__) . '/library'));
 
-define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
+define("TEMPLATES_PATH", 'resources/view/templates/');
 
 /*
     Error reporting.

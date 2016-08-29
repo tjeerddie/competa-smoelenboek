@@ -23,7 +23,7 @@
 
         //gets the template
         private function getTemplate () {
-            return str_replace('\\','/',__NAMESPACE__) . '/templates/'.$this->control.'Pages/'.$this->action.".php";
+            return str_replace('\\','/',__NAMESPACE__).'/templates/'.$this->control.'Pages/'.$this->action.".php";
         }
 
         //shows the template
