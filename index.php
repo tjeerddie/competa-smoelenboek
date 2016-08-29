@@ -28,9 +28,9 @@
         if (in_array($action, $controllers[$controller])) {
             call($controller, $action);
         } else {
-            require_once("resources/view/templates/error.php");
+            require_once(TEMPLATES_PATH . 'error.php');
         }
     } else {
-        require_once("resources/view/templates/error.php");
+        require_once(TEMPLATES_PATH . 'error.php');
     }
 ?>

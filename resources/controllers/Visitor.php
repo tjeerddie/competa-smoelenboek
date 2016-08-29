@@ -1,5 +1,6 @@
 <?php
     require_once("resources/controllers/Controller.php");
+
     class Visitor extends Controller {
         private $model;
         private $view;
