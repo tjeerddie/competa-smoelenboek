@@ -11,7 +11,7 @@
 
     function call($control, $action) {
         // require the file that matches the controller name
-        require_once('resources/controllers/' . $control . '.php');
+        require_once(CONTROLLERS_PATH . $control . '.php');
 
         //makes the controller
         $control = new $control();
