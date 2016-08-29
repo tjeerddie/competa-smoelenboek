@@ -30,7 +30,7 @@ $config = array(
     Creating constants for heavily used paths.
     ex. require_once(LIBRARY_PATH . "Paginator.php").
 */
-define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/View/templates'). "/");
+define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/view/templates'). "/");
 define("CONTROLLERS_PATH", realpath(dirname(__FILE__) . '/controllers'). "/");
 define("MODELS_PATH", realpath(dirname(__FILE__) . '/models'). "/");
 define("DB_PATH", realpath(dirname(__FILE__) . '/models/db'). "/");
