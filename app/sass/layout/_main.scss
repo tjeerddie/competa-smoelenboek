@@ -1,0 +1,15 @@
+@include block(main) {
+  background: {
+    color: $white;
+  }
+  height: 100%;
+  margin: {
+    left: 250px;
+    right: 120px;
+  }
+  transition: margin-left .5s;
+
+  @include state(enlarged) {
+    margin-left: 60px;
+  }
+}

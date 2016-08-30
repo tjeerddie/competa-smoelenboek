@@ -1,0 +1,19 @@
+.img-fluid {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.figure {
+  display: inline-block;
+}
+
+.figure-img {
+  margin-bottom: ($spacer-y / 2);
+  line-height: 1;
+}
+
+.figure-caption {
+  font-size: 1rem;
+  color: gray;
+}
