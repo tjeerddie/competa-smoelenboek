@@ -19,9 +19,9 @@
         }
 
         public function search(){
-          if(isset($_POST['submit'])){ 
+          if(isset($_POST['submit'])){
           if(preg_match("/^[  a-zA-Z]+/", $_POST['name'])) {
-            $name=$_POST['name'];
+            $name=filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
             if ($name !== 'undefined')
             {
               $sql="SELECT  ID, first_name, last_name FROM employees WHERE first_name LIKE '%" . $name .  "%' OR last_name LIKE '%" . $name ."%'";
@@ -29,11 +29,7 @@
               $stmnt->execute();
               $employees = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
               return $employees;
-            }
-            else{
-
-            }
-
+          }
           }
           else {
             echo  "<p>Please enter a search query</p>";
