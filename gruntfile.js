@@ -6,9 +6,10 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
     clean: {
-      build: ['build/css/*', 'build/js/*', '!build/js/jquery-3.1.0.min.js'],
+      build: ['build/css/*', 'build/img/*', 'build/js/*', '!build/js/jquery-3.1.0.min.js'],
       afterMinifying: ['build/css/**/*.css',
                        '!build/css/<%= pkg.name %>.min.css',
+                       '!build/img/*',
                        'build/js/**/*.js',
                        '!build/js/**/*.min.js'
                       ]
@@ -20,7 +21,7 @@ module.exports = function (grunt) {
       main: {
         expand: true,
         src: ['src/*', '!src/sass/*'],
-        dest: 'dest/'
+        dest: 'build/'
       },
     },
     // TODO: Fix imagemin

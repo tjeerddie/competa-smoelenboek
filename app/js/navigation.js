@@ -2,15 +2,19 @@ $(document).ready(function () {
   "use strict";
 
   var $main = $('.main');
-  var $navigationImage = $('.navigation__image');
   var $navigation = $('.navigation');
-  var $navigationButton = $('.navigation__button');
+  var $navigationList = $('.navigation__list');
+  var $navigationImage = $('.navigation__image');
+  var $navigationLink = $('.navigation__link');
+  var $navigationHamburger = $('.navigation__hamburger');
 
-  $navigationButton.on('click', function (e) {
-    $navigationButton.toggleClass('is-active');
+  $navigationHamburger.on('click', function (e) {
+    // $navigationHamburger.toggleClass('is-active');
     $navigation.toggleClass('is-ensmalled');
+    $navigationList.toggleClass('is-ensmalled');
     $main.toggleClass('is-enlarged');
     $navigationImage.toggleClass('is-ensmalled');
+    $navigationLink.toggleClass('is-ensmalled');
     e.preventDefault();
   });
 });
