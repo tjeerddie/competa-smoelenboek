@@ -12,6 +12,7 @@
 
         public function home () {
             $this->view->setView("user", "home");
+            $emps = $this->model->search();
             $this->view->set("employees", $this->model->getEmployees());
             $this->view->show();
         }

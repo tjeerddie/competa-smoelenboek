@@ -11,5 +11,9 @@
         public function getEmployees () {
             return parent::getEmployees();
         }
+        
+        public function search () {
+            return parent::search();
+        }
     }
 ?>
