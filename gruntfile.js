@@ -6,13 +6,11 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
     clean: {
-      build: {
-        src: ['build/*']
-      },
+      build: ['build/css/*', 'build/js/*', '!build/js/jquery-3.1.0.min.js'],
       afterMinifying: ['build/css/**/*.css',
                        '!build/css/<%= pkg.name %>.min.css',
                        'build/js/**/*.js',
-                       '!build/js/<%= pkg.name %>.min.js'
+                       '!build/js/**/*.min.js'
                       ]
     },
     copy: {
@@ -41,7 +39,7 @@ module.exports = function (grunt) {
         separator: ';'
       },
       dist: {
-        src: ['build/js/**/*.js'],
+        src: ['app/js/**/*.js'],
         dest: 'build/js/<%= pkg.name %>.js'
       }
     },
