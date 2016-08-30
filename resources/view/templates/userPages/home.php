@@ -11,10 +11,10 @@
     echo "</br></br>";
 
     require_once("resources/view/templates/search.php");
-    if($employees !== null)
-    {
+    if($employees !== null){
       foreach ($employees as $employee) {
-        echo $employee->getFirstName();
+        echo $employee->getFirstName(), " ", $employee->getMiddleName(), " ", $employee->getLastName(),
+        " ", $employee->getPhoneNumber(), " ", $employee->getEmail(), "<br>";
       }
     }
 

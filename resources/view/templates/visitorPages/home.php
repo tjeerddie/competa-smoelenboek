@@ -5,7 +5,8 @@
 
     if($employees !== null){
       foreach ($employees as $employee) {
-        echo $employee->getFirstName();
+        echo $employee->getFirstName(), " ", $employee->getMiddleName(), " ", $employee->getLastName(),
+        " ", $employee->getPhoneNumber(), " ", $employee->getEmail(), "<br>";
       }
     }
 
