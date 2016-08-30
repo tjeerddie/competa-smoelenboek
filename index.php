@@ -3,15 +3,15 @@
 
     if (isset($_GET['control']) && isset($_GET['action'])) {
         $control = filter_input(INPUT_GET,'control', FILTER_SANITIZE_STRING);
-        $action     = filter_input(INPUT_GET,'action', FILTER_SANITIZE_STRING);
+        $action = filter_input(INPUT_GET,'action', FILTER_SANITIZE_STRING);
     } else {
         $control = 'Visitor';
-        $action     = 'home';
+        $action = 'home';
     }
 
     function call($control, $action) {
         // require the file that matches the controller name
-        require_once('resources/controllers/' . $control . '.php');
+        require_once(CONTROLLERS_PATH . $control . '.php');
 
         //makes the controller
         $control = new $control();
@@ -21,7 +21,7 @@
     }
 
     // list of allowed controllers with corresponding actions.
-    $controllers = array('Visitor' => ['home', 'error'], 'User' => ['home', 'error']);
+    $controllers = array('Visitor' => ['home', 'search', 'error'], 'User' => ['home', 'error']);
 
     // check that the requested controller and action are both allowed
     if (array_key_exists($control, $controllers)) {
