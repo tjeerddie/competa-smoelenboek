@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Smoelenboek</title>
     <link rel="stylesheet" href="../build/css/smoelenboek.min.css">
+    <script src="https://use.fontawesome.com/e66d807195.js"></script>
   </head>
   <body>
     <nav class="navigation">
@@ -15,19 +16,25 @@
       </figure>
       <ul class="list--reset navigation__list">
         <li class="navigation__list-item">
-          <a class="navigation__link navigation__link--active" href="#">home</a>
+          <div class="navigation__link__container is-active" role="button">
+            <a class="navigation__link" href="#">home</a>
+            <span class="fa fa-home" role="button"></span>
+          </div>
         </li>
         <li class="navigation__list-item">
-          <a class="navigation__link navigation__link" href="#">log in</a>
+          <div class="navigation__link__container" role="button">
+            <a class="navigation__link navigation__link" href="#">log in</a>
+            <span class="fa fa-sign-in" role="button"></span>
+          </div>
         </li>
       </ul>
     </nav>
     <main class="main">
       <header class="header">
-        <button class="navigation__button" type="button" name="navigation-button">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="navigation__hamburger" type="button" name="navigation-button">
+          <span class="navigation__hamburger__burger">burger</span>
+          <span class="navigation__hamburger__burger">burger</span>
+          <span class="navigation__hamburger__burger">burger</span>
         </button>
       </header>
       <p>
