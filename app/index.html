@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="../build/css/smoelenboek.min.css">
   </head>
   <body>
-    <nav class="navigation is-open">
+    <nav class="navigation">
       <figure class="figure navigation__logo">
         <img class="figure-img img-fluid navigation__image" src="img/layout/competa_logo_big.png" alt="" />
+        <img class="figure-img img-fluid navigation__image" src="img/layout/competa_logo_small.png" alt="" />
       </figure>
       <ul class="list--reset navigation__list">
         <li class="navigation__list-item">
@@ -21,15 +22,20 @@
         </li>
       </ul>
     </nav>
-    <main class="grid__container main">
+    <main class="main">
       <header class="header">
-        <button type="button" name="close">
-          close
+        <button class="navigation__button" type="button" name="navigation-button">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </header>
       <p>
         test
       </p>
     </main>
+
+    <script src="../build/js/jquery-3.1.0.min.js"></script>
+    <script src="../build/js/smoelenboek.min.js"></script>
   </body>
 </html>
