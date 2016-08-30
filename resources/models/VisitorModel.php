@@ -4,17 +4,12 @@
 
     class VisitorModel extends Model {
 
-
         public function __construct () {
             parent::__construct();
         }
 
-        public function getPeople() {
-            $sql = "SELECT * FROM `employees`";
-            $stmnt = $this->db->prepare($sql);
-            $stmnt->execute();
-            $employees = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
-            return $employees;
+        public function getEmployees () {
+            return parent::getEmployees();
         }
     }
 ?>

@@ -1,12 +1,4 @@
-<?php
-    require_once("resources/view/templates/header.php");
-
-    echo "Names:  ";
-    foreach ($employees as $employee) {
-        echo $employee->getFirstName();
-        echo ", ";
-    }
-    echo "</br></br>";
+<?php require_once("resources/view/templates/header.php");
 
     require_once("resources/view/templates/footer.php");
 ?>

@@ -3,10 +3,10 @@
 
     if (isset($_GET['control']) && isset($_GET['action'])) {
         $control = filter_input(INPUT_GET,'control', FILTER_SANITIZE_STRING);
-        $action     = filter_input(INPUT_GET,'action', FILTER_SANITIZE_STRING);
+        $action = filter_input(INPUT_GET,'action', FILTER_SANITIZE_STRING);
     } else {
         $control = 'Visitor';
-        $action     = 'home';
+        $action = 'home';
     }
 
     function call($control, $action) {

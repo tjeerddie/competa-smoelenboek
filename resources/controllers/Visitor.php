@@ -12,7 +12,6 @@
 
         public function home () {
             $this->view->setView("visitor", "home");
-            $this->view->set("employees", $this->model->getPeople());
             $this->view->show();
         }
     }

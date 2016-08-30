@@ -1,22 +1,15 @@
 <?php
-    require_once("model.php");
-    class UserModel extends model {
-        protected $db;
-        private  $dsn = 'mysql:dbname=smoelenboek;host=127.0.0.1:8080;charset=utf8';
-        private  $user = 'root';
-        private  $password = '';
+    require_once(MODELS_PATH . 'Model.php');
+    require_once(DB_PATH . 'Employee.php');
 
-        public function __construct(){
-            $this->db = new \PDO($this->dsn, $this->user, $this->password);
-            $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+    class UserModel extends model {
+
+        public function __construct () {
+            parent::__construct();
         }
 
-        private function getPeople() {
-            $sql = "SELECT * FROM `employees`";
-           $stmnt = $this->db->prepare($sql);
-           $stmnt->execute();
-           $employees = $stmnt->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Contact');
-           console.log($employees);
+        public function getEmployees () {
+            return parent::getEmployees();
         }
     }
 ?>
