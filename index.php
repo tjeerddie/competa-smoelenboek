@@ -14,22 +14,19 @@
         require_once(CONTROLLERS_PATH . $control . '.php');
 
         //makes the controller
-        $control = new $control();
+        $controller = new $control();
 
         // call the action
-        $control->{ $action }();
+        $controller->{ $action }();
     }
 
     // list of allowed controllers with corresponding actions.
-    $controllers = array('Visitor' => ['home', 'error'], 'User' => ['home', 'error']);
+    $controllers = array('Visitor' => ['home', 'login', 'error'], 'User' => ['home', 'error']);
 
     // check that the requested controller and action are both allowed
-    if (array_key_exists($control, $controllers)) {
-        if (in_array($action, $controllers[$control])) {
+    if (array_key_exists($control, $controllers)
+    && in_array($action, $controllers[$control])) {
             call($control, $action);
-        } else {
-            require_once(TEMPLATES_PATH . 'error.php');
-        }
     } else {
         require_once(TEMPLATES_PATH . 'error.php');
     }

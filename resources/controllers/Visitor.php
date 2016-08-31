@@ -14,5 +14,20 @@
             $this->view->setView("visitor", "home");
             $this->view->show();
         }
+
+        public function login () {
+        if($this->model->isPostLeeg()) {
+           $this->view->set("message","fill the form");
+        } else {
+            if($this->model->login()){
+                header('Location: ' ."http://localhost:8080/competa-smoelenboek/?control=User&action=home");
+                $this->view->set("message", "yes");
+            } else {
+                $this->view->set("message", "no");
+            }
+        }
+            $this->view->setView("visitor", "login");
+            $this->view->show();
+        }
     }
 ?>
