@@ -288,9 +288,9 @@ html {
 }
 /* line 31, ../sass/base/_default.scss */
 body {
-  background-color: #3a526a;
+  background-color: #3A526A;
   min-height: 100%;
-  color: #4b4a4a;
+  color: #3d3d3d;
   font-family: "open-sans", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -317,7 +317,7 @@ p {
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
-  border-bottom: 1px dotted #4b4a4a;
+  border-bottom: 1px dotted #3d3d3d;
 }
 
 /* line 67, ../sass/base/_default.scss */
@@ -361,7 +361,7 @@ blockquote {
 
 /* line 100, ../sass/base/_default.scss */
 a {
-  color: #000;
+  color: black;
   text-decoration: none;
 }
 /* line 104, ../sass/base/_default.scss */
@@ -429,14 +429,14 @@ textarea {
 /* line 166, ../sass/base/_default.scss */
 table {
   border-collapse: collapse;
-  background-color: #f0f0f0;
+  background-color: white;
 }
 
 /* line 171, ../sass/base/_default.scss */
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  color: #4b4a4a;
+  color: #3d3d3d;
   text-align: left;
   caption-side: bottom;
 }
@@ -515,12 +515,24 @@ output {
   display: inline-block;
   font-size: 1rem;
   line-height: 1.5;
-  color: #4b4a4a;
+  color: #3d3d3d;
 }
 
 /* line 248, ../sass/base/_default.scss */
 [hidden] {
   display: none !important;
+}
+
+/* line 252, ../sass/base/_default.scss */
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 /* line 3, ../sass/base/_typography.scss */
@@ -530,7 +542,7 @@ h1, h2, h3, h4, h5, h6,
   font-family: "roboto", sans-serif;
   font-weight: 500;
   line-height: 1.1;
-  color: inherit;
+  color: black;
 }
 
 /* line 12, ../sass/base/_typography.scss */
@@ -1704,9 +1716,94 @@ h6, .h6 {
   list-style-type: none;
 }
 
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__logo {
+  height: 75px;
+  margin-bottom: 10px;
+  position: relative;
+  width: 100%;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__image {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__sign-in {
+  background-color: white;
+  border-color: #f3f3f3;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 350px;
+  padding: 15px;
+  position: relative;
+  transform: translateY(50%);
+}
+/* line 38, ../sass/layout/_form.scss */
+.form__sign-in .form__control[type="text"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: -1px;
+}
+/* line 52, ../sass/layout/_form.scss */
+.form__sign-in .form__control[type="password"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: 10px;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__control {
+  background-clip: padding-box;
+  background-color: white;
+  background-image: none;
+  border-color: rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 1px;
+  color: #3d3d3d;
+  display: block;
+  font-size: 1rem;
+  height: auto;
+  line-height: 1.5;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__message {
+  color: #3d3d3d;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  /* line 14, ../sass/abstracts/mixins/_bem.scss */
+  .form__message {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 543px) {
+  /* line 14, ../sass/abstracts/mixins/_bem.scss */
+  .form__message {
+    font-size: 0.75rem;
+  }
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__message--danger {
+  color: #ca202b;
+}
+
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .main {
-  background-color: #f0f0f0;
+  background-color: white;
   height: 100%;
   margin-left: 250px;
   margin-right: 120px;
@@ -1715,6 +1812,13 @@ h6, .h6 {
 /* line 31, ../sass/abstracts/mixins/_bem.scss */
 .main.is-enlarged {
   margin-left: 60px;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.main--login {
+  background-color: transparent;
+  margin: 0;
+  padding: 15px;
+  transition: margin-left 0s;
 }
 
 /* line 1, ../sass/layout/_image.scss */
@@ -1749,7 +1853,7 @@ h6, .h6 {
 
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .navigation {
-  background-color: #f0f0f0;
+  background-color: white;
   position: fixed;
   width: 250px;
   height: 100%;
@@ -1759,7 +1863,7 @@ h6, .h6 {
   padding-bottom: 30px;
   border-right-width: 1px;
   border-right-style: solid;
-  border-right-color: gray;
+  border-right-color: #f3f3f3;
   overflow: hidden;
   z-index: 10;
   transition: width .5s;
@@ -1823,7 +1927,7 @@ h6, .h6 {
   text-align: center;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: #4b4a4a;
+  border-bottom-color: #f3f3f3;
 }
 /* line 98, ../sass/layout/_navigation.scss */
 .navigation__list-item:last-child {
@@ -1860,4 +1964,46 @@ h6, .h6 {
   border-bottom-width: 3px;
   border-bottom-style: solid;
   border-bottom-color: #ca202b;
+}
+
+/* line 7, ../sass/abstracts/mixins/_bem.scss */
+.button {
+  border-color: transparent;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 1px;
+  padding: .5rem 1rem;
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+@media (min-width: 992px) {
+  /* line 7, ../sass/abstracts/mixins/_bem.scss */
+  .button {
+    border-radius: 0.3rem;
+    font-size: 1.25rem;
+    padding: .75rem 1.5rem;
+  }
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.button--block {
+  display: block;
+  width: 100%;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.button--primary {
+  background-color: #1f64ae;
+  border-color: #1f64ae;
+  color: white;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.button__icon {
+  position: relative;
+  top: 3px;
 }

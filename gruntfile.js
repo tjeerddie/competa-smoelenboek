@@ -85,11 +85,9 @@ module.exports = function (grunt) {
     connect: {
       server: {
         options: {
-          port: 8080,
-          base: 'build',
-          livereload: false,
+          livereload: true,
           open: {
-            target: 'http//http://localhost:8080'
+            target: 'http://localhost:8080/competa-smoelenboek/index.php'
           }
         }
       }
