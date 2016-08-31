@@ -5,7 +5,7 @@
     <meta name="author" content="Team InProgress">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Smoelenboek</title>
-    <link rel="stylesheet" href="../../build/css/smoelenboek.min.css">
+    <link rel="stylesheet" href="build/css/smoelenboek.min.css">
   </head>
   <body>
       <div id="header">
