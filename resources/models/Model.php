@@ -19,12 +19,6 @@
             return empty($_POST);
         }
 
-        private function startSessie() {
-            if(!isset($_SESSION)) {
-                session_start();
-            }
-        }
-
         public function getEmployees() {
             $sql = "SELECT * FROM `employees` ORDER BY last_name ASC";
             $stmnt = $this->db->prepare($sql);

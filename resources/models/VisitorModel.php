@@ -22,7 +22,7 @@
 
                 if(count($user) === 1) {
                     if (password_verify($password, $user[0]->getHash())) {
-                        $this->startSessie();
+                        session_start();
                         $_SESSION['user']=$user[0];
                         return true;
                     } else {
