@@ -15,23 +15,23 @@
 }
 
 // Colours
-$white: #f0f0f0 !default;
-$gray: #4b4a4a !default;
-$black: #000 !default;
-$blue: #1f65ad !default;
-$red: #ca202b !default;
-$dark-blue: #3a526a !default;
-$orange: #fe5722 !default;
+$blue: rgba(31, 100, 174, 1.0) !default;
+$dark-blue: #3A526A !default;
+$red: rgba(202, 32, 43, 1.0) !default;
+$orange: rgba(254, 87, 34, 1.0) !default;
+$grey: rgba(61, 61, 61, 1.0) !default;
+$white: rgba(255, 255, 255, 1.0) !default;
+$black: rgba(0, 0, 0, 1) !default;
+$light-grey: rgba(243,243,243,1.0) !default;
 
 // Spacing
 $spacer: 1rem !default;
 $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
-$border-width: 1px !default;
 
 // Body
 $body-bg: $dark-blue !default;
-$body-color: $gray !default;
+$body-color: $grey !default;
 
 // Links
 $link-color: $black !default;
@@ -82,17 +82,34 @@ $font-size-h4: 1.5rem !default;
 $font-size-h5: 1.25rem !default;
 $font-size-h6: 1rem !default;
 
+$font-color-base: $grey;
+$font-color-danger: $red;
+$font-color-primary: $blue;
+$font-color-warning: $orange;
+
 $headings-margin-bottom: ($spacer / 2) !default;
 $headings-font-family: $font-family-roboto !default;
 $headings-font-weight: 500 !default;
 $headings-line-height: 1.1 !default;
-$headings-color: inherit !default;
+$headings-color: $black !default;
 
-$text-muted: $gray !default;
+$text-muted: $grey !default;
 
-$abbr-border-color: $gray !default;
+$abbr-border-color: $grey !default;
 
 $dt-font-weight: bold !default;
+
+// Components
+$line-height-lg: (4 / 3) !default;
+$line-height-sm: 1.5 !default;
+
+$border-radius: .25rem !default;
+$border-radius-lg: .3rem !default;
+$border-radius-sm: .2rem !default;
+
+$border-color: $light-grey !default;
+$border-style: solid !default;
+$border-width: 1px !default;
 
 // Tables
 $table-cell-padding: .75rem !default;
@@ -100,6 +117,7 @@ $table-cell-padding: .75rem !default;
 $table-bg: $white;
 
 // Forms
-$input-color: $gray !default;
+$input-border-color: rgba(0, 0, 0, .15) !default;
+$input-color: $grey !default;
 
 $cursor-disabled: not-allowed !default;

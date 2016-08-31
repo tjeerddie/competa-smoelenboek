@@ -5,6 +5,11 @@
         private $model;
         private $view;
 
+        private $messages = [
+          'Fill in your username and password.',
+          'Your username or password is wrong!'
+        ];
+
         public function __construct(){
             $this->model = $this->getModel("VisitorModel");
             $this->view = $this->getView();
@@ -17,13 +22,13 @@
 
         public function login () {
         if($this->model->isPostLeeg()) {
-           $this->view->set("message","fill the form");
+          $this->view->set("message", $this->messages[0]);
         } else {
             if($this->model->login()){
                 header('Location: ' ."http://localhost:8080/competa-smoelenboek/?control=User&action=home");
-                $this->view->set("message", "yes");
             } else {
-                $this->view->set("message", "no");
+                $this->view->set("message", $this->messages[1]);
+                $this->view->set("failedToSignIn", true);
             }
         }
             $this->view->setView("visitor", "login");
