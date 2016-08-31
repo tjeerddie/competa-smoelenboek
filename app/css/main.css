@@ -1861,3 +1861,29 @@ h6, .h6 {
   border-bottom-style: solid;
   border-bottom-color: #ca202b;
 }
+
+/* line 7, ../sass/abstracts/mixins/_bem.scss */
+.navigation__hamburger {
+  width: 30px;
+  height: 5px;
+  background-color: #111;
+  border-radius: 5px;
+  position: relative;
+}
+/* line 8, ../sass/components/_button.scss */
+.navigation__hamburger:after, .navigation__hamburger:before {
+  content: '';
+  width: 100%;
+  height: 5px;
+  background-color: #111;
+  position: absolute;
+  border-radius: 5px;
+}
+/* line 18, ../sass/components/_button.scss */
+.navigation__hamburger:after {
+  top: 10px;
+}
+/* line 23, ../sass/components/_button.scss */
+.navigation__hamburger:before {
+  top: 20px;
+}
