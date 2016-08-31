@@ -1,22 +1,48 @@
 <?php
-    require_once("model.php");
-    class VisitorModel extends model {
-        protected $db;
-        private  $dsn = 'mysql:dbname=smoelenboek;host=127.0.0.1:8080;charset=utf8';
-        private  $user = 'root';
-        private  $password = '';
+    require_once(MODELS_PATH . 'Model.php');
 
-        public function __construct(){
-            $this->db = new \PDO($this->dsn, $this->user, $this->password);
-            $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+    class VisitorModel extends Model {
+
+        public function __construct () {
+            parent::__construct();
         }
 
-        private function getPeople() {
-            $sql = "SELECT * FROM `employees`";
-           $stmnt = $this->db->prepare($sql);
-           $stmnt->execute();
-           $employees = $stmnt->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Contact');
-           console.log($employees);
+        public function login () {
+            if ((isset($_POST['username'])) && (!empty($_POST['username']))
+            && (isset($_POST['password']))  && (!empty($_POST['password']))) {
+                $username = filter_input(INPUT_POST,'username', FILTER_SANITIZE_STRING);
+                $password = filter_input(INPUT_POST,'password', FILTER_SANITIZE_STRING);
+
+                $hash = '*';
+                $sql = "SELECT * FROM `users` WHERE `username` = :username";
+                $stmnt = $this->db->prepare($sql);
+                $stmnt->bindParam(':username', $username);
+                $stmnt->execute();
+                $user = $stmnt->fetchAll(\PDO::FETCH_CLASS,'UserInfo');
+
+                if(count($user) === 1) {
+                    if (password_verify($password, $user[0]->getHash())) {
+                        session_start();
+                        $_SESSION['user']=$user[0];
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                     return false;
+                }
+
+                //for new passwords
+                // $options = [
+                //     'cost' => 9,
+                // ];
+
+                // $hash = password_hash($password, PASSWORD_BCRYPT, $options);
+                // echo $hash;
+                // $sql = "UPDATE `users` SET `password`='$hash' WHERE `username` = '$username'";
+                // $stmnt = $this->db->prepare($sql);
+                // $stmnt->execute();
+            }
         }
     }
 ?>
