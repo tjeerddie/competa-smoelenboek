@@ -1,18 +1,35 @@
 <?php require_once("resources/view/templates/header.php");
     require_once("resources/view/templates/navigation.php");?>
 
-    <main class="main">
-      <header class="header">
-        <button class="navigation__hamburger" type="button" name="navigation-button">
-          <span class="navigation__hamburger__burger">burger</span>
-          <span class="navigation__hamburger__burger">burger</span>
-          <span class="navigation__hamburger__burger">burger</span>
-        </button>
-      </header>
-      <p>
-        test
-      </p>
-    </main>
+        <main class="main">
+            <header class="header">
+            <button class="navigation__hamburger" type="button" name="navigation-button">
+                <span class="navigation__hamburger__burger">burger</span>
+                <span class="navigation__hamburger__burger">burger</span>
+                <span class="navigation__hamburger__burger">burger</span>
+            </button>
+        </header>
+        <?php   require_once("resources/view/templates/search.php");
+            echo "Employees </br></br>";
+            foreach ($employees as $employee) {
+            echo "name: " . $employee->getFirstName()." ".$employee->getMiddleName()." ".$employee->getLastName();
+            echo "</br> email: " . $employee->getEmail();
+            echo "</br> phone: " . $employee->getPhoneNumber();
+            foreach ($groups as $group) {
+                if ($employee->getGroupId() === $group->getId()) {
+                    echo "</br> group: " . $group->getName();
+                }
+            }
+            foreach ($jobs as $job) {
+                if ($employee->getCategoryId() === $job->getId()) {
+                    echo "</br> job: " . $job->getType();
+                }
+            }
+            echo "</br></br>";
+        }
+        echo "</br></br>";
+        ?>
+        </main>
 
-<?php    require_once("resources/view/templates/footer.php");
-?>
+
+<?php    require_once("resources/view/templates/footer.php");?>
