@@ -3,17 +3,19 @@
 
         <main class="main">
             <header class="header">
-            <button class="navigation__hamburger" type="button" name="navigation-button">
-                <span class="navigation__hamburger__burger">burger</span>
-                <span class="navigation__hamburger__burger">burger</span>
-                <span class="navigation__hamburger__burger">burger</span>
-            </button>
-        </header>
+                <button class="navigation__hamburger" type="button" name="navigation-button">
+                    <span class="navigation__hamburger__burger">burger</span>
+                    <span class="navigation__hamburger__burger">burger</span>
+                    <span class="navigation__hamburger__burger">burger</span>
+                </button>
+            </header>
         <?php   require_once("resources/view/templates/search.php");
             echo "Employees </br></br>";
-            foreach ($employees as $employee) {
-            echo "name: " . $employee->getFirstName()." ".$employee->getMiddleName()." ".$employee->getLastName();
-            echo "</br> email: " . $employee->getEmail();
+            foreach ($employees as $employee):?>
+            <a href="?control=Visitor&action=employee&id=<?php echo $employee->getId();?>">
+                <?php echo "name: " . $employee->getFirstName()." ".$employee->getMiddleName()." ".$employee->getLastName();?>
+            </a>
+            <?php echo "</br> email: " . $employee->getEmail();
             echo "</br> phone: " . $employee->getPhoneNumber();
             foreach ($groups as $group) {
                 if ($employee->getGroupId() === $group->getId()) {
@@ -26,7 +28,7 @@
                 }
             }
             echo "</br></br>";
-        }
+        endforeach;
         echo "</br></br>";
         ?>
         </main>

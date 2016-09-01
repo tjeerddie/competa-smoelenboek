@@ -19,6 +19,15 @@
             return empty($_POST);
         }
 
+        public function getEmployee() {
+            $id = filter_input(INPUT_GET,'id', FILTER_SANITIZE_STRING);
+            $sql = "SELECT * FROM `employees` WHERE `id` = '$id'";
+            $stmnt = $this->db->prepare($sql);
+            $stmnt->execute();
+            $employee = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
+            return $employee[0];
+        }
+
         public function getEmployees() {
             $sql = "SELECT * FROM `employees` ORDER BY last_name ASC";
             $stmnt = $this->db->prepare($sql);

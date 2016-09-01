@@ -1,5 +1,7 @@
 <?php
     abstract class Controller {
+        protected $model;
+        protected $view;
 
         protected function getModel ($model) {
             require_once('resources/models/' . $model . '.php');
