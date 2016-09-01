@@ -12,6 +12,11 @@
     <header class="main__header">
       <h1 class="main__heading">employees</h1>
     </header>
+    <div class="divider">
+      <div class="divider__block">
+        
+      </div>
+    </div>
     <div class="grid__row">
       <?php foreach ($employees as $employee): ?>
         <figure class="figure grid__column-xl-3 card">

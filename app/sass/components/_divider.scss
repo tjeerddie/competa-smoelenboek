@@ -1,0 +1,45 @@
+@include block(divider) {
+  background: {
+    color: $black;
+  }
+  margin: {
+    bottom: 3%;
+    left: auto;
+    right: auto;
+    top: 2%;
+  }
+  min: {
+    height: 1px;
+  }
+  position: relative;
+  width: 18%;
+
+  @include element(block) {
+    display: block;
+    margin: {
+      bottom: 3%;
+      left: auto;
+      right: auto;
+      top: 2%;
+    }
+    min: {
+      height: 3px;
+    }
+    position: relative;
+    width: 15%;
+
+    @include modifier();
+
+    @include modifier(red) {
+      background: {
+        color: $red;
+      }
+    }
+
+    @include modifier(blue) {
+      background: {
+        color: $blue;
+      }
+    }
+  }
+}
