@@ -11,9 +11,12 @@
         }
 
         public function home () {
+            $this->model->startSessie();
             $this->view->setView("user", "home");
             $emps = $this->model->search();
             $this->view->set("employees", $this->model->getEmployees());
+            $this->view->set("groups", $this->model->getGroups());
+            $this->view->set("jobs", $this->model->getJobs());
             $this->view->show();
         }
     }

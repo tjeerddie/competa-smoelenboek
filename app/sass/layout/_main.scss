@@ -1,0 +1,24 @@
+@include block(main) {
+  background: {
+    color: $white;
+  }
+  height: 100%;
+  margin: {
+    left: 250px;
+    right: 120px;
+  }
+  transition: margin-left .5s;
+
+  @include state(enlarged) {
+    margin-left: 60px;
+  }
+
+  @include modifier(login) {
+    background: {
+      color: transparent;
+    }
+    margin: 0;
+    padding: 15px;
+    transition: margin-left 0s;
+  }
+}

@@ -1,0 +1,145 @@
+@include block(navigation) {
+  background: {
+    color: $white;
+  }
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: {
+    top: 30px;
+    bottom: 30px
+  }
+  border: {
+    right: {
+      width: 1px;
+      style: solid;
+      color: $light-grey;
+    }
+  }
+  overflow: hidden;
+  z-index: 10;
+  transition: width .5s;
+
+  @include state(ensmalled) {
+    width: 60px;
+  }
+
+  @include element(logo) {
+    position: relative;;
+    width: 100%;
+    height: 75px;
+    margin: 0;
+  }
+
+  @include element(image) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: visibility 0s, opacity .25s linear;
+
+    &:first-child {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &:last-child {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    @include state(ensmalled) {
+      &:first-child {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      &:last-child {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  @include element(list) {
+    position: relative;
+    width: 100%;
+    margin: {
+      top: 30px;
+    }
+    padding: {
+      left: 30px;
+      right: 30px;
+    }
+
+    @include state(ensmalled) {
+      padding: 0;
+    }
+
+    &-item {
+      position: relative;
+      width: 100%;
+      padding: {
+        top: 15px;
+        bottom: 15px;
+      }
+      text: {
+        align: center;
+      }
+      border: {
+        bottom: {
+          width: 1px;
+          style: solid;
+          color: $light-grey;
+        }
+      }
+
+      &:last-child {
+        border: 0;
+      }
+    }
+  }
+
+  @include element(link) {
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity .25s linear;
+
+    @include state(ensmalled) {
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    @include element(container) {
+      position: relative;
+      width: 50%;
+      margin: {
+        left: auto;
+        right: auto;
+      }
+
+      &:hover {
+        border: {
+          bottom: {
+            width: 3px;
+            style: solid;
+            color: lighten($link-hover-color, 10%);
+          }
+        }
+      }
+
+      @include state(active) {
+        border: {
+          bottom: {
+            width: 3px;
+            style: solid;
+            color: $link-hover-color;
+          }
+        }
+      }
+    }
+  }
+}

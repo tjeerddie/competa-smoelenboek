@@ -59,11 +59,11 @@
             return $this->City;
         }
 
-        public function getgroupId () {
+        public function getGroupId () {
             return $this->group_id;
         }
 
-        public function getcategoryId () {
+        public function getCategoryId () {
             return $this->category_id;
         }
     }

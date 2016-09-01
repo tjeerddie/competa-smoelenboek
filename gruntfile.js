@@ -6,13 +6,12 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
     clean: {
-      build: {
-        src: ['build/*']
-      },
+      build: ['build/css/*', 'build/img/*', 'build/js/*', '!build/js/jquery-3.1.0.min.js'],
       afterMinifying: ['build/css/**/*.css',
                        '!build/css/<%= pkg.name %>.min.css',
+                       '!build/img/*',
                        'build/js/**/*.js',
-                       '!build/js/<%= pkg.name %>.min.js'
+                       '!build/js/**/*.min.js'
                       ]
     },
     copy: {
@@ -22,7 +21,7 @@ module.exports = function (grunt) {
       main: {
         expand: true,
         src: ['src/*', '!src/sass/*'],
-        dest: 'dest/'
+        dest: 'build/'
       },
     },
     // TODO: Fix imagemin
@@ -41,7 +40,7 @@ module.exports = function (grunt) {
         separator: ';'
       },
       dist: {
-        src: ['build/js/**/*.js'],
+        src: ['app/js/**/*.js'],
         dest: 'build/js/<%= pkg.name %>.js'
       }
     },
@@ -86,11 +85,9 @@ module.exports = function (grunt) {
     connect: {
       server: {
         options: {
-          port: 8080,
-          base: 'build',
-          livereload: false,
+          livereload: true,
           open: {
-            target: 'http//http://localhost:8080'
+            target: 'http://localhost:8080/competa-smoelenboek/index.php'
           }
         }
       }

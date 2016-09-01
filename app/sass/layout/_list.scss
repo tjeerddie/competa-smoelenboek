@@ -1,0 +1,12 @@
+@include block(list) {
+  @include modifier(reset) {
+    padding: {
+      left: 0;
+    }
+    list: {
+      style: {
+        type: $link-decoration
+      }
+    }
+  }
+}
