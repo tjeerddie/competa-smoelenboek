@@ -27,6 +27,24 @@
             return $employees;
         }
 
+        public function search(){
+          if(isset($_POST['submit'])){
+          if(preg_match("/^[  a-zA-Z]+/", $_POST['name'])){
+            $name=filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
+            if ($name !== 'undefined'){
+              $sql="SELECT * FROM employees WHERE first_name LIKE '%" . $name .  "%' OR last_name LIKE '%" . $name ."%'";
+              $stmnt = $this->db->prepare($sql);
+              $stmnt->execute();
+              $employees = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
+              return $employees;
+          }
+          }
+          else{
+            echo  "<p>Please enter a search query</p>";
+          }
+        }
+        }
+
         public function getGroups() {
            $sql = 'SELECT * FROM `groups` ORDER BY name ASC';
            $stmnt = $this->db->prepare($sql);

@@ -44,5 +44,8 @@
                 // $stmnt->execute();
             }
         }
+        public function search () {
+            return parent::search();
+        }
     }
 ?>

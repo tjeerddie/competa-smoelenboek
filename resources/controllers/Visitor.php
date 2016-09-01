@@ -17,6 +17,14 @@
 
         public function home () {
             $this->view->setView("visitor", "home");
+            $emps = $this->model->search();
+            if(isset($emps)){
+              $this->view->set("employees" , $emps);
+            } else {
+              $this->view->set("employees", $this->model->getEmployees());
+            }
+            $this->view->set("groups", $this->model->getGroups());
+            $this->view->set("jobs", $this->model->getJobs());
             $this->view->show();
         }
 
