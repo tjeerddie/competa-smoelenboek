@@ -15,7 +15,7 @@
             $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }
 
-        function isPostLeeg(){
+        function postEmpty(){
             return empty($_POST);
         }
 

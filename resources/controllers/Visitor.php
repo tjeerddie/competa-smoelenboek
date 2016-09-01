@@ -21,7 +21,7 @@
         }
 
         public function login () {
-        if($this->model->isPostLeeg()) {
+        if($this->model->postEmpty()) {
           $this->view->set("message", $this->messages[0]);
         } else {
             if($this->model->login()){

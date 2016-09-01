@@ -11,7 +11,6 @@
         }
 
         public function home () {
-            $this->model->startSessie();
             $this->view->setView("user", "home");
             $this->view->set("employees", $this->model->getEmployees());
             $this->view->set("groups", $this->model->getGroups());
