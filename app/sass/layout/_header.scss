@@ -1,4 +1,6 @@
 @include block(header) {
-  position: relative;
   padding: 15px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }

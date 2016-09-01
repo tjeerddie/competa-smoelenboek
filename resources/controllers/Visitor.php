@@ -42,5 +42,11 @@
             $this->view->setView("visitor", "login");
             $this->view->show();
         }
+
+        public function employees () {
+          $this->view->set("employees", $this->model->getEmployees());
+          $this->view->setView("visitor", "employees");
+          $this->view->show();
+        }
     }
 ?>

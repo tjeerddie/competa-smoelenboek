@@ -1,0 +1,50 @@
+@include block(card) {
+  background: {
+    color: $white;
+  }
+  border: {
+    color: transparent;;
+    radius: $border-radius;
+    style: $border-style;
+    width: $border-width;
+  }
+  display: block;
+  margin-bottom: $card-spacer-y;
+  padding: 15px;
+  position: relative;
+
+  @include element(image) {
+    margin: {
+      left: auto;
+      right: auto;
+    }
+    max: {
+      height: 125px;
+      width: 125px;
+    }
+    min: {
+      height: 125px;
+      width: 125px;
+    }
+  }
+
+  @include element(block) {
+    @extend %clearfix;
+    padding: {
+      left: $card-spacer-x;
+      right: $card-spacer-x;
+      top: .5rem;
+    }
+  }
+
+  @include element(title) {
+    margin-bottom: $card-spacer-y;
+    text-align: center;
+  }
+
+  @include element(text) {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

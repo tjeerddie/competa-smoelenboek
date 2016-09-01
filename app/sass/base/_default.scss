@@ -103,13 +103,7 @@ a {
 
   &:focus,
   &:hover {
-    border: {
-      bottom: {
-        width: 1px;
-        style: solid;
-        color: transparent;
-      }
-    }
+    border: none;
   }
 
   &:focus {
