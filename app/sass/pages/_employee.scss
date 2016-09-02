@@ -1,0 +1,84 @@
+@include block(employee) {
+    transform: translateY(10%);
+
+    @include element(list) {
+        position: relative;
+        width: 100%;
+        margin: {
+            top: 30px;
+        }
+        padding: {
+            left: 30px;
+            right: 30px;
+        }
+    }
+
+    @include element(box) {
+        transform: translateY(10%);
+    }
+
+    @include element(container) {
+        position: relative;
+        margin: {
+            left: auto;
+            right: auto;
+            bottom: 10px;
+        }
+
+        border: {
+          color: $border-color;
+          radius: $border-radius;
+          style: $border-style;
+          width: $border-width;
+        }
+    }
+
+    @include modifier(image) {
+        max: {
+            height: 400px;
+            width: 350px;
+        }
+        min: {
+            height: 400px;
+            width: 350px;
+        }
+    }
+    @include modifier(item) {
+        font: {
+            size: 1.5rem !important;
+        }
+        line-height: $line-height-base;
+    }
+
+    @include element(text) {
+        width: 35%;
+        display: inline-block;
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s, opacity .25s linear;
+    }
+
+    @include element(spacer) {
+        width: 5%;
+        display: inline-block;
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s, opacity .25s linear;
+    }
+
+    @include element(info) {
+        width: 55%;
+        display: inline-block;
+
+    }
+
+    @include element(info-box) {
+        width: 100%;
+        border: {
+          color: $border-color;
+          radius: $border-radius;
+          style: $border-style;
+          width: $border-width;
+        }
+    }
+}

@@ -3,7 +3,7 @@
     color: $white;
   }
   border: {
-    color: $border-color;
+    color: transparent;
     radius: $border-radius;
     style: $border-style;
     width: $border-width;
@@ -45,13 +45,16 @@
 
   @include element(block) {
     @extend %clearfix;
-    padding: {
-      top: .5rem;
-    }
   }
 
   @include element(title) {
     height: 100%;
+    margin: {
+        bottom: auto;
+        top: auto;
+    }
+    max-height: 55px;
+    min-height: 55px;
     text-align: center;
   }
 
