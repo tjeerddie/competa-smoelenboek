@@ -2,8 +2,6 @@
     require_once(CONTROLLERS_PATH . "Controller.php");
 
     class Visitor extends Controller {
-        private $model;
-        private $view;
 
         private $messages = [
           'Fill in your username and password.',
@@ -47,6 +45,13 @@
           $this->view->set("employees", $this->model->getEmployees());
           $this->view->setView("visitor", "employees");
           $this->view->show();
+
+        public function employee () {
+            $this->view->set("employee", $this->model->getEmployee());
+            $this->view->set("groups", $this->model->getGroups());
+            $this->view->set("jobs", $this->model->getJobs());
+            $this->view->setView("visitor", "employee");
+            $this->view->show();
         }
     }
 ?>
