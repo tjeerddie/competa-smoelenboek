@@ -43,7 +43,7 @@
             return $this->phone_number;
         }
 
-        public function getPhone () {
+        public function getPhoto () {
             return $this->photo;
         }
 
