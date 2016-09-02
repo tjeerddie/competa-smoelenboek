@@ -21,4 +21,18 @@
     padding: 15px;
     transition: margin-left 0s;
   }
+
+  @include element(header) {
+    padding: {
+      bottom: 15px;
+      top: 15px;
+    }
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  @include element(heading) {
+    text-transform: uppercase;
+  }
 }
