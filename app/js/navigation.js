@@ -9,7 +9,7 @@ $(document).ready(function () {
   var $navigationHamburger = $('.navigation__hamburger');
 
   $navigationHamburger.on('click', function (e) {
-    // $navigationHamburger.toggleClass('is-active');
+    $navigationHamburger.toggleClass('is-open');
     $navigation.toggleClass('is-ensmalled');
     $navigationList.toggleClass('is-ensmalled');
     $main.toggleClass('is-enlarged');
@@ -18,3 +18,5 @@ $(document).ready(function () {
     e.preventDefault();
   });
 });
+
+
