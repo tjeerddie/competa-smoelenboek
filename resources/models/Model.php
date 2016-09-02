@@ -15,8 +15,17 @@
             $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }
 
-        function isPostLeeg(){
+        function postEmpty(){
             return empty($_POST);
+        }
+
+        public function getEmployee() {
+            $id = filter_input(INPUT_GET,'id', FILTER_SANITIZE_STRING);
+            $sql = "SELECT * FROM `employees` WHERE `id` = '$id'";
+            $stmnt = $this->db->prepare($sql);
+            $stmnt->execute();
+            $employee = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
+            return $employee[0];
         }
 
         public function getEmployees() {
@@ -25,6 +34,21 @@
             $stmnt->execute();
             $employees = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
             return $employees;
+        }
+
+        public function search(){
+            if(isset($_POST['submit']) && preg_match("/^[  a-zA-Z]+/", $_POST['name'])){
+                $name=filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
+                if ($name !== 'undefined'){
+                    $sql="SELECT * FROM employees WHERE first_name LIKE '%" . $name .  "%' OR last_name LIKE '%" . $name ."%'";
+                    $stmnt = $this->db->prepare($sql);
+                    $stmnt->execute();
+                    $employees = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
+                    return $employees;
+                } else {
+                    echo  "<p>Please enter a search query</p>";
+                }
+            }
         }
 
         public function getGroups() {

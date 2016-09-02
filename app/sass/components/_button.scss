@@ -1,6 +1,8 @@
 @include block(navigation__hamburger){
   width: 20px;
   height: 15px;
+  border: none;
+  background-color: $white;
   position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -11,6 +13,10 @@
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 
   span {
     display: block;
@@ -66,5 +72,56 @@
         transform: rotate(-135deg);
       }
     }
+  }
+}
+
+@include block(button) {
+  border: {
+    color: transparent;
+    radius: $border-radius;
+    style: $border-style;
+    width: $border-width;
+  }
+  padding: .5rem 1rem;
+  position: relative;
+  display: inline-block;
+  font: {
+    size: $font-size-base;
+    weight: 400;
+  }
+  line-height: $line-height-base;
+  text-align: center;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  @include media-breakpoint-up(lg) {
+    border: {
+      radius: $border-radius-lg;
+    }
+    font: {
+      size: $font-size-lg
+    }
+    padding: .75rem 1.5rem;
+  }
+
+  @include modifier(block) {
+    display: block;
+    width: 100%;
+  }
+
+  @include modifier(primary) {
+    background: {
+      color: $blue;
+    }
+    border: {
+      color: $blue;
+    }
+    color: $white;
+  }
+
+  @include element(icon) {
+    position: relative;
+    top: 3px;
   }
 }

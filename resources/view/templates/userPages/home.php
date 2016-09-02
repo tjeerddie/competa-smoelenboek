@@ -1,4 +1,5 @@
 <?php require_once("resources/view/templates/header.php");
+      require_once("resources/view/templates/search.php");
 
     echo "Employees </br></br>";
     foreach ($employees as $employee) {
@@ -17,5 +18,6 @@
         }
         echo "</br></br>";
     }
+    echo "</br></br>";
     require_once("resources/view/templates/footer.php");
 ?>
