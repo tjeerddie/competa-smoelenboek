@@ -3,15 +3,30 @@
     color: $white;
   }
   border: {
-    color: transparent;;
+    color: $border-color;
     radius: $border-radius;
     style: $border-style;
     width: $border-width;
   }
   display: block;
-  margin-bottom: $card-spacer-y;
-  padding: 15px;
+  margin: {
+    left: 1%;
+    right: 1%;
+  }
+  padding: {
+    bottom: 15px;
+    left: 5px;
+    right: 5px;
+    top: 15px;
+  }
   position: relative;
+  width: 23%;
+
+  &:hover {
+    .card__overlay {
+      display: block;
+    }
+  }
 
   @include element(image) {
     margin: {
@@ -31,20 +46,38 @@
   @include element(block) {
     @extend %clearfix;
     padding: {
-      left: $card-spacer-x;
-      right: $card-spacer-x;
       top: .5rem;
     }
   }
 
   @include element(title) {
-    margin-bottom: $card-spacer-y;
+    height: 100%;
     text-align: center;
   }
 
   @include element(text) {
+    color: $grey;
+    overflow: hidden;
+    text: {
+      align: center;
+      overflow: ellipsis;
+    }
+    white-space: nowrap;
+
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  @include element(overlay) {
+    background-color: $light-grey;
+    bottom: 0;
+    display: none;
+    left: 0;
+    opacity: .75;
+    padding: 1.25rem;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }

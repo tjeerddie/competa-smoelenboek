@@ -88,6 +88,17 @@
     padding: 10px;
     position: relative;
     width: 100%;
+
+    @include modifier(search) {
+      border: {
+        bottom-right-radius: 0;
+        top-right-radius: 0;
+      }
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 0;
+      width: auto;
+    }
   }
 
   @include element(message) {
@@ -113,7 +124,7 @@
     }
 
     @include modifier(danger) {
-      color: $font-color-danger; 
+      color: $font-color-danger;
     }
   }
 }

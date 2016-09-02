@@ -13,18 +13,20 @@
       <h1 class="main__heading">employees</h1>
     </header>
     <div class="divider">
-      <div class="divider__block">
-        
-      </div>
+      <div class="divider__block divider__block--absolute divider__block--red"></div>
     </div>
+    <?php require_once(TEMPLATES_PATH . 'search.php') ?>
     <div class="grid__row">
       <?php foreach ($employees as $employee): ?>
         <figure class="figure grid__column-xl-3 card">
-          <img class="figure__image image--fluid card__image image--rounded" src="<?= $employee->getPhoto() ?>" alt="" />
+          <img class="figure__image image--fluid card__image image--rounded" src="app/img/content/<?= $employee->getPhoto() ?>" alt="" />
           <figcaption class=" figure__caption card__block">
-            <h4 class="card__title"><?= $employee->getFirstName() ?></h4>
+            <h4 class="card__title"><?= $employee->getFirstName() ." " . $employee->getLastName() ?></h4>
           </figcaption>
-        </figure>.
+          <a class="card__overlay" href="#">
+            <p class="card__text">Click to see more about</p>
+          </a>
+        </figure>
       <?php endforeach; ?>
     </div>
   </div>
