@@ -1861,3 +1861,40 @@ h6, .h6 {
   border-bottom-style: solid;
   border-bottom-color: #ca202b;
 }
+
+/* line 5, ../sass/pages/_home.scss */
+.main .textTitle {
+  color: #4b4a4a;
+  text-align: center;
+}
+/* line 10, ../sass/pages/_home.scss */
+.main .line {
+  width: 30%;
+  border-style: solid;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 1px;
+  border-color: #4b4a4a;
+  z-index: -1;
+}
+/* line 26, ../sass/pages/_home.scss */
+.main .rectLine {
+  position: relative;
+  width: 10%;
+  top: -56px;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #ca202b;
+  z-index: 10;
+}
+/* line 44, ../sass/pages/_home.scss */
+.main .textField {
+  text-align: center;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
