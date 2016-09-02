@@ -2,8 +2,6 @@
     require_once(CONTROLLERS_PATH . "Controller.php");
 
     class Visitor extends Controller {
-        private $model;
-        private $view;
 
         private $messages = [
           'Fill in your username and password.',
@@ -29,7 +27,7 @@
         }
 
         public function login () {
-        if($this->model->isPostLeeg()) {
+        if($this->model->postEmpty()) {
           $this->view->set("message", $this->messages[0]);
         } else {
             if($this->model->login()){
@@ -40,6 +38,20 @@
             }
         }
             $this->view->setView("visitor", "login");
+            $this->view->show();
+        }
+
+        public function employees () {
+          $this->view->set("employees", $this->model->getEmployees());
+          $this->view->setView("visitor", "employees");
+          $this->view->show();
+        }
+
+        public function employee () {
+            $this->view->set("employee", $this->model->getEmployee());
+            $this->view->set("groups", $this->model->getGroups());
+            $this->view->set("jobs", $this->model->getJobs());
+            $this->view->setView("visitor", "employee");
             $this->view->show();
         }
     }

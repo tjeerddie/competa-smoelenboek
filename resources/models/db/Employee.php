@@ -35,6 +35,10 @@
             return $this->last_name;
         }
 
+        public function getFullName () {
+            return $this->first_name ." " . $this->middle_name . " " . $this->last_name;
+        }
+
         public function getEmail () {
             return $this->email;
         }
@@ -43,7 +47,7 @@
             return $this->phone_number;
         }
 
-        public function getPhone () {
+        public function getPhoto () {
             return $this->photo;
         }
 
