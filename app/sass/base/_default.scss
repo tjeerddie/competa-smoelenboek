@@ -41,6 +41,7 @@ body {
     size: $font-size-base;
   }
   line-height: $line-height-base;
+  overflow: hidden;
 }
 
 h1,
@@ -103,13 +104,7 @@ a {
 
   &:focus,
   &:hover {
-    border: {
-      bottom: {
-        width: 1px;
-        style: solid;
-        color: transparent;
-      }
-    }
+    border: none;
   }
 
   &:focus {
@@ -247,4 +242,15 @@ output {
 
 [hidden] {
   display: none !important;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

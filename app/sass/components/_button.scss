@@ -1,0 +1,69 @@
+@include block(button) {
+  border: {
+    color: transparent;
+    radius: $border-radius;
+    style: $border-style;
+    width: $border-width;
+  }
+  padding: .5rem 1rem;
+  position: relative;
+  display: inline-block;
+  font: {
+    size: $font-size-base;
+    weight: 400;
+  }
+  line-height: $line-height-base;
+  text-align: center;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  @include media-breakpoint-up(lg) {
+    border: {
+      radius: $border-radius-lg;
+    }
+    font: {
+      size: $font-size-lg;
+    }
+    padding: .75rem 1.5rem;
+  }
+
+  @include modifier(block) {
+    display: block;
+    width: 100%;
+  }
+
+  @include modifier(primary) {
+    background: {
+      color: $blue;
+    }
+    border: {
+      color: $blue;
+    }
+    color: $white;
+  }
+
+  @include modifier(search) {
+    border: {
+      bottom-left-radius: 0;
+      top-left-radius: 0;
+    }
+    height: 26px;
+    line-height: 1px;
+    margin: {
+      bottom: 10px;
+      left: -5px;
+    }
+    padding: 0 .1rem;
+    top: 4px;
+
+    .fa {
+      font-size: 25px !important;
+    }
+  }
+
+  @include element(icon) {
+    position: relative;
+    top: 3px;
+  }
+}
