@@ -1781,6 +1781,11 @@ h6, .h6 {
   padding: 0;
   width: auto;
 }
+/* line 102, ../sass/layout/_form.scss */
+.form__control--search:hover, .form__control--search:focus {
+  outline: none;
+  border-color: #3d3d3d;
+}
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .form__message {
   color: #3d3d3d;
@@ -1831,7 +1836,6 @@ h6, .h6 {
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .main__header {
-  padding-bottom: 15px;
   padding-top: 15px;
   position: relative;
   text-align: center;
@@ -1850,7 +1854,7 @@ h6, .h6 {
 }
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .image--rounded {
-  border-color: #f3f3f3;
+  border-color: transparent;
   border-radius: 50%;
   border-style: solid;
   border-width: 1px;
@@ -2104,6 +2108,11 @@ h6, .h6 {
   border-color: #1f64ae;
   color: white;
 }
+/* line 122, ../sass/components/_button.scss */
+.button--primary:hover, .button--primary:focus {
+  background-color: #3A526A;
+  border-color: #3A526A;
+}
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .button--search {
   border-bottom-left-radius: 0;
@@ -2115,7 +2124,7 @@ h6, .h6 {
   padding: 0 .1rem;
   top: 4px;
 }
-/* line 60, ../sass/components/_button.scss */
+/* line 143, ../sass/components/_button.scss */
 .button--search .fa {
   font-size: 25px !important;
 }
@@ -2128,16 +2137,15 @@ h6, .h6 {
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .divider {
   background-color: black;
-  margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15px;
   min-height: 1px;
   position: relative;
-  width: 18%;
+  width: 30%;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .divider__block {
+  background-color: white;
   display: block;
   margin-bottom: 1%;
   margin-left: auto;
@@ -2170,7 +2178,7 @@ h6, .h6 {
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .card {
   background-color: white;
-  border-color: transparent;
+  border-color: #f3f3f3;
   border-radius: 0.25rem;
   border-style: solid;
   border-width: 1px;
@@ -2185,8 +2193,26 @@ h6, .h6 {
   width: 23%;
 }
 /* line 26, ../sass/components/_card.scss */
+.card:hover .card__image {
+  opacity: .25;
+  transition: visibility 0s, opacity .5s linear;
+  visibility: visible;
+}
+/* line 32, ../sass/components/_card.scss */
+.card:hover .card__block {
+  opacity: .25;
+  transition: visibility 0s, opacity .5s linear;
+  visibility: visible;
+}
+/* line 38, ../sass/components/_card.scss */
 .card:hover .card__overlay {
-  display: block;
+  opacity: .75;
+  transition: visibility 0s, opacity .5s linear;
+  visibility: visible;
+}
+/* line 44, ../sass/components/_card.scss */
+.card:hover .divider__block {
+  opacity: .25;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .card__image {
@@ -2196,6 +2222,15 @@ h6, .h6 {
   max-width: 125px;
   min-height: 125px;
   min-width: 125px;
+  opacity: 1;
+  transition: visibility 0s, opacity .25s linear;
+  visibility: visible;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.card__block {
+  opacity: 1;
+  transition: visibility 0s, opacity .25s linear;
+  visibility: visible;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .card__title {
@@ -2209,26 +2244,26 @@ h6, .h6 {
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .card__text {
   color: #3d3d3d;
+  margin-bottom: 0;
   overflow: hidden;
   text-align: center;
   text-overflow: ellipsis;
+  position: relative;
   white-space: nowrap;
-}
-/* line 72, ../sass/components/_card.scss */
-.card__text:last-child {
-  margin-bottom: 0;
+  transform: translateY(175%);
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .card__overlay {
   background-color: #f3f3f3;
   bottom: 0;
-  display: none;
   left: 0;
-  opacity: .75;
+  opacity: 0;
   padding: 1.25rem;
   position: absolute;
   right: 0;
   top: 0;
+  transition: visibility 0s, opacity 1s linear;
+  visibility: hidden;
 }
 
 /* line 7, ../sass/abstracts/mixins/_bem.scss */

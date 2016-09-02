@@ -24,10 +24,7 @@
   }
 
   @include element(header) {
-    padding: {
-      bottom: 15px;
-      top: 15px;
-    }
+    padding-top: 15px;
     position: relative;
     text-align: center;
     width: 100%;

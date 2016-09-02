@@ -3,7 +3,7 @@
     color: $white;
   }
   border: {
-    color: transparent;
+    color: $border-color;
     radius: $border-radius;
     style: $border-style;
     width: $border-width;
@@ -23,8 +23,26 @@
   width: 23%;
 
   &:hover {
+    .card__image {
+      opacity: .25;
+      transition: visibility 0s, opacity .5s linear;
+      visibility: visible;
+    }
+
+    .card__block {
+      opacity: .25;
+      transition: visibility 0s, opacity .5s linear;
+      visibility: visible;
+    }
+
     .card__overlay {
-      display: block;
+      opacity: .75;
+      transition: visibility 0s, opacity .5s linear;
+      visibility: visible;
+    }
+
+    .divider__block {
+      opacity: .25;
     }
   }
 
@@ -41,10 +59,16 @@
       height: 125px;
       width: 125px;
     }
+    opacity: 1;
+    transition: visibility 0s, opacity .25s linear;
+    visibility: visible;
   }
 
   @include element(block) {
     @extend %clearfix;
+    opacity: 1;
+    transition: visibility 0s, opacity .25s linear;
+    visibility: visible;
   }
 
   @include element(title) {
@@ -62,27 +86,27 @@
 
   @include element(text) {
     color: $grey;
+    margin-bottom: 0;
     overflow: hidden;
     text: {
       align: center;
       overflow: ellipsis;
     }
+    position: relative;
     white-space: nowrap;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+    transform: translateY(175%);
   }
 
   @include element(overlay) {
     background-color: $light-grey;
     bottom: 0;
-    display: none;
     left: 0;
-    opacity: .75;
+    opacity: 0;
     padding: 1.25rem;
     position: absolute;
     right: 0;
     top: 0;
+    transition: visibility 0s, opacity 1s linear;
+    visibility: hidden;
   }
 }
