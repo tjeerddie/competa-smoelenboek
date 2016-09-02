@@ -2064,10 +2064,10 @@ h6, .h6 {
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .divider__block {
   display: block;
-  margin-bottom: 3%;
+  margin-bottom: 1%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2%;
+  margin-top: 1%;
   min-height: 3px;
   position: relative;
   width: 15%;
@@ -2095,7 +2095,7 @@ h6, .h6 {
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .card {
   background-color: white;
-  border-color: #f3f3f3;
+  border-color: transparent;
   border-radius: 0.25rem;
   border-style: solid;
   border-width: 1px;
@@ -2123,12 +2123,12 @@ h6, .h6 {
   min-width: 125px;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
-.card__block {
-  padding-top: .5rem;
-}
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
 .card__title {
   height: 100%;
+  margin-bottom: auto;
+  margin-top: auto;
+  max-height: 55px;
+  min-height: 55px;
   text-align: center;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
@@ -2139,7 +2139,7 @@ h6, .h6 {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* line 67, ../sass/components/_card.scss */
+/* line 70, ../sass/components/_card.scss */
 .card__text:last-child {
   margin-bottom: 0;
 }
