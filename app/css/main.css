@@ -1815,6 +1815,7 @@ h6, .h6 {
   height: 100vh;
   margin-left: 250px;
   margin-right: 120px;
+  position: relative;
   transition: margin-left .5s;
 }
 /* line 31, ../sass/abstracts/mixins/_bem.scss */
@@ -2124,12 +2125,12 @@ h6, .h6 {
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .card__title {
-  height: 100%;
   margin-bottom: auto;
   margin-top: auto;
-  max-height: 55px;
-  min-height: 55px;
+  overflow: hidden;
   text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .card__text {
@@ -2139,7 +2140,7 @@ h6, .h6 {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* line 70, ../sass/components/_card.scss */
+/* line 72, ../sass/components/_card.scss */
 .card__text:last-child {
   margin-bottom: 0;
 }

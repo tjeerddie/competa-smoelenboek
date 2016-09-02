@@ -48,14 +48,16 @@
   }
 
   @include element(title) {
-    height: 100%;
     margin: {
         bottom: auto;
         top: auto;
     }
-    max-height: 55px;
-    min-height: 55px;
-    text-align: center;
+    overflow: hidden;
+    text: {
+      align: center;
+      overflow: ellipsis;
+    }
+    white-space: nowrap;
   }
 
   @include element(text) {
