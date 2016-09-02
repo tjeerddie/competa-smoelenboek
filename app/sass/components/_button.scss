@@ -100,7 +100,7 @@
       radius: $border-radius-lg;
     }
     font: {
-      size: $font-size-lg
+      size: $font-size-lg;
     }
     padding: .75rem 1.5rem;
   }
@@ -118,6 +118,25 @@
       color: $blue;
     }
     color: $white;
+  }
+
+  @include modifier(search) {
+    border: {
+      bottom-left-radius: 0;
+      top-left-radius: 0;
+    }
+    height: 26px;
+    line-height: 1px;
+    margin: {
+      bottom: 10px;
+      left: -5px;
+    }
+    padding: 0 .1rem;
+    top: 4px;
+
+    .fa {
+      font-size: 25px !important;
+    }
   }
 
   @include element(icon) {

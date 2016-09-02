@@ -19,7 +19,8 @@
     <div class="grid__row">
       <?php foreach ($employees as $employee): ?>
         <figure class="figure grid__column-xl-3 card">
-          <img class="figure__image image--fluid card__image image--rounded" src="app/img/content/<?= $employee->getPhoto() ?>" alt="" />
+          <img class="figure__image image--fluid card__image image--rounded" src="app/img/content/<?= $employee->getPhoto() ?>" alt="<?= $employee->getFullName() ?>" />
+          <div class="divider__block divider__block--blue"></div>
           <figcaption class=" figure__caption card__block">
             <h4 class="card__title"><?= $employee->getFirstName() ." " . $employee->getLastName() ?></h4>
           </figcaption>
