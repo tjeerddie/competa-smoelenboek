@@ -45,6 +45,7 @@
           $this->view->set("employees", $this->model->getEmployees());
           $this->view->setView("visitor", "employees");
           $this->view->show();
+        }
 
         public function employee () {
             $this->view->set("employee", $this->model->getEmployee());
