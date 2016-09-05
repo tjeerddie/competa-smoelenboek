@@ -1,13 +1,7 @@
 <?php require_once(INCLUDES_PATH . 'header.php') ?>
 <?php require_once(INCLUDES_PATH . 'navigation.php') ?>
 <main class="main">
-  <header class="header">
-    <button class="navigation__hamburger" type="button" name="navigation-button">
-        <span class="navigation__hamburger__burger">burger</span>
-        <span class="navigation__hamburger__burger">burger</span>
-        <span class="navigation__hamburger__burger">burger</span>
-    </button>
-  </header>
+  <?php require_once(INCLUDES_PATH . "hamburger.php");?>
   <div class="grid__container">
     <header class="main__header">
       <h1 class="main__heading">employees</h1>
@@ -15,7 +9,7 @@
     <div class="divider">
       <div class="divider__block divider__block--absolute divider__block--red"></div>
     </div>
-    <?php require_once(TEMPLATES_PATH . 'search.php') ?>
+    <?php require_once(INCLUDES_PATH . 'search.php') ?>
     <div class="grid__row">
       <?php foreach ($employees as $employee): ?>
         <figure class="figure grid__column-xl-3 card">

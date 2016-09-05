@@ -1,7 +1,7 @@
 <?php require_once(INCLUDES_PATH . "header.php");
     require_once(INCLUDES_PATH . "navigation.php");?>
         <main class="main">
-            <?php require_once(TEMPLATES_PATH . "hamburger.php");?>
+            <?php require_once(INCLUDES_PATH . "hamburger.php");?>
             <div class="grid__container employee">
                 <header class="main__header">
                     <h1 class="main__heading"><?= $employee->getFullName();?></h1>

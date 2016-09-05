@@ -7,7 +7,7 @@
             parent::__construct();
         }
 
-        public function uitloggen(){
+        public function logout(){
            $_SESSION = array();
            session_destroy();
         }
