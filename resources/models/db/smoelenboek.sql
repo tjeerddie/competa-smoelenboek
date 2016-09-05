@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `middle_name` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `last_name` varchar(30) CHARACTER SET utf8 NOT NULL,
   `email` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `phone_number` int(15) NOT NULL,
+  `phone_number` varchar(15) NOT NULL,
   `photo` varchar(80) CHARACTER SET utf8 NOT NULL DEFAULT 'default.jpg',
   `description` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
   `address` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
@@ -42,14 +42,13 @@ CREATE TABLE IF NOT EXISTS `employees` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
-INSERT INTO `employees` (`id`, `first_name`, `middle_name`, `last_name`, `email`, `phone_number`, `photo`, `description`, `address`, `city`, `group_id`, `category_id`) VALUES
-(1, 'Test', 'Henk', 'de Tester', 'tester@competa.com', '0611111111', 'default.jpg', 'blablablablablablablablablablabla', 'Teststraat 11', 'Test City', 1, 1),
-(2, 'Ruben', 'gedoopt', 'van der Knaap', 'ruben@ruby.com', '0601189998', 'default.jpg', 'blablablablablablablablablabla', 'blablablabla', 'blablabla', 2, 4),
-(3, 'Nigel', 'ryan', 'hoegee', 'nigel@hoegee.com', '061234565', 'default.jpg', 'in progress of making', 'ergens', 'anders', 1, 4),
-(4, 'Jonathan', 'ja inderdaad', 'kerkhoven', 'jonathan@competa.com', '06545454', 'default.jpg', 'in progress of making', 'ergens', 'bove', 1, 4),
-(5, 'tjeerd', NULL, 'verschragen', 'tjeerd@ompeta.com', '0687654321', 'default.jpg', 'in progress of making', 'dakloos', 'ergens', 1, 4),
-(6, 'michael', NULL, 'netelenbos', 'michael@competa.com', '0678788008', 'default.jpg', 'lorem ipsum', 'ook weer ergens', 'eentje in nederland', 3, 4),
-(7, 'ted', '', 'Van riel', 'ted@competa.com', '0666666665', 'default.jpg', 'geen', 'ergens', 'ook weer eentje', 3, 4);
+(1, 'Test', NULL, 'de Tester', 'tester@competa.com', '0652415964', 'default.jpg', 'Test mannetje', 'Teststraat 11', 'Test City', 1, 1),
+(2, 'Ruben', NULL, 'van der Knaap', 'ruben@competa.com', '0614526545', 'default.jpg', '1 + 1 = geen 3', 'Binnenhof 1', 'Den Haag', 2, 4),
+(3, 'Nigel', 'Ryan', 'Hoegee', 'nigel@competa.com', '0645617535', 'default.jpg', 'Wit is niet zwart en ook niet paars', 'Binnenhof 2', 'Delft', 1, 4),
+(4, 'Jonathan', NULL, 'Kerkhoven', 'jonathan@competa.com', '0654241413', 'default.jpg', 'Paarden zijn andere dieren dan honden', 'Binnenhof 3', 'Rijswijk', 1, 4),
+(5, 'Tjeerd', NULL, 'Verschragen', 'tjeerd@competa.com', '0687475661', 'default.jpg', 'Rugzakken hoor je niet op je buik te dragen', 'Binnenhof 4', 'Wateringen', 1, 4),
+(6, 'Michael', NULL, 'Netelenbos', 'michael@competa.com', '0678788008', 'default.jpg', 'Michael spel je met ae zoals te zien is, niet met ea', 'Binnenhof 5', 'Amsterdam', 3, 4),
+(7, 'Ted', NULL, 'van Riel', 'ted@competa.com', '0641563481', 'default.jpg', 'Battlefield 1 is een money grab', 'Binnenhof 6', 'Rotterdam', 3, 4);
 
 CREATE TABLE IF NOT EXISTS `job_categories`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -59,11 +58,11 @@ CREATE TABLE IF NOT EXISTS `job_categories`(
 )ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 INSERT INTO `job_categories` (`id`, `type`) VALUES
-(1, 'frontend'),
-(2, 'backend'),
-(3, 'fullstack'),
-(5, 'designer'),
-(4, 'intern');
+(1, 'Frontend'),
+(2, 'Backend'),
+(3, 'Fullstack'),
+(5, 'Designer'),
+(4, 'Intern');
 
 CREATE TABLE IF NOT EXISTS `users`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -86,5 +85,3 @@ ALTER TABLE `employees`
 
 ALTER TABLE `employees`
   ADD CONSTRAINT `category_lid` FOREIGN KEY (`category_id`) REFERENCES `job_categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
-
