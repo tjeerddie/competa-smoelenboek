@@ -45,9 +45,8 @@
                     $stmnt->execute();
                     $employees = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
                     return $employees;
-                } else {
-                    echo  "<p>Please enter a search query</p>";
                 }
+                return undefined;
             }
         }
 

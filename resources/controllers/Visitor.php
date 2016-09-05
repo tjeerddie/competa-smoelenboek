@@ -42,9 +42,14 @@
         }
 
         public function employees () {
-          $this->view->set("employees", $this->model->getEmployees());
-          $this->view->setView("visitor", "employees");
-          $this->view->show();
+            $employees = $this->model->search();
+            if(isset($employees)){
+                $this->view->set("employees", $employees);
+            } else {
+                $this->view->set("employees", $this->model->getEmployees());
+            }
+            $this->view->setView("visitor", "employees");
+            $this->view->show();
         }
 
         public function employee () {

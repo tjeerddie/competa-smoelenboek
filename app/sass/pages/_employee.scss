@@ -4,9 +4,6 @@
     @include element(list) {
         position: relative;
         width: 100%;
-        margin: {
-            top: 30px;
-        }
         padding: {
             left: 30px;
             right: 30px;
@@ -51,34 +48,12 @@
     }
 
     @include element(text) {
-        width: 35%;
-        display: inline-block;
         visibility: visible;
         opacity: 1;
         transition: visibility 0s, opacity .25s linear;
     }
-
-    @include element(spacer) {
-        width: 5%;
-        display: inline-block;
-        visibility: visible;
-        opacity: 1;
-        transition: visibility 0s, opacity .25s linear;
-    }
-
     @include element(info) {
-        width: 55%;
         display: inline-block;
-
-    }
-
-    @include element(info-box) {
-        width: 100%;
-        border: {
-          color: $border-color;
-          radius: $border-radius;
-          style: $border-style;
-          width: $border-width;
-        }
+        font-weight: normal;
     }
 }

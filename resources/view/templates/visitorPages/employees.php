@@ -24,7 +24,7 @@
           <figcaption class=" figure__caption card__block">
             <h4 class="card__title"><?= $employee->getFirstName() ." " . $employee->getLastName() ?></h4>
           </figcaption>
-          <a class="card__overlay" href="#">
+          <a class="card__overlay" href="?control=Visitor&action=employee&id=<?= $employee->getId()?>">
             <p class="card__text">Click to see more about</p>
           </a>
         </figure>
