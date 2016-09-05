@@ -35,4 +35,11 @@
   @include element(heading) {
     text-transform: uppercase;
   }
+
+  @include element(text) {
+    margin:
+    {
+      top: 40px;
+    }
+  }
 }

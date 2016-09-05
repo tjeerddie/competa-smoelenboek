@@ -1840,6 +1840,10 @@ h6, .h6 {
 .main__heading {
   text-transform: uppercase;
 }
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.main__text {
+  margin-top: 40px;
+}
 
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .image--fluid {
