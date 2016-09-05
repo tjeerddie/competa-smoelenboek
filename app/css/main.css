@@ -1845,6 +1845,10 @@ h6, .h6 {
 .main__heading {
   text-transform: uppercase;
 }
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.main__text {
+  margin-top: 40px;
+}
 
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .image--fluid {
@@ -2139,6 +2143,7 @@ h6, .h6 {
   padding: 0 .1rem;
   top: 4px;
 }
+
 /* line 143, ../sass/components/_button.scss */
 .button--search .fa {
   font-size: 25px !important;
