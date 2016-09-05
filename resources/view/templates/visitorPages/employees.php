@@ -1,13 +1,7 @@
-<?php require_once(TEMPLATES_PATH . 'header.php') ?>
-<?php require_once(TEMPLATES_PATH . 'navigation.php') ?>
+<?php require_once(INCLUDES_PATH . 'header.php') ?>
+<?php require_once(INCLUDES_PATH . 'navigation.php') ?>
 <main class="main">
-  <header class="header">
-    <button class="navigation__hamburger" type="button" name="navigation-button">
-        <span class="navigation__hamburger__burger">burger</span>
-        <span class="navigation__hamburger__burger">burger</span>
-        <span class="navigation__hamburger__burger">burger</span>
-    </button>
-  </header>
+  <?php require_once(INCLUDES_PATH . "hamburger.php");?>
   <div class="grid__container">
     <header class="main__header">
       <h1 class="main__heading">employees</h1>
@@ -32,4 +26,4 @@
     </div>
   </div>
 </main>
-<?php require_once(TEMPLATES_PATH . 'footer.php') ?>
+<?php require_once(INCLUDES_PATH . 'footer.php') ?>

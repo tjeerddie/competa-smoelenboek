@@ -1,13 +1,7 @@
-<?php require_once("resources/view/templates/header.php");
-    require_once("resources/view/templates/navigation.php");?>
+<?php require_once(INCLUDES_PATH . "header.php");
+    require_once(INCLUDES_PATH . "navigation.php");?>
         <main class="main">
-            <header class="header">
-                <button class="navigation__hamburger" type="button" name="navigation-button">
-                    <span class="navigation__hamburger__burger">burger</span>
-                    <span class="navigation__hamburger__burger">burger</span>
-                    <span class="navigation__hamburger__burger">burger</span>
-                </button>
-            </header>
+            <?php require_once(TEMPLATES_PATH . "hamburger.php");?>
             <div class="grid__container employee">
                 <header class="main__header">
                     <h1 class="main__heading"><?= $employee->getFullName();?></h1>
@@ -74,4 +68,4 @@
         </main>
 
 
-<?php    require_once("resources/view/templates/footer.php");?>
+<?php    require_once(INCLUDES_PATH . "footer.php");?>

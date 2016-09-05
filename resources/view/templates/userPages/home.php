@@ -1,5 +1,5 @@
-<?php require_once(TEMPLATES_PATH . 'header.php') ?>
-<?php require_once(TEMPLATES_PATH . 'navigation.php') ?>
+<?php require_once(INCLUDES_PATH . 'header.php') ?>
+<?php require_once(INCLUDES_PATH . 'navigation.php') ?>
 <main class="main">
   <header class="header">
     <button class="navigation__hamburger" type="button" name="navigation-button">
@@ -31,4 +31,4 @@
     </div>
   </div>
 </main>
-<?php require_once(TEMPLATES_PATH . 'footer.php') ?>
+<?php require_once(INCLUDES_PATH . 'footer.php') ?>

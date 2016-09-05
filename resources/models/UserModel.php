@@ -6,5 +6,10 @@
         public function __construct () {
             parent::__construct();
         }
+
+        public function uitloggen(){
+           $_SESSION = array();
+           session_destroy();
+        }
     }
 ?>

@@ -19,5 +19,10 @@
             $this->view->setView("visitor", "employees");
             $this->view->show();
         }
+
+        public function logout () {
+            $this->model->logout();
+            header('Location: ' ."http://localhost:8080/competa-smoelenboek/?control=Visitor&action=home");
+        }
     }
 ?>
