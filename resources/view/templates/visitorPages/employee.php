@@ -1,17 +1,27 @@
 <?php require_once("resources/view/templates/header.php");
     require_once("resources/view/templates/navigation.php");?>
         <main class="main">
+            <header class="header">
+                <button class="navigation__hamburger" type="button" name="navigation-button">
+                    <span class="navigation__hamburger__burger">burger</span>
+                    <span class="navigation__hamburger__burger">burger</span>
+                    <span class="navigation__hamburger__burger">burger</span>
+                </button>
+            </header>
             <div class="grid__container employee">
                 <header class="main__header">
                     <h1 class="main__heading"><?= $employee->getFullName();?></h1>
                 </header>
+                <div class="divider">
+                    <div class="divider__block divider__block--absolute divider__block--red"></div>
+                </div>
                 <div class="grid__row employee__box">
                     <div class="grid__column-xl-5 grid__column--offset-xl-1">
                         <figure class="figure">
                             <img class="employee--image" src="app/img/content/<?= $employee->getPhoto();?>" alt="de photo of <?= $employee->getFullName();?>"></img>
                         </figure>
                     </div>
-                    <div class="grid__column-xl-5 grid__column">
+                    <div class="grid__column-xl-5">
                         <ul class="list--reset employee__list">
                             <li class="employee__list-item">
                                 <div class="employee__container">

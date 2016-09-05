@@ -2158,14 +2158,12 @@ h6, .h6 {
 
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .employee {
-  transform: translateY(10%);
+  transform: translateY(20%);
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__list {
   position: relative;
   width: 100%;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__box {
@@ -2173,21 +2171,21 @@ h6, .h6 {
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__container {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
   border-color: #f3f3f3;
   border-radius: 0.25rem;
   border-style: solid;
   border-width: 1px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .employee--image {
-  max-height: 400px;
-  max-width: 350px;
-  min-height: 400px;
-  min-width: 350px;
+  max-height: 350px;
+  max-width: 300px;
+  min-height: 350px;
+  min-width: 300px;
 }
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .employee--item {
@@ -2196,11 +2194,12 @@ h6, .h6 {
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__text {
-  visibility: visible;
   opacity: 1;
   transition: visibility 0s, opacity .25s linear;
+  visibility: visible;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__info {
+  display: inline-block;
   font-weight: normal;
 }

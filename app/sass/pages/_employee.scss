@@ -1,59 +1,52 @@
 @include block(employee) {
+  @include element(list) {
+    position: relative;
+    width: 100%;
+  }
+
+  @include element(box) {
     transform: translateY(10%);
+  }
 
-    @include element(list) {
-        position: relative;
-        width: 100%;
-        padding: {
-            left: 30px;
-            right: 30px;
-        }
+  @include element(container) {
+    border: {
+      color: $border-color;
+      radius: $border-radius;
+      style: $border-style;
+      width: $border-width;
     }
+    margin: {
+      bottom: 10px;
+      left: auto;
+      right: auto;
+    }
+    position: relative;
+  }
 
-    @include element(box) {
-        transform: translateY(10%);
+  @include modifier(image) {
+    max: {
+      height: 350px;
+      width: 300px;
     }
+    min: {
+      height: 350px;
+      width: 300px;
+    }
+  }
+  @include modifier(item) {
+    font: {
+      size: 1.5rem !important;
+    }
+    line-height: $line-height-base;
+  }
 
-    @include element(container) {
-        position: relative;
-        margin: {
-            left: auto;
-            right: auto;
-            bottom: 10px;
-        }
-
-        border: {
-          color: $border-color;
-          radius: $border-radius;
-          style: $border-style;
-          width: $border-width;
-        }
-    }
-
-    @include modifier(image) {
-        max: {
-            height: 400px;
-            width: 350px;
-        }
-        min: {
-            height: 400px;
-            width: 350px;
-        }
-    }
-    @include modifier(item) {
-        font: {
-            size: 1.5rem !important;
-        }
-        line-height: $line-height-base;
-    }
-
-    @include element(text) {
-        visibility: visible;
-        opacity: 1;
-        transition: visibility 0s, opacity .25s linear;
-    }
-    @include element(info) {
-        display: inline-block;
-        font-weight: normal;
-    }
+  @include element(text) {
+    opacity: 1;
+    transition: visibility 0s, opacity .25s linear;
+    visibility: visible;
+  }
+  @include element(info) {
+    display: inline-block;
+    font-weight: normal;
+  }
 }
