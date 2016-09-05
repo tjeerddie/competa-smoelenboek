@@ -1781,6 +1781,11 @@ h6, .h6 {
   padding: 0;
   width: auto;
 }
+/* line 81, ../sass/layout/_form.scss */
+.form__control--search:hover, .form__control--search:focus {
+  border-color: #3d3d3d;
+  outline: none;
+}
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .form__message {
   color: #3d3d3d;
@@ -1815,6 +1820,7 @@ h6, .h6 {
   height: 100vh;
   margin-left: 250px;
   margin-right: 120px;
+  position: relative;
   transition: margin-left .5s;
 }
 /* line 31, ../sass/abstracts/mixins/_bem.scss */
@@ -1830,7 +1836,6 @@ h6, .h6 {
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .main__header {
-  padding-bottom: 15px;
   padding-top: 15px;
   position: relative;
   text-align: center;
@@ -1853,7 +1858,7 @@ h6, .h6 {
 }
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .image--rounded {
-  border-color: #f3f3f3;
+  border-color: transparent;
   border-radius: 50%;
   border-style: solid;
   border-width: 1px;
@@ -1885,19 +1890,19 @@ h6, .h6 {
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .navigation {
   background-color: white;
-  position: fixed;
-  width: 250px;
-  height: 100%;
-  top: 0;
-  left: 0;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  border-right-width: 1px;
-  border-right-style: solid;
   border-right-color: #f3f3f3;
+  border-right-style: solid;
+  border-right-width: 1px;
+  height: 100%;
+  left: 0;
   overflow: hidden;
-  z-index: 10;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  position: fixed;
+  top: 0;
   transition: width .5s;
+  width: 250px;
+  z-index: 10;
 }
 /* line 31, ../sass/abstracts/mixins/_bem.scss */
 .navigation.is-ensmalled {
@@ -1905,96 +1910,111 @@ h6, .h6 {
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .navigation__logo {
-  position: relative;
-  width: 100%;
   height: 75px;
   margin: 0;
+  position: relative;
+  width: 100%;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .navigation__image {
-  position: absolute;
   left: 50%;
+  position: absolute;
   transform: translateX(-50%);
-  transition: visibility 0s, opacity .25s linear;
+  transition: visibility 0s, opacity .25s ease-in-out;
 }
-/* line 42, ../sass/layout/_navigation.scss */
-.navigation__image:first-child {
-  visibility: visible;
-  opacity: 1;
-}
-/* line 47, ../sass/layout/_navigation.scss */
-.navigation__image:last-child {
-  visibility: hidden;
-  opacity: 0;
-}
-/* line 53, ../sass/layout/_navigation.scss */
+/* line 17, ../sass/layout/_navigation.scss */
 .navigation__image.is-ensmalled:first-child {
-  visibility: hidden;
+  height: 46px;
   opacity: 0;
+  visibility: hidden;
 }
-/* line 58, ../sass/layout/_navigation.scss */
+/* line 23, ../sass/layout/_navigation.scss */
 .navigation__image.is-ensmalled:last-child {
-  visibility: visible;
   opacity: 1;
+  visibility: visible;
+}
+/* line 34, ../sass/layout/_navigation.scss */
+.navigation__image:first-child {
+  opacity: 1;
+}
+/* line 38, ../sass/layout/_navigation.scss */
+.navigation__image:last-child {
+  height: 46px;
+  margin-left: -1px;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .navigation__list {
-  position: relative;
-  width: 100%;
   margin-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
-}
-/* line 31, ../sass/abstracts/mixins/_bem.scss */
-.navigation__list.is-ensmalled {
-  padding: 0;
-}
-/* line 80, ../sass/layout/_navigation.scss */
-.navigation__list-item {
   position: relative;
   width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  text-align: center;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: #f3f3f3;
 }
-/* line 98, ../sass/layout/_navigation.scss */
+/* line 55, ../sass/layout/_navigation.scss */
+.navigation__list-item {
+  border-bottom-color: #f3f3f3;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+/* line 31, ../sass/abstracts/mixins/_bem.scss */
+.navigation__list-item.is-ensmalled {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* line 83, ../sass/layout/_navigation.scss */
 .navigation__list-item:last-child {
   border: 0;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
-.navigation__link {
-  display: inline-block;
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s, opacity .25s linear;
-}
-/* line 31, ../sass/abstracts/mixins/_bem.scss */
-.navigation__link.is-ensmalled {
-  display: none;
-  visibility: hidden;
-  opacity: 0;
-}
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.navigation__link__container {
-  position: relative;
-  width: 50%;
+.navigation__link__wrapper {
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  display: block;
   margin-left: auto;
   margin-right: auto;
-}
-/* line 124, ../sass/layout/_navigation.scss */
-.navigation__link__container:hover {
-  border-bottom-width: 3px;
-  border-bottom-style: solid;
-  border-bottom-color: #e03d47;
+  max-height: 35px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 /* line 31, ../sass/abstracts/mixins/_bem.scss */
-.navigation__link__container.is-active {
-  border-bottom-width: 3px;
-  border-bottom-style: solid;
+.navigation__link__wrapper.is-active {
   border-bottom-color: #ca202b;
+}
+/* line 118, ../sass/layout/_navigation.scss */
+.navigation__link__wrapper:hover, .navigation__link__wrapper:focus {
+  border-bottom-color: #e03d47;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.navigation__link__title {
+  display: inline-block;
+  height: 100%;
+  margin-bottom: 0;
+  opacity: 1;
+  position: relative;
+  text-transform: uppercase;
+  transition: visibility 0s, opacity .25s ease-in-out;
+  visibility: visible;
+}
+/* line 31, ../sass/abstracts/mixins/_bem.scss */
+.navigation__link__title.is-ensmalled {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.navigation__link__icon {
+  height: 100%;
+  position: relative;
+  top: 3px;
 }
 
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
@@ -2107,6 +2127,11 @@ h6, .h6 {
   border-color: #1f64ae;
   color: white;
 }
+/* line 122, ../sass/components/_button.scss */
+.button--primary:hover, .button--primary:focus {
+  background-color: #3A526A;
+  border-color: #3A526A;
+}
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .button--search {
   border-bottom-left-radius: 0;
@@ -2118,7 +2143,8 @@ h6, .h6 {
   padding: 0 .1rem;
   top: 4px;
 }
-/* line 137, ../sass/components/_button.scss */
+
+/* line 143, ../sass/components/_button.scss */
 .button--search .fa {
   font-size: 25px !important;
 }
@@ -2131,16 +2157,15 @@ h6, .h6 {
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .divider {
   background-color: black;
-  margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15px;
   min-height: 1px;
   position: relative;
-  width: 18%;
+  width: 30%;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .divider__block {
+  background-color: white;
   display: block;
   margin-bottom: 1%;
   margin-left: auto;
@@ -2173,7 +2198,7 @@ h6, .h6 {
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .card {
   background-color: white;
-  border-color: transparent;
+  border-color: #f3f3f3;
   border-radius: 0.25rem;
   border-style: solid;
   border-width: 1px;
@@ -2188,8 +2213,26 @@ h6, .h6 {
   width: 23%;
 }
 /* line 26, ../sass/components/_card.scss */
+.card:hover .card__image {
+  opacity: .25;
+  transition: visibility 0s, opacity .5s linear;
+  visibility: visible;
+}
+/* line 32, ../sass/components/_card.scss */
+.card:hover .card__block {
+  opacity: .25;
+  transition: visibility 0s, opacity .5s linear;
+  visibility: visible;
+}
+/* line 38, ../sass/components/_card.scss */
 .card:hover .card__overlay {
-  display: block;
+  opacity: .75;
+  transition: visibility 0s, opacity .5s linear;
+  visibility: visible;
+}
+/* line 44, ../sass/components/_card.scss */
+.card:hover .divider__block {
+  opacity: .25;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .card__image {
@@ -2199,39 +2242,48 @@ h6, .h6 {
   max-width: 125px;
   min-height: 125px;
   min-width: 125px;
+  opacity: 1;
+  transition: visibility 0s, opacity .25s linear;
+  visibility: visible;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.card__block {
+  opacity: 1;
+  transition: visibility 0s, opacity .25s linear;
+  visibility: visible;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .card__title {
-  height: 100%;
   margin-bottom: auto;
   margin-top: auto;
-  max-height: 55px;
-  min-height: 55px;
-  text-align: center;
-}
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.card__text {
-  color: #3d3d3d;
   overflow: hidden;
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* line 70, ../sass/components/_card.scss */
-.card__text:last-child {
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.card__text {
+  color: #3d3d3d;
   margin-bottom: 0;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  position: relative;
+  white-space: nowrap;
+  transform: translateY(175%);
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .card__overlay {
   background-color: #f3f3f3;
   bottom: 0;
-  display: none;
   left: 0;
-  opacity: .75;
+  opacity: 0;
   padding: 1.25rem;
   position: absolute;
   right: 0;
   top: 0;
+  transition: visibility 0s, opacity 1s linear;
+  visibility: hidden;
 }
 
 /* line 7, ../sass/abstracts/mixins/_bem.scss */

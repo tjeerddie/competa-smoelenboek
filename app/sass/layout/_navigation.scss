@@ -1,70 +1,47 @@
 @include block(navigation) {
-  background: {
-    color: $white;
-  }
-  position: fixed;
-  width: 250px;
-  height: 100%;
-  top: 0;
-  left: 0;
-  padding: {
-    top: 30px;
-    bottom: 30px
-  }
-  border: {
-    right: {
-      width: 1px;
-      style: solid;
-      color: $light-grey;
-    }
-  }
-  overflow: hidden;
-  z-index: 10;
-  transition: width .5s;
 
   @include state(ensmalled) {
     width: 60px;
   }
 
   @include element(logo) {
-    position: relative;;
-    width: 100%;
     height: 75px;
     margin: 0;
+    position: relative;
+    width: 100%;
   }
 
   @include element(image) {
-    position: absolute;
+
+    @include state(ensmalled) {
+      &:first-child {
+        height: 46px;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &:last-child {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
     left: 50%;
+    position: absolute;
     transform: translateX(-50%);
-    transition: visibility 0s, opacity .25s linear;
+    transition: visibility 0s, opacity .25s ease-in-out;
 
     &:first-child {
-      visibility: visible;
       opacity: 1;
     }
 
     &:last-child {
-      visibility: hidden;
-      opacity: 0;
-    }
-
-    @include state(ensmalled) {
-      &:first-child {
-        visibility: hidden;
-        opacity: 0;
-      }
-
-      &:last-child {
-        visibility: visible;
-        opacity: 1;
-      }
+      height: 46px;
+      margin-left: -1px;
     }
   }
 
   @include element(list) {
-    position: relative;
-    width: 100%;
     margin: {
       top: 30px;
     }
@@ -72,28 +49,36 @@
       left: 30px;
       right: 30px;
     }
-
-    @include state(ensmalled) {
-      padding: 0;
-    }
+    position: relative;
+    width: 100%;
 
     &-item {
-      position: relative;
-      width: 100%;
-      padding: {
-        top: 15px;
-        bottom: 15px;
+
+      @include state(ensmalled) {
+        padding: {
+          left: 5px;
+          right: 5px;
+        }
       }
+
+      border: {
+        bottom: {
+          color: $light-grey;
+          style: solid;
+          width: 1px;
+        }
+      }
+      padding: {
+        bottom: 15px;
+        left: 30px;
+        right: 30px;
+        top: 15px;
+      }
+      position: relative;
       text: {
         align: center;
       }
-      border: {
-        bottom: {
-          width: 1px;
-          style: solid;
-          color: $light-grey;
-        }
-      }
+      width: 100%;
 
       &:last-child {
         border: 0;
@@ -102,44 +87,90 @@
   }
 
   @include element(link) {
-    display: inline-block;
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0s, opacity .25s linear;
 
-    @include state(ensmalled) {
-      display: none;
-      visibility: hidden;
-      opacity: 0;
-    }
-
-    @include element(container) {
-      position: relative;
-      width: 50%;
-      margin: {
-        left: auto;
-        right: auto;
-      }
-
-      &:hover {
-        border: {
-          bottom: {
-            width: 3px;
-            style: solid;
-            color: lighten($link-hover-color, 10%);
-          }
-        }
-      }
+    @include element(wrapper) {
 
       @include state(active) {
         border: {
           bottom: {
-            width: 3px;
-            style: solid;
             color: $link-hover-color;
           }
         }
       }
+
+      border: {
+        bottom: {
+          color: transparent;
+          style: solid;
+          width: 3px;
+        }
+      }
+      display: block;
+      margin: {
+        left: auto;
+        right: auto;
+      }
+      max-height: 35px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+
+      &:hover,
+      &:focus {
+        border: {
+          bottom: {
+            color: lighten($link-hover-color, 10%);
+          }
+        }
+      }
+    }
+
+    @include element(title) {
+
+      @include state(ensmalled) {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      display: inline-block;
+      height: 100%;
+      margin-bottom: 0;
+      opacity: 1;
+      position: relative;
+      text-transform: uppercase;
+      transition: visibility 0s, opacity .25s ease-in-out;
+      visibility: visible;
+    }
+
+    @include element(icon) {
+
+      height: 100%;
+      position: relative;
+      top: 3px;
     }
   }
+
+  background: {
+    color: $white;
+  }
+  border: {
+    right: {
+      color: $light-grey;
+      style: solid;
+      width: 1px;
+    }
+  }
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  padding: {
+    bottom: 30px;
+    top: 30px;
+  }
+  position: fixed;
+  top: 0;
+  transition: width .5s;
+  width: 250px;
+  z-index: 10;
 }
