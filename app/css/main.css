@@ -2202,5 +2202,6 @@ h6, .h6 {
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__info {
+  display: inline-block;
   font-weight: normal;
 }
