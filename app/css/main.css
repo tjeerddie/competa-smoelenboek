@@ -1847,7 +1847,11 @@ h6, .h6 {
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .main__text {
+  width: 80%;
   margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
@@ -2143,7 +2147,6 @@ h6, .h6 {
   padding: 0 .1rem;
   top: 4px;
 }
-
 /* line 143, ../sass/components/_button.scss */
 .button--search .fa {
   font-size: 25px !important;
