@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS `employees` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+INSERT INTO `employees` (`id`, `first_name`, `middle_name`, `last_name`, `email`, `phone_number`, `photo`, `description`, `address`, `city`, `group_id`, `category_id`) VALUES
 (1, 'Test', NULL, 'de Tester', 'tester@competa.com', '0652415964', 'default.jpg', 'Test mannetje', 'Teststraat 11', 'Test City', 1, 1),
 (2, 'Ruben', NULL, 'van der Knaap', 'ruben@competa.com', '0614526545', 'default.jpg', '1 + 1 = geen 3', 'Binnenhof 1', 'Den Haag', 2, 4),
 (3, 'Nigel', 'Ryan', 'Hoegee', 'nigel@competa.com', '0645617535', 'default.jpg', 'Wit is niet zwart en ook niet paars', 'Binnenhof 2', 'Delft', 1, 4),
