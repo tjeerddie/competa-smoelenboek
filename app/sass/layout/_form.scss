@@ -67,6 +67,24 @@
   }
 
   @include element(control) {
+
+    @include modifier(search) {
+      border: {
+        bottom-right-radius: 0;
+        top-right-radius: 0;
+      }
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 0;
+      width: auto;
+
+      &:hover,
+      &:focus {
+        border-color: $grey;
+        outline: none;
+      }
+    }
+
     background: {
       clip: padding-box;
       color: $white;
@@ -88,26 +106,22 @@
     padding: 10px;
     position: relative;
     width: 100%;
-
-    @include modifier(search) {
-      border: {
-        bottom-right-radius: 0;
-        top-right-radius: 0;
-      }
-      display: inline-block;
-      margin-bottom: 10px;
-      padding: 0;
-      width: auto;
-
-      &:hover,
-      &:focus {
-        outline: none;
-        border-color: $grey;
-      }
-    }
   }
 
   @include element(message) {
+
+    @include media-breakpoint-down(sm) {
+      font-size: $font-size-sm;
+    }
+
+    @include media-breakpoint-down(xs) {
+      font-size: $font-size-xs;
+    }
+
+    @include modifier(danger) {
+      color: $font-color-danger;
+    }
+
     color: $font-color-base;
     font: {
       size: $font-size-base;
@@ -120,17 +134,5 @@
     position: relative;
     text-align: center;
     width: 100%;
-
-    @include media-breakpoint-down(sm) {
-      font-size: $font-size-sm
-    }
-
-    @include media-breakpoint-down(xs) {
-      font-size: $font-size-xs
-    }
-
-    @include modifier(danger) {
-      color: $font-color-danger;
-    }
   }
 }
