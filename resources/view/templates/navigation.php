@@ -6,15 +6,8 @@
   </figure>
   <ul class="list--reset navigation__list">
     <li class="navigation__list-item">
-      <div class="navigation__link__container is-active" role="button">
         <a class="navigation__link" href="?control=Visitor&action=home">home</a>
         <span class="fa fa-home" role="button"></span>
-      </div>
-    </li>
-    <li class="navigation__list-item">
-      <div class="navigation__link__container" role="button">
-        <a class="navigation__link" href="?control=Visitor&action=employees">employees</a>
-        <span class="fa fa-users" role="button"></span>
       </div>
     </li>
     <li class="navigation__list-item">

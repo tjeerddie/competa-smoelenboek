@@ -1,0 +1,53 @@
+@include block(main) {
+
+  $textColor : #4b4a4a;
+
+  .textTitle {
+    color: $textColor;
+    text-align: center;
+  }
+
+  .line{
+    width: 30%;
+    border-style: solid;
+    margin:{
+      top: 60px;
+      bottom: 50px;
+      left: auto;
+      right: auto;
+    }
+    border:{
+      width: 1px;
+      color: $textColor;
+    }
+    z-index: -1;
+  }
+
+  .rectLine{
+    position: relative;
+    width: 10%;
+    top: -56px;
+    margin:
+    {
+      left: auto;
+      right: auto;
+    }
+    border:
+    {
+      style: solid;
+      width: 5px;
+      color: #ca202b;
+    }
+    z-index: 10;
+  }
+
+  .textField{
+    text-align: center;
+    width: 75%;
+    margin:
+    {
+      left: auto;
+      right: auto;
+    }
+  }
+}
