@@ -2315,13 +2315,6 @@ h6, .h6 {
 .employee__box {
   transform: translateY(10%);
 }
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.employee__container {
-  margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .employee--image {
   max-height: 185px;
