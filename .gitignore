@@ -201,4 +201,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-/build/*
+/build
