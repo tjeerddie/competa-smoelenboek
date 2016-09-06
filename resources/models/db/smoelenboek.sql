@@ -22,17 +22,14 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
-<<<<<<< HEAD
 --
 -- Tabelstructuur voor tabel `employees`
 --
-=======
 INSERT INTO `groups` (`id`, `name`) VALUES
 (2, 'blablablablblablablablablab'),
 (4, 'flying POTATOES'),
 (1, 'inprogess'),
 (3, 'super slecht');
->>>>>>> develop
 
 CREATE TABLE `employees` (
   `id` int(11) NOT NULL,
