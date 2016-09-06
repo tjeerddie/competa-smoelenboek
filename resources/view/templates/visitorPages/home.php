@@ -1,14 +1,8 @@
-<?php require_once("resources/view/templates/header.php");
-    require_once("resources/view/templates/navigation.php");?>
+<?php require_once (INCLUDES_PATH . "header.php");
+    require_once(INCLUDES_PATH . "navigation.php");?>
 
         <main class="main">
-            <header class="header">
-                <button class="navigation__hamburger is-open" type="button" name="navigation-button">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </header>
+            <?php require_once(INCLUDES_PATH . "hamburger.php");?>
             <section class="grid__container">
               <header class="main__header">
                 <h1 class="main__heading">Home</h1>
@@ -29,4 +23,4 @@
               </p>
             </section>
         </main>
-<?php    require_once("resources/view/templates/footer.php");?>
+<?php require_once(INCLUDES_PATH . "footer.php");?>

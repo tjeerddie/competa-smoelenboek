@@ -1,5 +1,7 @@
 <?php
     require_once("resources/config.php");
+    
+    session_start();
 
     if (isset($_GET['control']) && isset($_GET['action'])) {
         $control = filter_input(INPUT_GET,'control', FILTER_SANITIZE_STRING);
@@ -21,12 +23,11 @@
     }
 
     // list of allowed controllers with corresponding actions.
-    $controllers = array('Visitor' => ['home', 'login', 'employees', 'employee','search', 'error'], 'User' => ['home', 'employees', 'search', 'error']);
+    $controllers = array('Visitor' => ['home', 'login', 'employees', 'employee','search', 'error'], 'User' => ['home', 'logout', 'employees', 'search', 'error']);
 
     // check that the requested controller and action are both allowed
     if (array_key_exists($control, $controllers)
     && in_array($action, $controllers[$control])) {
-        session_start();
         if($control === "User" && !isset($_SESSION['user'])){
             require_once(TEMPLATES_PATH . 'error.php');
         } else {

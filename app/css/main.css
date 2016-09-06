@@ -1731,7 +1731,7 @@ h6, .h6 {
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .form__sign-in {
   background-color: white;
-  border-color: #f3f3f3;
+  border-color: #e6e6e6;
   border-radius: 0.25rem;
   border-style: solid;
   border-width: 1px;
@@ -1894,7 +1894,7 @@ h6, .h6 {
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .navigation {
   background-color: white;
-  border-right-color: #f3f3f3;
+  border-right-color: #e6e6e6;
   border-right-style: solid;
   border-right-width: 1px;
   height: 100%;
@@ -1956,7 +1956,7 @@ h6, .h6 {
 }
 /* line 55, ../sass/layout/_navigation.scss */
 .navigation__list-item {
-  border-bottom-color: #f3f3f3;
+  border-bottom-color: #e6e6e6;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   padding-bottom: 15px;
@@ -2019,6 +2019,22 @@ h6, .h6 {
   height: 100%;
   position: relative;
   top: 3px;
+}
+
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.table__row {
+  border-bottom-color: #e6e6e6;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+/* line 11, ../sass/layout/_table.scss */
+.table__row:last-child {
+  border-bottom: 0;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.table__cell {
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
@@ -2202,7 +2218,7 @@ h6, .h6 {
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .card {
   background-color: white;
-  border-color: #f3f3f3;
+  border-color: #e6e6e6;
   border-radius: 0.25rem;
   border-style: solid;
   border-width: 1px;
@@ -2290,71 +2306,35 @@ h6, .h6 {
   visibility: hidden;
 }
 
-/* line 7, ../sass/abstracts/mixins/_bem.scss */
-.employee {
-  transform: translateY(10%);
-}
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__list {
   position: relative;
   width: 100%;
-  margin-top: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__box {
   transform: translateY(10%);
 }
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.employee__container {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-  border-color: #f3f3f3;
-  border-radius: 0.25rem;
-  border-style: solid;
-  border-width: 1px;
-}
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .employee--image {
-  max-height: 400px;
-  max-width: 350px;
-  min-height: 400px;
-  min-width: 350px;
+  max-height: 185px;
+  max-width: 185px;
+  min-height: 185px;
+  min-width: 185px;
 }
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .employee--item {
-  font-size: 1.5rem !important;
+  font-size: 1.5rem;
   line-height: 1.5;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__text {
-  width: 35%;
-  display: inline-block;
-  visibility: visible;
   opacity: 1;
   transition: visibility 0s, opacity .25s linear;
-}
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.employee__spacer {
-  width: 5%;
-  display: inline-block;
   visibility: visible;
-  opacity: 1;
-  transition: visibility 0s, opacity .25s linear;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__info {
-  width: 55%;
   display: inline-block;
-}
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.employee__info-box {
-  width: 100%;
-  border-color: #f3f3f3;
-  border-radius: 0.25rem;
-  border-style: solid;
-  border-width: 1px;
+  font-weight: normal;
 }

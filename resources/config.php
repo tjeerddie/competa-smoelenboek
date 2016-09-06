@@ -1,9 +1,4 @@
 <?php
-
-/*
-    include data and settings that every page needs.
-*/
-
 /*
     Creating constants for heavily used paths.
     ex. require_once(LIBRARY_PATH . "Paginator.php").
@@ -13,6 +8,12 @@ define("MODELS_PATH", realpath(dirname(__FILE__) . '/models'). "/");
 define("DB_PATH", realpath(dirname(__FILE__) . '/models/db'). "/");
 define("RESOURCES_PATH", realpath(dirname(__FILE__) . '/resources'). "/");
 define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/view/templates'). "/");
+define("INCLUDES_PATH", realpath(dirname(__FILE__) . '/view/templates/includes'). "/");
+
+/*
+    include data and settings that every page needs.
+*/
+    require_once(DB_PATH . 'UserInfo.php');
 
 /*
     Error reporting.

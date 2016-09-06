@@ -14,25 +14,21 @@
         }
 
         public function home () {
-            $this->view->setView("visitor", "home");
-            $this->view->set("groups", $this->model->getGroups());
-            $this->view->set("jobs", $this->model->getJobs());
-            $this->view->show();
+            $this->view->show("Visitor", "home");
         }
 
         public function login () {
-        if($this->model->postEmpty()) {
-          $this->view->set("message", $this->messages[0]);
-        } else {
-            if($this->model->login()){
-                header('Location: ' ."http://localhost:8080/competa-smoelenboek/?control=User&action=home");
+            if($this->model->postEmpty()) {
+              $this->view->set("message", $this->messages[0]);
             } else {
-                $this->view->set("message", $this->messages[1]);
-                $this->view->set("failedToSignIn", true);
+                if($this->model->login()){
+                    header('Location: ' ."http://localhost:8080/competa-smoelenboek/?control=User&action=home");
+                } else {
+                    $this->view->set("message", $this->messages[1]);
+                    $this->view->set("failedToSignIn", true);
+                }
             }
-        }
-            $this->view->setView("visitor", "login");
-            $this->view->show();
+            $this->view->show("Visitor", "login");
         }
 
         public function employees () {
@@ -42,17 +38,14 @@
           } else {
             $this->view->set("employees", $this->model->getEmployees());
           }
-          $this->view->set("employees", $this->model->getEmployees());
-          $this->view->setView("visitor", "employees");
-          $this->view->show();
+          $this->view->show("Visitor", "employees");
         }
 
         public function employee () {
             $this->view->set("employee", $this->model->getEmployee());
             $this->view->set("groups", $this->model->getGroups());
             $this->view->set("jobs", $this->model->getJobs());
-            $this->view->setView("visitor", "employee");
-            $this->view->show();
+            $this->view->show("Visitor", "employee");
         }
     }
 ?>

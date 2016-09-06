@@ -107,7 +107,7 @@ $border-radius: .25rem !default;
 $border-radius-lg: .3rem !default;
 $border-radius-sm: .2rem !default;
 
-$border-color: $light-grey !default;
+$border-color: darken($light-grey, 5%) !default;
 $border-style: solid !default;
 $border-width: 1px !default;
 

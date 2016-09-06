@@ -14,12 +14,20 @@
             return $this->id;
         }
 
-        public function getUserName () {
+        public function getUsername () {
             return $this->username;
         }
 
         public function getHash () {
             return $this->password;
+        }
+
+        public function getEmail () {
+            return $this->email;
+        }
+
+        public function getPermissions () {
+            return $this->permissions;
         }
     }
 ?>
