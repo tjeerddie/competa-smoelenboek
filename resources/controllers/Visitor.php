@@ -14,14 +14,6 @@
         }
 
         public function home () {
-            $emps = $this->model->search();
-            if(isset($emps)){
-              $this->view->set("employees" , $emps);
-            } else {
-              $this->view->set("employees", $this->model->getEmployees());
-            }
-            $this->view->set("groups", $this->model->getGroups());
-            $this->view->set("jobs", $this->model->getJobs());
             $this->view->show("Visitor", "home");
         }
 
@@ -40,13 +32,13 @@
         }
 
         public function employees () {
-            $employees = $this->model->search();
-            if(isset($employees)){
-                $this->view->set("employees", $employees);
-            } else {
-                $this->view->set("employees", $this->model->getEmployees());
-            }
-            $this->view->show("Visitor", "employees");
+          $emps = $this->model->search();
+          if(isset($emps)){
+            $this->view->set("employees" , $emps);
+          } else {
+            $this->view->set("employees", $this->model->getEmployees());
+          }
+          $this->view->show("Visitor", "employees");
         }
 
         public function employee () {

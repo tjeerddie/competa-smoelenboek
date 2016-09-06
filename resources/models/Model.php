@@ -37,17 +37,15 @@
         }
 
         public function search(){
-            if(isset($_POST['submit']) && preg_match("/^[  a-zA-Z]+/", $_POST['name'])){
+            if(isset($_POST['search']) && preg_match("/^[  a-zA-Z]+/", $_POST['name'])){
                 $name=filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
-                if ($name !== 'undefined'){
-                    $sql="SELECT * FROM employees WHERE first_name LIKE '%" . $name .  "%' OR last_name LIKE '%" . $name ."%'";
-                    $stmnt = $this->db->prepare($sql);
-                    $stmnt->execute();
-                    $employees = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
-                    return $employees;
-                }
-                return undefined;
+                $sql="SELECT * FROM employees WHERE first_name LIKE '%" . $name .  "%' OR last_name LIKE '%" . $name ."%'";
+                $stmnt = $this->db->prepare($sql);
+                $stmnt->execute();
+                $employees = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
+                return $employees;
             }
+            return;
         }
 
         public function getGroups() {
