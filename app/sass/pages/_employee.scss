@@ -8,34 +8,19 @@
     transform: translateY(10%);
   }
 
-  @include element(container) {
-    border: {
-      color: $border-color;
-      radius: $border-radius;
-      style: $border-style;
-      width: $border-width;
-    }
-    margin: {
-      bottom: 10px;
-      left: auto;
-      right: auto;
-    }
-    position: relative;
-  }
-
   @include modifier(image) {
     max: {
-      height: 350px;
-      width: 300px;
+      height: 185px;
+      width: 185px;
     }
     min: {
-      height: 350px;
-      width: 300px;
+      height: 185px;
+      width: 185px;
     }
   }
   @include modifier(item) {
     font: {
-      size: 1.5rem !important;
+      size: 1.5rem;
     }
     line-height: $line-height-base;
   }

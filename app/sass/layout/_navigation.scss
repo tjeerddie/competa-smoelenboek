@@ -63,7 +63,7 @@
 
       border: {
         bottom: {
-          color: $light-grey;
+          color: $border-color;
           style: solid;
           width: 1px;
         }
@@ -156,7 +156,7 @@
   }
   border: {
     right: {
-      color: $light-grey;
+      color: $border-color;
       style: solid;
       width: 1px;
     }
