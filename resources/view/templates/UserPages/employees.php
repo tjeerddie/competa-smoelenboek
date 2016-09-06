@@ -10,6 +10,7 @@
       <div class="divider__block divider__block--absolute divider__block--red"></div>
     </div>
     <?php require_once(INCLUDES_PATH . 'search.php') ?>
+    <a class="button__edit" href="?control=User&action=addEmployee"><button></button></a>
     <div class="grid__row">
       <?php foreach ($employees as $employee): ?>
         <figure class="figure grid__column-xl-3 card">
