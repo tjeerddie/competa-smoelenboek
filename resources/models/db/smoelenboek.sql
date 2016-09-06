@@ -22,9 +22,17 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+<<<<<<< HEAD
 --
 -- Tabelstructuur voor tabel `employees`
 --
+=======
+INSERT INTO `groups` (`id`, `name`) VALUES
+(2, 'blablablablblablablablablab'),
+(4, 'flying POTATOES'),
+(1, 'inprogess'),
+(3, 'super slecht');
+>>>>>>> develop
 
 CREATE TABLE `employees` (
   `id` int(11) NOT NULL,
@@ -32,7 +40,7 @@ CREATE TABLE `employees` (
   `middle_name` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `last_name` varchar(30) CHARACTER SET utf8 NOT NULL,
   `email` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `phone_number` varchar(15) CHARACTER SET utf8 NOT NULL,
+  `phone_number` varchar(15) NOT NULL,
   `photo` varchar(80) CHARACTER SET utf8 NOT NULL DEFAULT 'default.jpg',
   `description` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
   `address` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
@@ -108,74 +116,19 @@ CREATE TABLE `users` (
   `username` varchar(30) CHARACTER SET utf8 NOT NULL,
   `password` varchar(60) CHARACTER SET utf8 NOT NULL DEFAULT 'qwerty',
   `email` varchar(45) CHARACTER SET utf8 NOT NULL,
-  `permission` enum('user','admin') DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Gegevens worden geëxporteerd voor tabel `users`
---
+  `permission` ENUM('user', 'admin'),
+  UNIQUE KEY `uesername` (`username`),
+  UNIQUE KEY `email` (`email`),
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `permission`) VALUES
 (1, 'testUser', '$2y$09$OVlPJVfuzUENJUuPTDUqNeGmsIpTOy5yT1D5b9RDI47jjosgB2W/u', 'email', 'admin'),
 (2, 'test', 'blablabla', 'test@gtfo.com', 'admin'),
 (3, 'bert', 'qwerty', 'bert@bern.com', 'user');
 
---
--- Indexen voor geëxporteerde tabellen
---
-
---
--- Indexen voor tabel `employees`
---
 ALTER TABLE `employees`
-  ADD PRIMARY KEY (`id`);
+  ADD CONSTRAINT `group_lid` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
---
--- Indexen voor tabel `groups`
---
-ALTER TABLE `groups`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`);
-
---
--- Indexen voor tabel `job_categories`
---
-ALTER TABLE `job_categories`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `type` (`type`);
-
---
--- Indexen voor tabel `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `uesername` (`username`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
--- AUTO_INCREMENT voor geëxporteerde tabellen
---
-
---
--- AUTO_INCREMENT voor een tabel `employees`
---
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT voor een tabel `groups`
---
-ALTER TABLE `groups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT voor een tabel `job_categories`
---
-ALTER TABLE `job_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT voor een tabel `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+  ADD CONSTRAINT `category_lid` FOREIGN KEY (`category_id`) REFERENCES `job_categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
