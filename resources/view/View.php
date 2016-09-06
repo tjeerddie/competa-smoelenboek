@@ -11,11 +11,6 @@
             }
         }
 
-        public function setView ($control, $action) {
-            $this->control = $control;
-            $this->action = $action;
-        }
-
         //gives name with value to the view
         public function set($name, $value) {
             self::$data[$name] = $value;
@@ -23,11 +18,14 @@
 
         //gets the template
         private function getTemplate () {
-            return TEMPLATES_PATH . $this->control.'Pages/'.$this->action . ".php";
+            return TEMPLATES_PATH . $this->control .'Pages/'.$this->action . ".php";
         }
 
         //shows the template
-        public function show () {
+        public function show ($control, $action) {
+            $this->control = $control;
+            $this->action = $action;
+
             foreach (self::$data as $key =>$value) {
                 $$key = $value;
             }

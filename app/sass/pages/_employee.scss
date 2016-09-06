@@ -1,0 +1,37 @@
+@include block(employee) {
+  @include element(list) {
+    position: relative;
+    width: 100%;
+  }
+
+  @include element(box) {
+    transform: translateY(10%);
+  }
+
+  @include modifier(image) {
+    max: {
+      height: 185px;
+      width: 185px;
+    }
+    min: {
+      height: 185px;
+      width: 185px;
+    }
+  }
+  @include modifier(item) {
+    font: {
+      size: 1.5rem;
+    }
+    line-height: $line-height-base;
+  }
+
+  @include element(text) {
+    opacity: 1;
+    transition: visibility 0s, opacity .25s linear;
+    visibility: visible;
+  }
+  @include element(info) {
+    display: inline-block;
+    font-weight: normal;
+  }
+}

@@ -1,19 +1,30 @@
-.img-fluid {
-  display: block;
-  max-width: 100%;
-  height: auto;
+@include block(image) {
+  @include modifier(fluid) {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
+  @include modifier(rounded) {
+    border: {
+      color: transparent;
+      radius: 50%;
+      style: $border-style;
+      width: $border-width;
+    }
+  }
 }
 
-.figure {
+@include block(figure) {
   display: inline-block;
-}
 
-.figure-img {
-  margin-bottom: ($spacer-y / 2);
-  line-height: 1;
-}
+  @include element(image) {
+    line-height: 1;
+    margin-bottom: ($spacer-y / 2);
+  }
 
-.figure-caption {
-  font-size: 1rem;
-  color: gray;
+  @include element(caption) {
+    color: $grey;
+    font-size: 1rem;
+  }
 }

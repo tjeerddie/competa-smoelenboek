@@ -1,0 +1,22 @@
+@include block(table) {
+  @include element(row) {
+    border: {
+      bottom: {
+        color: $border-color;
+        style: $border-style;
+        width: $border-width;
+      }
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  @include element(cell) {
+    padding: {
+      bottom: 15px;
+      top: 15px;
+    }
+  }
+}

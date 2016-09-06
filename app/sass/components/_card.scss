@@ -1,0 +1,112 @@
+@include block(card) {
+  background: {
+    color: $white;
+  }
+  border: {
+    color: $border-color;
+    radius: $border-radius;
+    style: $border-style;
+    width: $border-width;
+  }
+  display: block;
+  margin: {
+    left: 1%;
+    right: 1%;
+  }
+  padding: {
+    bottom: 15px;
+    left: 5px;
+    right: 5px;
+    top: 15px;
+  }
+  position: relative;
+  width: 23%;
+
+  &:hover {
+    .card__image {
+      opacity: .25;
+      transition: visibility 0s, opacity .5s linear;
+      visibility: visible;
+    }
+
+    .card__block {
+      opacity: .25;
+      transition: visibility 0s, opacity .5s linear;
+      visibility: visible;
+    }
+
+    .card__overlay {
+      opacity: .75;
+      transition: visibility 0s, opacity .5s linear;
+      visibility: visible;
+    }
+
+    .divider__block {
+      opacity: .25;
+    }
+  }
+
+  @include element(image) {
+    margin: {
+      left: auto;
+      right: auto;
+    }
+    max: {
+      height: 125px;
+      width: 125px;
+    }
+    min: {
+      height: 125px;
+      width: 125px;
+    }
+    opacity: 1;
+    transition: visibility 0s, opacity .25s linear;
+    visibility: visible;
+  }
+
+  @include element(block) {
+    @extend %clearfix;
+    opacity: 1;
+    transition: visibility 0s, opacity .25s linear;
+    visibility: visible;
+  }
+
+  @include element(title) {
+    margin: {
+        bottom: auto;
+        top: auto;
+    }
+    overflow: hidden;
+    text: {
+      align: center;
+      overflow: ellipsis;
+    }
+    white-space: nowrap;
+  }
+
+  @include element(text) {
+    color: $grey;
+    margin-bottom: 0;
+    overflow: hidden;
+    text: {
+      align: center;
+      overflow: ellipsis;
+    }
+    position: relative;
+    white-space: nowrap;
+    transform: translateY(175%);
+  }
+
+  @include element(overlay) {
+    background-color: $light-grey;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    padding: 1.25rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: visibility 0s, opacity 1s linear;
+    visibility: hidden;
+  }
+}

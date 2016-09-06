@@ -22,7 +22,6 @@
 
                 if(count($user) === 1) {
                     if (password_verify($password, $user[0]->getHash())) {
-                        session_start();
                         $_SESSION['user']=$user[0];
                         return true;
                     } else {
@@ -31,7 +30,6 @@
                 } else {
                      return false;
                 }
-
                 //for new passwords
                 // $options = [
                 //     'cost' => 9,

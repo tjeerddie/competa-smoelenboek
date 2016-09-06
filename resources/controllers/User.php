@@ -2,8 +2,6 @@
     require_once(CONTROLLERS_PATH . "Controller.php");
 
     class User extends Controller {
-        private $model;
-        private $view;
 
         public function __construct(){
             $this->model = $this->getModel("UserModel");
@@ -11,13 +9,20 @@
         }
 
         public function home () {
-            $this->model->startSessie();
-            $this->view->setView("user", "home");
-            $emps = $this->model->search();
+            $user = $this->model->getUser();
+            $this->view->set("name", $user->getUsername());
             $this->view->set("employees", $this->model->getEmployees());
-            $this->view->set("groups", $this->model->getGroups());
-            $this->view->set("jobs", $this->model->getJobs());
-            $this->view->show();
+            $this->view->show("User", "home");
+        }
+
+        public function employees () {
+            $this->view->set("employees", $this->model->getEmployees());
+            $this->view->show("User", "employees");
+        }
+
+        public function logout () {
+            $this->model->logout();
+            header('Location: ' ."http://localhost:8080/competa-smoelenboek/?control=Visitor&action=home");
         }
     }
 ?>

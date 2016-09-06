@@ -1,4 +1,4 @@
-<?php require_once("resources/view/templates/header.php"); ?>
+<?php require_once(INCLUDES_PATH . "header.php"); ?>
 
   <main class="main main--login">
     <div class="grid__container">
@@ -25,4 +25,4 @@
     </div>
   </main>
 
-<?php require_once("resources/view/templates/footer.php"); ?>
+<?php require_once(INCLUDES_PATH . "footer.php"); ?>

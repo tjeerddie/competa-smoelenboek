@@ -21,10 +21,10 @@ CREATE TABLE IF NOT EXISTS `groups` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 INSERT INTO `groups` (`id`, `name`) VALUES
-(2, 'blablablablblablablablablab'),
-(4, 'flying POTATOES'),
-(1, 'inprogess'),
-(3, 'super slecht');
+(2, 'Conflict'),
+(4, 'Flying Potatoes'),
+(1, 'Inprogess'),
+(3, 'Onwijs Koel');
 
 CREATE TABLE IF NOT EXISTS `employees` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -77,9 +77,7 @@ CREATE TABLE IF NOT EXISTS `users`(
 )ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `permission`) VALUES
-(1, 'testUser', '$2y$09$OVlPJVfuzUENJUuPTDUqNeGmsIpTOy5yT1D5b9RDI47jjosgB2W/u', 'email', 'admin'),
-(2, 'test', 'blablabla', 'test@gtfo.com', 'admin'),
-(3, 'bert', 'qwerty', 'bert@bern.com', 'user');
+(1, 'testUser', '$2y$09$OVlPJVfuzUENJUuPTDUqNeGmsIpTOy5yT1D5b9RDI47jjosgB2W/u', 'email', 'admin');
 
 ALTER TABLE `employees`
   ADD CONSTRAINT `group_lid` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

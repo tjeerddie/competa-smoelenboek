@@ -1,3 +1,80 @@
+@include block(navigation__hamburger){
+  width: 20px;
+  height: 15px;
+  border: none;
+  background-color: $white;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #000000;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0px;
+    }
+
+    &:nth-child(2) {
+      top: 6px;
+    }
+
+    &:nth-child(3) {
+      top: 12px;
+    }
+  }
+
+  @include state(open) {
+    span {
+      &:nth-child(1) {
+        top: 6px;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg);
+      }
+
+      &:nth-child(2) {
+        left: -20px;
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        top: 6px;
+        -webkit-transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+      }
+    }
+  }
+}
+
 @include block(button) {
   border: {
     color: transparent;
@@ -23,7 +100,7 @@
       radius: $border-radius-lg;
     }
     font: {
-      size: $font-size-lg
+      size: $font-size-lg;
     }
     padding: .75rem 1.5rem;
   }
@@ -41,6 +118,31 @@
       color: $blue;
     }
     color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: $dark-blue;
+      border-color: $dark-blue;
+    }
+  }
+
+  @include modifier(search) {
+    border: {
+      bottom-left-radius: 0;
+      top-left-radius: 0;
+    }
+    height: 26px;
+    line-height: 1px;
+    margin: {
+      bottom: 10px;
+      left: -5px;
+    }
+    padding: 0 .1rem;
+    top: 4px;
+
+    .fa {
+      font-size: 25px !important;
+    }
   }
 
   @include element(icon) {
