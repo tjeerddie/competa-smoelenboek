@@ -9,15 +9,15 @@
         }
 
         public function home () {
+            $user = $this->model->getUser();
+            $this->view->set("name", $user->getUsername());
             $this->view->set("employees", $this->model->getEmployees());
-            $this->view->setView("visitor", "employees");
-            $this->view->show();
+            $this->view->show("User", "home");
         }
 
         public function employees () {
             $this->view->set("employees", $this->model->getEmployees());
-            $this->view->setView("visitor", "employees");
-            $this->view->show();
+            $this->view->show("User", "employees");
         }
 
         public function logout () {

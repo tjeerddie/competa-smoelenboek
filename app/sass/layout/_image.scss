@@ -7,7 +7,7 @@
 
   @include modifier(rounded) {
     border: {
-      color: $border-color;
+      color: transparent;
       radius: 50%;
       style: $border-style;
       width: $border-width;

@@ -14,7 +14,7 @@
             return $this->id;
         }
 
-        public function getUserName () {
+        public function getUsername () {
             return $this->username;
         }
 

@@ -1,5 +1,6 @@
 <?php
     require_once("resources/config.php");
+    
     session_start();
 
     if (isset($_GET['control']) && isset($_GET['action'])) {

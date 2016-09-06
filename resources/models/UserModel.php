@@ -7,6 +7,10 @@
             parent::__construct();
         }
 
+        public function getUser(){
+            return $_SESSION['user'];
+        }
+
         public function logout(){
            $_SESSION = array();
            session_destroy();
