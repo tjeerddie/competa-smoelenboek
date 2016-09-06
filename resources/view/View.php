@@ -18,7 +18,7 @@
 
         //gets the template
         private function getTemplate () {
-            return TEMPLATES_PATH . $this->control.'Pages/'.$this->action . ".php";
+            return TEMPLATES_PATH . $this->control .'Pages/'.$this->action . ".php";
         }
 
         //shows the template
