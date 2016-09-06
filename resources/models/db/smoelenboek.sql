@@ -21,10 +21,10 @@ CREATE TABLE IF NOT EXISTS `groups` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 INSERT INTO `groups` (`id`, `name`) VALUES
-(2, 'Conflict'),
-(4, 'Flying Potatoes'),
 (1, 'Inprogess'),
-(3, 'Onwijs Koel');
+(2, 'Conflict'),
+(3, 'Onwijs Koel'),
+(4, 'Flying Potatoes');
 
 CREATE TABLE IF NOT EXISTS `employees` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -68,7 +68,7 @@ INSERT INTO `job_categories` (`id`, `type`) VALUES
 CREATE TABLE IF NOT EXISTS `users`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) CHARACTER SET utf8 NOT NULL,
-  `password` varchar(30) CHARACTER SET utf8 NOT NULL DEFAULT 'qwerty',
+  `password` varchar(60) CHARACTER SET utf8 NOT NULL DEFAULT 'qwerty',
   `email` varchar(45) CHARACTER SET utf8 NOT NULL,
   `permission` ENUM('user', 'admin'),
   UNIQUE KEY `uesername` (`username`),

@@ -20,6 +20,13 @@
             $this->view->show("User", "employees");
         }
 
+        public function employee () {
+            $this->view->set("employee", $this->model->getEmployee());
+            $this->view->set("groups", $this->model->getGroups());
+            $this->view->set("jobs", $this->model->getJobs());
+            $this->view->show("User", "employee");
+        }
+
         public function logout () {
             $this->model->logout();
             header('Location: ' ."http://localhost:8080/competa-smoelenboek/?control=Visitor&action=home");
