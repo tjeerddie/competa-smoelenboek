@@ -1,6 +1,6 @@
 <?php require_once(INCLUDES_PATH . "header.php"); ?>
 
-  <main class="main main--addEmloyee">
+  <main class="main main--addEmployee">
     <div class="grid__container">
       <form class="form__add" method="post" autocomplete="off">
         <label class="sr=only" for="inputFirstname">First Name</label>
@@ -26,7 +26,6 @@
         <label class="sr=only" for="inputCategoryId">Category_Id</label>
         <input class="form__control" id="inputCategoryId" name="category_id" placeholder="Category Id" required>
 
-        <p class="form__message <?php echo ($failedToSignIn ? 'form__message--danger': ''); ?>"><?php echo $message; ?></p>
         <button class="button button--primary button--block" type="submit" name="submit" role="button">
           Submit
           <i class="fa fa-sign-in button__icon"></i>
