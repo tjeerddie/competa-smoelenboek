@@ -1,7 +1,6 @@
-
-  @include block(form__grid--employee) {
+@include block(main ) {
     position: fixed;
-    display: flex;
+    display: inline-flex;
     height:60%;
     width: 60%;
     left: 50%;

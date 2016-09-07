@@ -2037,9 +2037,9 @@ h6, .h6 {
 }
 
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
-.form__grid--employee {
+.main {
   position: fixed;
-  display: flex;
+  display: inline-flex;
   height: 60%;
   width: 60%;
   left: 50%;
@@ -2051,8 +2051,8 @@ h6, .h6 {
   border: solid 1px #f3f3f3;
   border-radius: 8px;
 }
-/* line 16, ../sass/layout/_employeeForm.scss */
-.form__grid--employee .form__control {
+/* line 15, ../sass/layout/_employeeForm.scss */
+.main .form__control {
   height: 30px;
   width: 40%;
 }
