@@ -33,7 +33,18 @@
             $stmnt = $this->db->prepare($sql);
             $stmnt->execute();
             $employees = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
-            return $employees;
+
+            $page = filter_input( INPUT_GET, "page", FILTER_VALIDATE_INT);
+            if(!isset($page)){
+                $page = 1;
+            }
+            $emps = [];
+            for ($i=($page*8);$i>$page*8-8;$i--) {
+                if($i<count($employees)){
+                    array_push($emps, $employees[$i]);
+                }
+            }
+            return $emps;
         }
 
         public function search(){

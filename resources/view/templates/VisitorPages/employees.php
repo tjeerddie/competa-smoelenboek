@@ -26,6 +26,7 @@
         </figure>
       <?php endforeach; ?>
     </div>
+    <button class="next-page" type="button" name="next">next</button>    
   </div>
 </main>
 <?php require_once(INCLUDES_PATH . 'footer.php') ?>
