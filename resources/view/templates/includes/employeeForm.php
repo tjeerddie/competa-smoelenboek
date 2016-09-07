@@ -1,7 +1,7 @@
 <?php require_once(INCLUDES_PATH . "header.php"); ?>
 
-  <main class="main main--addEmployee">
-    <div class="grid__container">
+  <!-- <main class="main main--addEmployee"> -->
+    <div class="form__grid--employee">
       <form class="form__add" method="post" autocomplete="off">
         <label class="sr=only" for="inputFirstname">First Name</label>
         <input class="form__control" id="inputFirstname" name="firstname" placeholder="First name" required autofocus>
@@ -11,7 +11,7 @@
         <input class="form__control" id="inputLastname" name="lastname" placeholder="Last name" required>
         <label class="sr=only" for="inputEmail">email</label>
         <input class="form__control" id="inputEmaile" name="email" placeholder="E-mail" required>
-        <label class="sr=only" for="inputPhoneNumber">Phone numbere</label>
+        <label class="sr=only" for="inputPhoneNumber">Phone number</label>
         <input class="form__control" id="inputPhoneNumber" name="phone_number" placeholder="Phonenumber" required>
         <label class="sr=only" for="inputPhoto">Photo</label>
         <input type="file" id="inputPhoto" name="photo"  accept='image/*'>
@@ -32,6 +32,6 @@
         </button>
       </form>
     </div>
-  </main>
+  <!-- </main> -->
 
 <?php require_once(INCLUDES_PATH . "footer.php"); ?>

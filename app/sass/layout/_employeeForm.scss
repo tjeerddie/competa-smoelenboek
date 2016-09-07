@@ -1,0 +1,20 @@
+
+  @include block(form__grid--employee) {
+    position: fixed;
+    display: flex;
+    height:60%;
+    width: 60%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    z-index: 1;
+    background-color: $white;
+    border: solid 1px $light-grey;
+    border-radius: 8px;
+
+    .form__control {
+      height: 30px;
+      width: 40%
+    }
+  }

@@ -2037,6 +2037,27 @@ h6, .h6 {
 }
 
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
+.form__grid--employee {
+  position: fixed;
+  display: flex;
+  height: 60%;
+  width: 60%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  z-index: 1;
+  background-color: white;
+  border: solid 1px #f3f3f3;
+  border-radius: 8px;
+}
+/* line 16, ../sass/layout/_employeeForm.scss */
+.form__grid--employee .form__control {
+  height: 30px;
+  width: 40%;
+}
+
+/* line 7, ../sass/abstracts/mixins/_bem.scss */
 .navigation__hamburger {
   width: 20px;
   height: 15px;

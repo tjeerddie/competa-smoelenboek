@@ -11,6 +11,7 @@
     </div>
     <?php require_once(INCLUDES_PATH . 'search.php') ?>
     <a class="button__edit" href="?control=User&action=addEmployee"><button></button></a>
+      <?php require_once(INCLUDES_PATH . "employeeForm.php");?>
     <div class="grid__row">
       <?php foreach ($employees as $employee): ?>
         <figure class="figure grid__column-xl-3 card">
