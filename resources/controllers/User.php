@@ -27,6 +27,16 @@
             $this->view->show("User", "employee");
         }
 
+        public function addEmployee () {
+          if (!$this->model->postEmpty()) {
+            $message = $this->model->addEmployee();
+            $this->view->set("message", $message);
+          }
+          $this->view->set("groups", $this->model->getGroups());
+          $this->view->set("jobs", $this->model->getJobs());
+          $this->view->show("User", "addEmployee");
+        }
+
         public function logout () {
             $this->model->logout();
             header('Location: ' ."http://localhost:8080/competa-smoelenboek/?control=Visitor&action=home");
