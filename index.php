@@ -23,7 +23,7 @@
     }
 
     // list of allowed controllers with corresponding actions.
-    $controllers = array('Visitor' => ['home', 'login', 'employees', 'employee','search', 'error'], 'User' => ['home', 'logout', 'employees', 'employee', 'search', 'error']);
+    $controllers = array('Visitor' => ['home', 'login', 'employees', 'employee','search', 'error'], 'User' => ['home', 'logout', 'employees', 'employee', 'search', 'error', 'changeInfo']);
 
     // check that the requested controller and action are both allowed
     if (array_key_exists($control, $controllers)

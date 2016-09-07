@@ -15,5 +15,9 @@
            $_SESSION = array();
            session_destroy();
         }
+
+        public function changeInfo(){
+          return parent::changeInfo();
+        }
     }
 ?>

@@ -294,10 +294,9 @@ body {
   font-family: "open-sans", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  overflow: hidden;
 }
 
-/* line 47, ../sass/base/_default.scss */
+/* line 46, ../sass/base/_default.scss */
 h1,
 h2,
 h3,
@@ -308,27 +307,27 @@ h6 {
   margin-bottom: .5rem;
 }
 
-/* line 57, ../sass/base/_default.scss */
+/* line 56, ../sass/base/_default.scss */
 p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-/* line 62, ../sass/base/_default.scss */
+/* line 61, ../sass/base/_default.scss */
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted #3d3d3d;
 }
 
-/* line 68, ../sass/base/_default.scss */
+/* line 67, ../sass/base/_default.scss */
 address {
   margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit;
 }
 
-/* line 74, ../sass/base/_default.scss */
+/* line 73, ../sass/base/_default.scss */
 ol,
 ul,
 dl {
@@ -336,7 +335,7 @@ dl {
   margin-bottom: 1rem;
 }
 
-/* line 81, ../sass/base/_default.scss */
+/* line 80, ../sass/base/_default.scss */
 ol ol,
 ul ul,
 ol ul,
@@ -344,75 +343,75 @@ ul ol {
   margin-bottom: 0;
 }
 
-/* line 88, ../sass/base/_default.scss */
+/* line 87, ../sass/base/_default.scss */
 dt {
   font-weight: bold;
 }
 
-/* line 92, ../sass/base/_default.scss */
+/* line 91, ../sass/base/_default.scss */
 dd {
   margin-bottom: .5rem;
   margin-left: 0;
 }
 
-/* line 97, ../sass/base/_default.scss */
+/* line 96, ../sass/base/_default.scss */
 blockquote {
   margin: 0 0 1rem;
 }
 
-/* line 101, ../sass/base/_default.scss */
+/* line 100, ../sass/base/_default.scss */
 a {
   color: black;
   text-decoration: none;
 }
-/* line 105, ../sass/base/_default.scss */
+/* line 104, ../sass/base/_default.scss */
 a:focus, a:hover {
   border: none;
 }
-/* line 110, ../sass/base/_default.scss */
+/* line 109, ../sass/base/_default.scss */
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
-/* line 116, ../sass/base/_default.scss */
+/* line 115, ../sass/base/_default.scss */
 a:not([href]):not([tabindex]) {
   color: inherit;
   text-decoration: none;
 }
-/* line 120, ../sass/base/_default.scss */
+/* line 119, ../sass/base/_default.scss */
 a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
   color: inherit;
   text-decoration: none;
 }
-/* line 126, ../sass/base/_default.scss */
+/* line 125, ../sass/base/_default.scss */
 a:not([href]):not([tabindex]):focus {
   outline: none;
 }
 
-/* line 131, ../sass/base/_default.scss */
+/* line 130, ../sass/base/_default.scss */
 pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
 }
 
-/* line 137, ../sass/base/_default.scss */
+/* line 136, ../sass/base/_default.scss */
 figure {
   margin: 0 0 1rem;
 }
 
-/* line 141, ../sass/base/_default.scss */
+/* line 140, ../sass/base/_default.scss */
 img {
   vertical-align: middle;
 }
 
-/* line 145, ../sass/base/_default.scss */
+/* line 144, ../sass/base/_default.scss */
 [role="button"] {
   cursor: pointer;
 }
 
-/* line 149, ../sass/base/_default.scss */
+/* line 148, ../sass/base/_default.scss */
 a,
 area,
 button,
@@ -425,13 +424,13 @@ textarea {
   touch-action: manipulation;
 }
 
-/* line 161, ../sass/base/_default.scss */
+/* line 160, ../sass/base/_default.scss */
 table {
   border-collapse: collapse;
   background-color: white;
 }
 
-/* line 166, ../sass/base/_default.scss */
+/* line 165, ../sass/base/_default.scss */
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -440,24 +439,24 @@ caption {
   caption-side: bottom;
 }
 
-/* line 174, ../sass/base/_default.scss */
+/* line 173, ../sass/base/_default.scss */
 th {
   text-align: left;
 }
 
-/* line 178, ../sass/base/_default.scss */
+/* line 177, ../sass/base/_default.scss */
 label {
   display: inline-block;
   margin-bottom: .5rem;
 }
 
-/* line 183, ../sass/base/_default.scss */
+/* line 182, ../sass/base/_default.scss */
 button:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
 }
 
-/* line 188, ../sass/base/_default.scss */
+/* line 187, ../sass/base/_default.scss */
 input,
 button,
 select,
@@ -467,13 +466,13 @@ textarea {
   border-radius: 0;
 }
 
-/* line 199, ../sass/base/_default.scss */
+/* line 198, ../sass/base/_default.scss */
 input[type="radio"]:disabled,
 input[type="checkbox"]:disabled {
   cursor: not-allowed;
 }
 
-/* line 205, ../sass/base/_default.scss */
+/* line 204, ../sass/base/_default.scss */
 input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
@@ -481,12 +480,12 @@ input[type="month"] {
   -webkit-appearance: listbox;
 }
 
-/* line 212, ../sass/base/_default.scss */
+/* line 211, ../sass/base/_default.scss */
 textarea {
   resize: vertical;
 }
 
-/* line 216, ../sass/base/_default.scss */
+/* line 215, ../sass/base/_default.scss */
 fieldset {
   min-width: 0;
   padding: 0;
@@ -494,7 +493,7 @@ fieldset {
   border: 0;
 }
 
-/* line 223, ../sass/base/_default.scss */
+/* line 222, ../sass/base/_default.scss */
 legend {
   display: block;
   width: 100%;
@@ -504,12 +503,12 @@ legend {
   line-height: inherit;
 }
 
-/* line 232, ../sass/base/_default.scss */
+/* line 231, ../sass/base/_default.scss */
 input[type="search"] {
   -webkit-appearance: none;
 }
 
-/* line 236, ../sass/base/_default.scss */
+/* line 235, ../sass/base/_default.scss */
 output {
   display: inline-block;
   font-size: 1rem;
@@ -517,12 +516,12 @@ output {
   color: #3d3d3d;
 }
 
-/* line 243, ../sass/base/_default.scss */
+/* line 242, ../sass/base/_default.scss */
 [hidden] {
   display: none !important;
 }
 
-/* line 247, ../sass/base/_default.scss */
+/* line 246, ../sass/base/_default.scss */
 .sr-only {
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -1781,8 +1780,12 @@ h6, .h6 {
   padding: 0;
   width: auto;
 }
-/* line 81, ../sass/layout/_form.scss */
-.form__control--search:hover, .form__control--search:focus {
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__control--update {
+  height: 30px;
+}
+/* line 108, ../sass/layout/_form.scss */
+.form__control:hover, .form__control:focus {
   border-color: #3d3d3d;
   outline: none;
 }
@@ -1817,7 +1820,7 @@ h6, .h6 {
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .main {
   background-color: white;
-  height: 100vh;
+  min-height: 100vh;
   margin-left: 250px;
   margin-right: 120px;
   position: relative;
@@ -2311,10 +2314,6 @@ h6, .h6 {
   position: relative;
   width: 100%;
 }
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.employee__box {
-  transform: translateY(10%);
-}
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .employee--image {
   max-height: 185px;
@@ -2337,4 +2336,8 @@ h6, .h6 {
 .employee__info {
   display: inline-block;
   font-weight: normal;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.employee__message {
+  margin-left: 380px;
 }
