@@ -20,8 +20,11 @@
             <h4 class="card__title"><?= $employee->getlastName() ?></h4>
           </figcaption>
           <a class="card__overlay" href="?control=User&action=employee&id=<?= $employee->getId()?>">
-            <p class="card__text">Click to see more about</p>
+            <p class="card__text">Click to edit or see more about</p>
             <p class="card__text"><?= $employee->getfirstName() . ' ' . $employee->getlastName() ?></p>
+          </a>
+          <a class="button button--delete" href="?control=User&action=delete&id=<?= $employee->getId()?>" type="submit" name="delete" role="button">
+            <i class="fa fa-user-times"></i>
           </a>
         </figure>
       <?php endforeach; ?>
