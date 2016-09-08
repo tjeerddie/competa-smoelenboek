@@ -1772,6 +1772,11 @@ h6, .h6 {
   width: 100%;
 }
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__control--standardButton {
+  width: 50%;
+  display: inline;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
 .form__control--search {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
@@ -1780,8 +1785,12 @@ h6, .h6 {
   padding: 0;
   width: auto;
 }
-/* line 81, ../sass/layout/_form.scss */
-.form__control--search:hover, .form__control--search:focus {
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__control--update {
+  height: 30px;
+}
+/* line 113, ../sass/layout/_form.scss */
+.form__control:hover, .form__control:focus {
   border-color: #3d3d3d;
   outline: none;
 }
@@ -2310,10 +2319,6 @@ h6, .h6 {
   position: relative;
   width: 100%;
 }
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.employee__box {
-  transform: translateY(10%);
-}
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .employee--image {
   max-height: 185px;
@@ -2336,4 +2341,8 @@ h6, .h6 {
 .employee__info {
   display: inline-block;
   font-weight: normal;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.employee__message {
+  margin-left: 380px;
 }

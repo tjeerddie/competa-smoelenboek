@@ -63,5 +63,7 @@
            $jobs = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Job');
            return $jobs;
         }
+
+
     }
 ?>
