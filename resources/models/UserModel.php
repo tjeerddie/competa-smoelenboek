@@ -45,7 +45,7 @@
           return "Please fill in a valid email.";
         }
         $values['photo'] = $this->sendPhoto();
-        if($values['photo']!=="error")
+        if(isset($_FILES['userfile']) && $_FILES['userfile']['size'] > 0)
         {
           $fotoName = $this->makeFileName();
           if($fotoName ===false){
@@ -136,12 +136,6 @@
       }
 
       public function sendPhoto() {
-        if(empty($_FILES['photo']['tmp_name'])||empty($_FILES['photo']['type'])) {
-            return "error";
-        }
-        if(empty($_FILES['photo']['size'])||empty($_FILES['photo']['tmp_name'])) {
-            return "error";
-        }
         $finfo = new \finfo(FILEINFO_MIME_TYPE);
 
         $ext = $finfo->file($_FILES['photo']['tmp_name']);
@@ -151,7 +145,7 @@
             'image/gif',
         );
         if(!in_array($ext, $allowed)) {
-            return "error";
+            return "Wrong file type";
         }
         $photoName = $this->makeFileName();
         $values['photo']=$photoName;
