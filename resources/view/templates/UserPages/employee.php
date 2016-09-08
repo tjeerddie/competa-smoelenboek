@@ -3,13 +3,13 @@
         <main class="main main--employee">
             <?php require_once(INCLUDES_PATH . "hamburger.php");?>
             <div class="grid__container">
-              <header class="main__header">
+              <!--<header class="main__header">
                   <h1 class="main__heading"><?= $employee->getFullName();?></h1>
               </header>
               <div class="divider">
                   <div class="divider__block divider__block--absolute divider__block--red"></div>
-              </div>
-              <form method="post" autocomplete="off">
+              </div>-->
+              <form method="post" enctype="multipart/form-data" autocomplete="off">
                 <p class="employee__message"><?= isset($message) ? $message : ""?></p>
                 <div class="form__group grid__row">
                   <figure class="figure form__logo form__logo--photo grid__column-md-5">
