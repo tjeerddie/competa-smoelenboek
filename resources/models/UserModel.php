@@ -44,29 +44,28 @@
         {
           return "Please fill in a valid email.";
         }
-        if($values['photo']!==null)
-        {
-                $fotoName = $this->makeFileName();
-                if($fotoName ===false){
-                    return "wrong image type";
-                }
 
-                $result = $this->savePhoto($fotoName);
-                if($result === false){
-                    return "Image save failed";
-                }
-                $id = $this->getEmployee()->getId();
-                $oldPhoto = $this->getEmployee()->getPhoto();
-                $sql = "UPDATE `employees` SET `employees`.`photo`= '$fotoName' WHERE `employees`.`id`= $id";
-                $stmnt = $this->db->prepare($sql);
-                $stmnt->execute();
-                $aantalGewijzigd = $stmnt->rowCount();
-                if($aantalGewijzigd === 1)
-                {
-                    $this->removeOldPhoto($oldPhoto);
-                }
-                return "nothing changed";
+        $fotoName = $this->makeFileName();
+        if($fotoName ===false){
+            return "wrong image type";
         }
+
+        $result = $this->savePhoto($fotoName);
+        if($result === false){
+            return "Image save failed";
+        }
+        $id = $this->getEmployee()->getId();
+        $oldPhoto = $this->getEmployee()->getPhoto();
+        $sql = "UPDATE `employees` SET `employees`.`photo`= '$fotoName' WHERE `employees`.`id`= $id";
+        $stmnt = $this->db->prepare($sql);
+        $stmnt->execute();
+        $aantalGewijzigd = $stmnt->rowCount();
+        if($aantalGewijzigd === 1)
+        {
+            $this->removeOldPhoto($oldPhoto);
+        }
+        return "nothing changed";
+
 
         $employee_id = $this->getEmployee()->getId();
         $sql = 'UPDATE `employees` SET ';
@@ -130,6 +129,29 @@
         if($stmnt->rowCount()===1){
             $this->removeOldPhoto($fotoName);
         }
+      }
+
+      public function sendPhoto() {
+        if(empty($_FILES['photo']['tmp_name'])||empty($_FILES['photo']['type'])) {
+            return "no image uploaded";
+        }
+        if(empty($_FILES['photo']['size'])||empty($_FILES['photo']['tmp_name'])) {
+            return "file too big";
+        }
+        $finfo = new \finfo(FILEINFO_MIME_TYPE);
+
+        $ext = $finfo->file($_FILES['photo']['tmp_name']);
+        $allowed = array(
+            'image/jpeg',
+            'image/png',
+            'image/gif',
+        );
+        if(!in_array($ext, $allowed)) {
+            return "wrong image type";
+        }
+        $photoName = $this->makeFileName();
+        $values['photo']=$photoName;
+        return $photoName;
       }
 
         private function removeOldPhoto($name)
