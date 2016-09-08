@@ -45,7 +45,7 @@
                 $employees = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
                 return $employees;
             }
-            return;
+            return $this->getEmployees();
         }
 
         public function getGroups() {

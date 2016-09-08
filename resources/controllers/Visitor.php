@@ -32,17 +32,17 @@
         }
 
         public function employees () {
-          if(isset($_GET['name'])){
-            if($_GET['name'] !== ""){
-              $employees = $this->model->search();
-              $this->view->set("employees", $employees);
-              echo require_once(INCLUDES_PATH . 'employees.php');
-            }
-            return;
-          } else {
-            $this->view->set("employees", $this->model->getEmployees());
-          }
+          $this->view->set("employees", $this->model->getEmployees());
           $this->view->show("Visitor", "employees");
+        }
+
+        public function search () {
+          if(isset($_GET['name'])){
+            $employees = $this->model->search();
+            $this->view->set("employees", $employees);
+            echo require_once(INCLUDES_PATH . 'employees.php');
+            return;
+          }
         }
 
         public function employee () {
