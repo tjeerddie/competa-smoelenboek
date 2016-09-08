@@ -68,6 +68,11 @@
 
   @include element(control) {
 
+    @include modifier(standardButton){
+      width: 50%;
+      display: inline;
+    }
+
     @include modifier(search) {
       border: {
         bottom-right-radius: 0;
@@ -111,6 +116,7 @@
       outline: none;
     }
   }
+
 
   @include element(message) {
 

@@ -56,7 +56,7 @@
                                 <td class="table__cell">
                                   <?php foreach ($groups as $group) :
                                       if ($employee->getGroupId() === $group->getId()) :?>
-                                          <select class="" value="<?= $group->getName();?>" name="group_name" type="text">
+                                          <select class="form__control" value="<?= $group->getName();?>" name="group_name" type="text">
                                             <?php foreach ($groups as $group) :
                                               if($employee->getGroupId() === $group->getId()) {
                                                 echo '<option selected value="'. $group->getId() .'" >',$group->getName(),'</option>';
@@ -77,7 +77,7 @@
                                 <td class="table__cell">
                                     <?php foreach ($jobs as $job) :
                                         if ($employee->getCategoryId() === $job->getId()) :?>
-                                            <select class="" name="job" type="text">
+                                            <select class="form__control" name="job" type="text">
                                               <?php foreach ($jobs as $job) :
                                                 if($employee->getCategoryId() === $job->getId()) {
                                                   echo '<option selected value="'. $job->getId() .'" >',$job->getType(),'</option>';
@@ -116,8 +116,8 @@
                                 </td>
                             </tr>
                         </table>
-                          <button class="" type="submit" name="update" role="button">update</button>
-                          <button type="reset" value="Reset">reset</button>
+                        <br>
+                          <button class="form__control form__control--standardButton" type="submit" name="update" role="button">update</button><button class="form__control form__control--standardButton"type="reset" value="Reset">reset</button>
                       </form>
                     </div>
                 </div>
