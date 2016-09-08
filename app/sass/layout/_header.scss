@@ -1,6 +1,36 @@
 @include block(header) {
-  padding: 15px;
+  @extend %clearfix;
+
+  @include state(enlarged) {
+    padding-left: 195px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 200%;
+  }
+
+  background: {
+    color: $white;
+  }
+  border: {
+    bottom: {
+      color: $border-color;
+      style: $border-style;
+      width: $border-width;
+    }
+  }
+  height: 60px;
+  left: -120px;
+  overflow: hidden;
+  padding: {
+    bottom: 15px;
+    left: 385px;
+    right: 15px;
+    top: 15px;
+  }
   position: fixed;
   top: 0;
-  z-index: 10;
+  transition: padding-left .5s;
+  width: 100%;
+  z-index: 9;
 }

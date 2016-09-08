@@ -16,6 +16,15 @@
            session_destroy();
         }
 
+        public function delete() {
+        if ($this->getEmployee() !== null) {
+          $id = $this->getEmployee()->getId();
+          $sql = "DELETE FROM `employees` WHERE `employees`.`id`=$id";
+          $stmnt = $this->db->prepare($sql);
+          $stmnt->execute();
+            }
+          }
+
         public function changeInfo() {
         $values = [];
         $values['first_name'] = filter_input(INPUT_POST,'first_name');
