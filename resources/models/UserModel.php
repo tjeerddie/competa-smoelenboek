@@ -45,31 +45,6 @@
           return "Please fill in a valid email.";
         }
         $values['photo'] = $this->sendPhoto();
-        if(isset($_FILES['userfile']) && $_FILES['userfile']['size'] > 0)
-        {
-          $fotoName = $this->makeFileName();
-          if($fotoName ===false){
-              return "wrong image type";
-          }
-
-          $result = $this->savePhoto($fotoName);
-          if($result === false){
-              return "Image save failed";
-          }
-          $id = $this->getEmployee()->getId();
-          $oldPhoto = $this->getEmployee()->getPhoto();
-          $sql = "UPDATE `employees` SET `employees`.`photo`= '$fotoName' WHERE `employees`.`id`= $id";
-          $stmnt = $this->db->prepare($sql);
-          $stmnt->execute();
-          $aantalGewijzigd = $stmnt->rowCount();
-          if($aantalGewijzigd === 1)
-          {
-              $this->removeOldPhoto($oldPhoto);
-              return "succes";
-          }
-          return "nothing changed";
-        }
-
 
         $employee_id = $this->getEmployee()->getId();
         $sql = 'UPDATE `employees` SET ';
@@ -120,7 +95,7 @@
         private function savePhoto($photoName) {
         $photo_tmp_name = $_FILES['photo']['tmp_name'];
         return \move_uploaded_file($photo_tmp_name, IMAGES_PATH.$photoName);
-      }
+        }
 
       private function removePhoto($name){
         if($name!=='default.jpg'&&  \file_exists(IMAGES_PATH.$name)){
@@ -136,6 +111,12 @@
       }
 
       public function sendPhoto() {
+        if(empty($_FILES['photo']['tmp_name'])||empty($_FILES['photo']['type'])) {
+            return "Wrong file type";
+        }
+        if(empty($_FILES['photo']['size'])||empty($_FILES['photo']['tmp_name'])) {
+            return "Image is too big";
+        }
         $finfo = new \finfo(FILEINFO_MIME_TYPE);
 
         $ext = $finfo->file($_FILES['photo']['tmp_name']);
@@ -145,10 +126,11 @@
             'image/gif',
         );
         if(!in_array($ext, $allowed)) {
-            return "Wrong file type";
+            return "error";
         }
         $photoName = $this->makeFileName();
         $values['photo']=$photoName;
+        $this->savePhoto($photoName);
         return $photoName;
       }
 
