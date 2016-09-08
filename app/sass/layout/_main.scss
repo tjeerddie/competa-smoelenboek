@@ -1,8 +1,13 @@
 @include block(main) {
+
+  @include media-breakpoint-down(sm) {
+    	margin-right: 0;
+  }
+
   background: {
     color: $white;
   }
-  min-height: 100vh;
+  min-height: calc(100vh - 60px);
   margin: {
     left: 250px;
     right: 120px;
