@@ -97,7 +97,6 @@
         }
 
         private function savePhoto($photoName) {
-          echo IMAGES_PATH;
         $photo_tmp_name = $_FILES['photo']['tmp_name'];
         return \move_uploaded_file($photo_tmp_name, IMAGES_PATH.$photoName);
         }
