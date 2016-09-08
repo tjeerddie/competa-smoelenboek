@@ -2229,6 +2229,15 @@ h6, .h6 {
 .button--search .fa {
   font-size: 25px !important;
 }
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.button--delete {
+  padding: 0 .1rem;
+  margin-right: 15px;
+  background-color: #ca202b;
+  float: right;
+  border: #ca202b;
+  color: white;
+}
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .button__icon {
   position: relative;

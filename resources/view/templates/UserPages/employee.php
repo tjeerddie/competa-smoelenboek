@@ -2,13 +2,25 @@
     require_once(INCLUDES_PATH . "navigation.php");?>
         <main class="main">
             <?php require_once(INCLUDES_PATH . "hamburger.php");?>
-            <div class="grid__container employee">
+            <div class="grid__container">
                 <header class="main__header">
                     <h1 class="main__heading"><?= $employee->getFullName();?></h1>
                 </header>
                 <div class="divider">
                     <div class="divider__block divider__block--absolute divider__block--red"></div>
-                </div><br>
+                </div>
+                <form class="form__employee" method="post" autocomplete="off">
+                  <figure class="figure form__logo">
+                    <img class="figure__logo" src="app/img/content/default.jpg" alt="<?= $employee->getFullName();?>" />
+                    <figcaption>
+                      <label class="sr-only" for="inputPhoto"></label>
+                      <input class="button" type="file" id="inputPhoto" name="photo" placeholder="File">
+                    </figcaption>
+                  </figure>
+                </form>
+
+
+
                 <p class="employee__message"><?= isset($message) ? $message : ""?></p>
                 <div class="grid__row">
                     <figure class="figure grid__column-xl-3 grid__column--offset-xl-1">
