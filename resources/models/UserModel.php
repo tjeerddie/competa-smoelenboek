@@ -61,6 +61,10 @@
                 $sql .= " `employees`.`$col_name` = :$col_name WHERE `employees`.`id`= $employee_id; ";
             }
             $needles[":$col_name"]=$value;
+            if ($values['photo']!==null)
+            {
+              $this->savePhoto($values['photo']);
+            }
         }
         $stmnt = $this->db->prepare($sql);
         $stmnt->execute($needles);
@@ -93,6 +97,7 @@
         }
 
         private function savePhoto($photoName) {
+          echo IMAGES_PATH;
         $photo_tmp_name = $_FILES['photo']['tmp_name'];
         return \move_uploaded_file($photo_tmp_name, IMAGES_PATH.$photoName);
         }
@@ -130,7 +135,6 @@
         }
         $photoName = $this->makeFileName();
         $values['photo']=$photoName;
-        $this->savePhoto($photoName);
         return $photoName;
       }
 
