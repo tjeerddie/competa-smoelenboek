@@ -34,7 +34,7 @@
                 return "no email";
             }
 
-            $photoName = $this->sendPhoto();
+            $values['photo'] = $this->sendPhoto();
             // switch($result)
             // {
             //     case "file too big":
@@ -80,10 +80,11 @@
              $stmnt = $this->db->prepare($sql);
              $stmnt->execute($needles);
             if($stmnt->rowCount()===1) {
-                 if(!empty($photoName)){
-                   $this->savePhoto($photoName);
+                 if(!empty($values['photo'])){
+                   $this->savePhoto($values['photo']);
+                   return "user added";
                  }
-                return "user added";
+                return "user added without photo";
             }
             return "rip nothing added";
         }
@@ -113,7 +114,7 @@
         }
         $photoName = $this->makeFileName();
         $values['photo']=$photoName;
-        return "image uploaded";
+        return $photoName;
       }
 
       private function makeFileName(){
@@ -143,14 +144,13 @@
       }
 
       private function savePhoto($photoName){
-        $foto_tmp_name = $_FILES['photo']['tmp_name'];
-        echo $foto_tmp_name, IMAGES_PATH.$photoName;
-        return \move_uploaded_file($foto_tmp_name, IMAGES_PATH.$photoName);
+        $photo_tmp_name = $_FILES['photo']['tmp_name'];
+        return \move_uploaded_file($photo_tmp_name, IMAGES_PATH.$photoName);
       }
 
       private function removePhoto($name){
         if($name!=='default.jpg'&&  \file_exists(IMAGES_PATH.$name)){
-          unlink(self::IMAGE_LOCATION.$name);
+          unlink(IMAGES_PATH.$name);
         }
       }
     }
