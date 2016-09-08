@@ -33,22 +33,11 @@
             $stmnt = $this->db->prepare($sql);
             $stmnt->execute();
             $employees = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
-
-            $page = filter_input( INPUT_GET, "page", FILTER_VALIDATE_INT);
-            if(!isset($page)){
-                $page = 1;
-            }
-            $emps = [];
-            for ($i=($page*8);$i>$page*8-8;$i--) {
-                if($i<count($employees)){
-                    array_push($emps, $employees[$i]);
-                }
-            }
-            return $emps;
+            return $employees;
         }
 
         public function search(){
-            if(isset($_POST['search']) && preg_match("/^[  a-zA-Z]+/", $_POST['name'])){
+            if(preg_match("/^[  a-zA-Z]+/", $_POST['name'])){
                 $name=filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
                 $sql="SELECT * FROM employees WHERE first_name LIKE '%" . $name .  "%' OR last_name LIKE '%" . $name ."%'";
                 $stmnt = $this->db->prepare($sql);

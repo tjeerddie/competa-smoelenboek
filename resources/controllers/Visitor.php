@@ -32,9 +32,11 @@
         }
 
         public function employees () {
-          $emps = $this->model->search();
-          if(isset($emps)){
-            $this->view->set("employees" , $emps);
+          if(isset($_GET['name'])){
+            // $employees = $this->model->search();
+            // $emps = require_once(INCLUDES_PATH . 'employees.php');
+            // echo $emps;
+            echo "hi";
           } else {
             $this->view->set("employees", $this->model->getEmployees());
           }
