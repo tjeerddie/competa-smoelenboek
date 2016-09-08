@@ -45,6 +45,8 @@
           return "Please fill in a working email field.";
         }
 
+        $values['photo'] = $this->sendPhoto();
+
         $employee_id = $this->getEmployee()->getId();
         $sql = 'UPDATE `employees` SET ';
 
@@ -63,6 +65,72 @@
         }
         $stmnt = $this->db->prepare($sql);
         $stmnt->execute($needles);
+        if($stmnt->rowCount()===1) {
+           if(!empty($values['photo'])){
+             $this->savePhoto($values['photo']);
+             return "user added";
+           }
     }
     }
+
+        public function sendPhoto() {
+        if(empty($_FILES['photo']['tmp_name'])||empty($_FILES['photo']['type'])) {
+            return "no image uploaded";
+        }
+        if(empty($_FILES['photo']['size'])||empty($_FILES['photo']['tmp_name'])) {
+            return "file too big";
+        }
+        $finfo = new \finfo(FILEINFO_MIME_TYPE);
+
+        $ext = $finfo->file($_FILES['photo']['tmp_name']);
+        $allowed = array(
+            'image/jpeg',
+            'image/png',
+            'image/gif',
+        );
+        if(!in_array($ext, $allowed)) {
+            return "wrong image type";
+        }
+        $photoName = $this->makeFileName();
+        $values['photo']=$photoName;
+        return $photoName;
+      }
+
+      private function makeFileName(){
+        $foto_tmp_name = $_FILES['photo']['tmp_name'];
+        $foto_name = $_FILES['photo']['name'];
+        $finfo = new \finfo(FILEINFO_MIME_TYPE);
+        $mime = $finfo->file($_FILES['photo']['tmp_name']);
+        $allowed = array(
+            'jpg'=>'image/jpeg',
+            'png'=>'image/png',
+            'gif'=>'image/gif',
+        );
+        $ext = array_search($mime,$allowed,true);
+        if($ext===false){
+            return false;
+        }
+        $time = getdate();
+        $theHashedName = $foto_name.$foto_tmp_name.$time[0].$time['weekday'].".$ext";
+        $teller =0;
+        $photoName = md5($theHashedName).".$ext";
+        while(file_exists(IMAGES_PATH . $theHashedName)){
+          $theHashedName = $teller.$theHashedName;
+          $photoName = md5($theHashedName).".$ext";
+          $teller++;
+        }
+        return $photoName;
+      }
+
+      private function savePhoto($photoName){
+        $photo_tmp_name = $_FILES['photo']['tmp_name'];
+        return \move_uploaded_file($photo_tmp_name, IMAGES_PATH.$photoName);
+      }
+
+      private function removePhoto($name){
+        if($name!=='default.jpg'&&  \file_exists(IMAGES_PATH.$name)){
+          unlink(IMAGES_PATH.$name);
+        }
+      }
+  }
 ?>
