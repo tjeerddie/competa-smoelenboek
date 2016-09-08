@@ -21,7 +21,7 @@
                   </figure>
                   <div class="form__group grid__column-md-7 grid__row">
                     <label class="form__label grid__column-md-4" for="inputFirstName">first name*</label>
-                    <input class="form__control grid__column-md-8" type="text" id="inputFirstName" name="firstName" value="<?= $employee->getFirstName();?>" placeholder="First name" required autofocus>
+                    <input class="form__control grid__column-md-8" type="text" id="inputFirstName" name="first_name" value="<?= $employee->getFirstName();?>" placeholder="First name" required autofocus>
                   </div>
                   <div class="form__group grid__column-md-7 grid__row">
                     <label class="form__label grid__column-md-4" for="inputLastName">last name*</label>
