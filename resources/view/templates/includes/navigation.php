@@ -23,7 +23,7 @@
     <li class="navigation__list-item">
       <a class="navigation__link" href="?control=<?= $control?>&action=<?= $control==="User"? "logout" : "login"?>">
         <div class="navigation__link__wrapper">
-          <p class="navigation__link__title"><?= isset($_SESSION['user'])? "Sign out" : "Sign in"?></p>
+          <p class="navigation__link__title"><?= !isset($_SESSION['user'])? "Sign in" : "Sign out"?></p>
           <span class="fa fa-sign-<?= $control==="User"? "out" : "in"?> navigation__link__icon" role="button"></span>
         </div>
       </a>
