@@ -4,10 +4,6 @@
     width: 100%;
   }
 
-  @include element(box) {
-    transform: translateY(10%);
-  }
-
   @include modifier(image) {
     max: {
       height: 185px;
@@ -33,5 +29,10 @@
   @include element(info) {
     display: inline-block;
     font-weight: normal;
+  }
+  @include element(message) {
+    margin: {
+      left: 380px;
+    }
   }
 }

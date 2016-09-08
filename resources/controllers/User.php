@@ -7,6 +7,10 @@
             $this->model = $this->getModel("UserModel");
             $this->view = $this->getView();
         }
+        private $messages = [
+          'Please fill in a valid email',
+          'Please fill in the required fields'
+        ];
 
         public function home () {
             $user = $this->model->getUser();
@@ -21,6 +25,10 @@
         }
 
         public function employee () {
+            if(!$this->model->postEmpty()){
+              $errorCode = $this->model->changeInfo();
+              $this->view->set("message", $errorCode);
+            }
             $this->view->set("employee", $this->model->getEmployee());
             $this->view->set("groups", $this->model->getGroups());
             $this->view->set("jobs", $this->model->getJobs());
