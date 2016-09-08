@@ -37,8 +37,8 @@
         }
 
         public function search(){
-            if(preg_match("/^[  a-zA-Z]+/", $_POST['name'])){
-                $name=filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
+            if(preg_match("/^[  a-zA-Z]+/", $_GET['name'])){
+                $name=filter_input(INPUT_GET,'name', FILTER_SANITIZE_STRING);
                 $sql="SELECT * FROM employees WHERE first_name LIKE '%" . $name .  "%' OR last_name LIKE '%" . $name ."%'";
                 $stmnt = $this->db->prepare($sql);
                 $stmnt->execute();
