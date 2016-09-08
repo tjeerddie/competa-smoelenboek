@@ -21,6 +21,9 @@
           Sign in
           <i class="fa fa-sign-in button__icon"></i>
         </button>
+        <p class="form__message form__message--left">
+          Or go <a class="form__link" href="?control=<?= $control?>&action=home">home</a>.
+        </p>
       </form>
     </div>
   </main>

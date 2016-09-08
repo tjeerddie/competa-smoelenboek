@@ -1823,6 +1823,21 @@ h6, .h6 {
 .form__message--danger {
   color: #ca202b;
 }
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__message--left {
+  margin-left: 15px;
+  margin-top: 5px;
+  text-align: left;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__link {
+  color: #1f64ae;
+}
+/* line 160, ../sass/layout/_form.scss */
+.form__link:hover, .form__link:focus {
+  color: #3A526A;
+  text-decoration: underline;
+}
 
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .main {

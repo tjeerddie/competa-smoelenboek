@@ -132,6 +132,14 @@
       color: $font-color-danger;
     }
 
+    @include modifier(left) {
+      margin: {
+        left: 15px;
+        top: 5px;
+      }
+      text-align: left;
+    }
+
     color: $font-color-base;
     font: {
       size: $font-size-base;
@@ -144,5 +152,15 @@
     position: relative;
     text-align: center;
     width: 100%;
+  }
+
+  @include element(link) {
+    color: $blue;
+
+    &:hover,
+    &:focus {
+      color: $dark-blue;
+      text-decoration: underline;
+    }
   }
 }
