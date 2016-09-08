@@ -12,7 +12,7 @@
     <?php require_once(INCLUDES_PATH . 'search.php') ?>
     <div class="grid__row">
       <?php foreach ($employees as $employee): ?>
-        <figure class="figure grid__column-xl-3 card">
+        <figure class="figure grid__column-xl-3 grid__column-lg-3 grid__column-md-4 grid__column-sm-2 grid__column-xs-1 card">
           <img class="figure__image image--fluid card__image image--rounded" src="app/img/content/<?= $employee->getPhoto() ?>" alt="<?= $employee->getFullName() ?>" />
           <div class="divider__block divider__block--blue"></div>
           <figcaption class=" figure__caption card__block">

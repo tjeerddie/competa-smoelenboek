@@ -2254,25 +2254,49 @@ h6, .h6 {
   position: relative;
   width: 23%;
 }
-/* line 26, ../sass/components/_card.scss */
+@media (max-width: 1199px) {
+  /* line 7, ../sass/abstracts/mixins/_bem.scss */
+  .card {
+    width: 31%;
+  }
+}
+@media (max-width: 991px) {
+  /* line 7, ../sass/abstracts/mixins/_bem.scss */
+  .card {
+    width: 48%;
+  }
+}
+@media (max-width: 767px) {
+  /* line 7, ../sass/abstracts/mixins/_bem.scss */
+  .card {
+    width: 48%;
+  }
+}
+@media (max-width: 543px) {
+  /* line 7, ../sass/abstracts/mixins/_bem.scss */
+  .card {
+    width: 100%;
+  }
+}
+/* line 42, ../sass/components/_card.scss */
 .card:hover .card__image {
   opacity: .25;
   transition: visibility 0s, opacity .5s linear;
   visibility: visible;
 }
-/* line 32, ../sass/components/_card.scss */
+/* line 48, ../sass/components/_card.scss */
 .card:hover .card__block {
   opacity: .25;
   transition: visibility 0s, opacity .5s linear;
   visibility: visible;
 }
-/* line 38, ../sass/components/_card.scss */
+/* line 54, ../sass/components/_card.scss */
 .card:hover .card__overlay {
   opacity: .75;
   transition: visibility 0s, opacity .5s linear;
   visibility: visible;
 }
-/* line 44, ../sass/components/_card.scss */
+/* line 60, ../sass/components/_card.scss */
 .card:hover .divider__block {
   opacity: .25;
 }
