@@ -9,7 +9,7 @@
         private $photo;
         private $description;
         private $address;
-        private $City;
+        private $city;
         private $group_id;
         private $category_id;
 
@@ -60,7 +60,7 @@
         }
 
         public function getCity () {
-            return $this->City;
+            return $this->city;
         }
 
         public function getGroupId () {

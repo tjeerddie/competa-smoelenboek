@@ -68,6 +68,11 @@
 
   @include element(control) {
 
+    @include modifier(standardButton){
+      width: 50%;
+      display: inline;
+    }
+
     @include modifier(search) {
       border: {
         bottom-right-radius: 0;
@@ -77,12 +82,10 @@
       margin-bottom: 10px;
       padding: 0;
       width: auto;
+    }
 
-      &:hover,
-      &:focus {
-        border-color: $grey;
-        outline: none;
-      }
+    @include modifier(update) {
+      height: 30px;
     }
 
     background: {
@@ -106,7 +109,14 @@
     padding: 10px;
     position: relative;
     width: 100%;
+
+    &:hover,
+    &:focus {
+      border-color: $grey;
+      outline: none;
+    }
   }
+
 
   @include element(message) {
 
