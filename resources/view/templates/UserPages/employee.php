@@ -1,14 +1,14 @@
 <?php require_once(INCLUDES_PATH . "header.php");
     require_once(INCLUDES_PATH . "navigation.php");?>
-        <main class="main">
+        <main class="main main--employee">
             <?php require_once(INCLUDES_PATH . "hamburger.php");?>
             <div class="grid__container">
-              <header class="main__header">
+              <!-- <header class="main__header">
                   <h1 class="main__heading"><?= $employee->getFullName();?></h1>
               </header>
               <div class="divider">
                   <div class="divider__block divider__block--absolute divider__block--red"></div>
-              </div>
+              </div> -->
               <form method="post" autocomplete="off">
                 <p class="employee__message"><?= isset($message) ? $message : ""?></p>
                 <div class="form__group grid__row">
@@ -71,7 +71,7 @@
                   </div>
                   <div class="form__group grid__column-xs-12 grid__row">
                     <label class="form__label grid__column-md-2" for="inputDescription">description</label>
-                    <textarea class="form-control grid__column-md-10" id="inputDescription" name="description" rows="3" value="<?= $employee->getDescription();?>" placeholder="Write here your description..."></textarea>
+                    <textarea class="form-control grid__column-md-10" id="inputDescription" name="description" rows="3" value="<?= $employee->getDescription();?>" placeholder="Write here your description..."><?= $employee->getDescription(); ?></textarea>
                   </div>
                   <div class="form__group grid__column-md-6 grid__row">
                     <label class="form__label grid__column-md-4" for="inputAddress">address</label>

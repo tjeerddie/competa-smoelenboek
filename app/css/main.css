@@ -1943,6 +1943,10 @@ h6, .h6 {
   padding: 15px;
   transition: margin-left 0s;
 }
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.main--employee {
+  margin-top: -16px;
+}
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .main__header {
   padding-top: 15px;
