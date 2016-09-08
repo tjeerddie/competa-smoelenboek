@@ -9,6 +9,7 @@ define("DB_PATH", realpath(dirname(__FILE__) . '/models/db'). "/");
 define("RESOURCES_PATH", realpath(dirname(__FILE__) . '/resources'). "/");
 define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/view/templates'). "/");
 define("INCLUDES_PATH", realpath(dirname(__FILE__) . '/view/templates/includes'). "/");
+define("IMAGES_PATH", realpath(dirname(__FILE__) . '/img/content'). "/");
 
 /*
     include data and settings that every page needs.

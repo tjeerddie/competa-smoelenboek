@@ -12,7 +12,7 @@
                     <div class="grid__column-xl-6">
                       <?= isset($message)? $message : "no message"?>
                       <div class="form__grid--employee">
-                        <form class="form__add" method="post" autocomplete="off">
+                        <form class="form__add" enctype="multipart/form-data" method="post" autocomplete="off">
                           <label class="sr=only" for="inputFirstname">First Name</label>
                           <input class="form__control" id="inputFirstname" name="first_name" placeholder="First name" required autofocus>
                           <label class="sr=only" for="inputLastname">Last Name</label>
