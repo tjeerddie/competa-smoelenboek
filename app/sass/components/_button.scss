@@ -1,6 +1,6 @@
 @include block(navigation__hamburger){
   width: 20px;
-  height: 15px;
+  height: 20px;
   border: none;
   background-color: $white;
   position: relative;
@@ -13,6 +13,8 @@
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
+
+      top: 5px;
 
   &:focus {
     outline: none;
