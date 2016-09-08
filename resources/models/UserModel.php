@@ -65,6 +65,7 @@
           if($aantalGewijzigd === 1)
           {
               $this->removeOldPhoto($oldPhoto);
+              return "succes";
           }
           return "nothing changed";
         }
@@ -116,7 +117,7 @@
         return $photoName;
         }
 
-        private function savePhoto($photoName){
+        private function savePhoto($photoName) {
         $photo_tmp_name = $_FILES['photo']['tmp_name'];
         return \move_uploaded_file($photo_tmp_name, IMAGES_PATH.$photoName);
       }
