@@ -35,7 +35,11 @@
   }
 
   @include media-breakpoint-down(xs) {
-    width: 100%;
+    margin: {
+      left: 8.33333%;
+      right: 8.33333%;
+    }
+    width: 83%;
   }
 
   &:hover {

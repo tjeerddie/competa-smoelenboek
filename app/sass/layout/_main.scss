@@ -1,7 +1,11 @@
 @include block(main) {
 
   @include media-breakpoint-down(sm) {
-    	margin-right: 0;
+    margin: {
+      left: 0;
+      right: 0;
+    }
+    min-width: 100%;
   }
 
   background: {
@@ -16,6 +20,10 @@
   transition: margin-left .5s;
 
   @include state(enlarged) {
+    @include media-breakpoint-down(sm) {
+      min-width: calc(100% - 60px);
+    }
+
     margin-left: 60px;
   }
 
