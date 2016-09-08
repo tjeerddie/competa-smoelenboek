@@ -59,10 +59,10 @@
                                           <select class="" value="<?= $group->getName();?>" name="group_name" type="text">
                                             <?php foreach ($groups as $group) :
                                               if($employee->getGroupId() === $group->getId()) {
-                                                echo '<option selected>',$group->getName(),'</option>';
+                                                echo '<option selected value="'. $group->getId() .'" >',$group->getName(),'</option>';
                                               }
                                               else{
-                                                echo '<option>',$group->getName(),'</option>';
+                                                echo '<option value="'. $group->getId() .'" >',$group->getName(),'</option>';
                                               }
                                               endforeach;?>
                                           </select>
@@ -77,10 +77,10 @@
                                 <td class="table__cell">
                                     <?php foreach ($jobs as $job) :
                                         if ($employee->getCategoryId() === $job->getId()) :?>
-                                            <select class="" value="<?= $job->getType();?>" name="job" type="text">
+                                            <select class="" name="job" type="text">
                                               <?php foreach ($jobs as $job) :
                                                 if($employee->getCategoryId() === $job->getId()) {
-                                                  echo '<option selected>',$job->getType(),'</option>';
+                                                  echo '<option selected value="'. $job->getId() .'" >',$job->getType(),'</option>';
                                                 }
                                                 else{
                                                   echo '<option value="'. $job->getId() .'" >',$job->getType(),'</option>';
@@ -117,6 +117,7 @@
                             </tr>
                         </table>
                           <button class="" type="submit" name="update" role="button">update</button>
+                          <button type="reset" value="Reset">reset</button>
                       </form>
                     </div>
                 </div>
