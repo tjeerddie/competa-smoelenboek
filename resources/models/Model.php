@@ -25,7 +25,12 @@
             $stmnt = $this->db->prepare($sql);
             $stmnt->execute();
             $employee = $stmnt->fetchAll(\PDO::FETCH_CLASS,'Employee');
-            return $employee[0];
+            if ( ! isset($employee[0])) {
+            }
+            else{
+              return $employee[0];
+            }
+
         }
 
         public function getEmployees() {

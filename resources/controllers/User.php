@@ -35,6 +35,12 @@
             $this->view->show("User", "employee");
         }
 
+        public function delete () {
+          $this->model->delete();
+          $this->view->set("employees", $this->model->getEmployees());
+          $this->view->show("User", "employees");
+        }
+
         public function logout () {
             $this->model->logout();
             header('Location: ' ."http://localhost:8080/competa-smoelenboek/?control=Visitor&action=home");
