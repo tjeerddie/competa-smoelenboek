@@ -30,8 +30,6 @@
         $values['first_name'] = filter_input(INPUT_POST,'first_name');
         $values['last_name'] = filter_input(INPUT_POST,'last_name');
         $values['phone_number'] = filter_input(INPUT_POST,'phone_number');
-        $values['address'] = filter_input(INPUT_POST,'address');
-        $values['city'] = filter_input(INPUT_POST,'city');
         $values['group_id'] = filter_input(INPUT_POST,'group_name', FILTER_VALIDATE_INT);
         $values['category_id'] = filter_input(INPUT_POST,'job', FILTER_VALIDATE_INT);
         $values['email'] = filter_input(INPUT_POST,'email', FILTER_VALIDATE_EMAIL);
