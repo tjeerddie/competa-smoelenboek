@@ -14,19 +14,19 @@
                       <div class="form__grid--employee">
                         <form class="form__add" method="post" autocomplete="off">
                           <label class="sr=only" for="inputFirstname">First Name</label>
-                          <input class="form__control" id="inputFirstname" name="firstname" placeholder="First name" required autofocus>
+                          <input class="form__control" id="inputFirstname" name="first_name" placeholder="First name" required autofocus>
                           <label class="sr=only" for="inputLastname">Last Name</label>
-                          <input class="form__control" id="inputLastname" name="lastname" placeholder="Last name" required>
+                          <input class="form__control" id="inputLastname" name="last_name" placeholder="Last name" required>
                           <label class="sr=only" for="inputEmail">email</label>
                           <input class="form__control" id="inputEmail" name="email" placeholder="E-mail" required>
                           <label class="sr=only" for="inputPhoneNumber">Phone number</label>
-                          <input class="form__control" id="inputPhoneNumber" name="phonenumber" placeholder="Phonenumber" required>
+                          <input class="form__control" id="inputPhoneNumber" name="phone_number" placeholder="Phonenumber" required>
                           <label class="sr=only" for="inputPhoto">Photo</label>
                           <input type="file" id="inputPhoto" name="photo"  accept='image/*'>
                           <label class="sr=only" for="inputGroupId">Group_Id</label>
-                          <input class="form__control" id="inputGroupId" name="group" placeholder="Group Id" required>
+                          <input class="form__control" id="inputGroupId" name="group_id" placeholder="Group Id" required>
                           <label class="sr=only" for="inputCategoryId">Category_Id</label>
-                          <input class="form__control" id="inputCategoryId" name="job" placeholder="Category Id" required>
+                          <input class="form__control" id="inputCategoryId" name="job_id" placeholder="Category Id" required>
 
                           <button class="button button--primary button--block" type="submit" name="submit" role="button">
                             Submit
