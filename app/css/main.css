@@ -1,6 +1,6 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Roboto:100,300,400,500,700,900";
 /* line 2, ../sass/abstracts/placeholders/_clearfix.scss */
-.grid__container::after, .grid__row::after, .header::after, .card__block::after {
+.grid__container::after, .grid__row::after, .header::after, .card__block::after, .sub-menu::after {
   content: "";
   display: table;
   clear: both;
@@ -579,6 +579,199 @@ h6, .h6 {
 .fa {
   font-size: 1.5rem !important;
   line-height: 1.5;
+}
+
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__logo {
+  height: 75px;
+  margin-bottom: 10px;
+  position: relative;
+  width: 100%;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__logo--photo {
+  border-bottom-color: #e6e6e6;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  height: 308px;
+  margin-bottom: 0;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__image {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__sign-in {
+  background-color: white;
+  border-color: #e6e6e6;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 350px;
+  padding: 15px;
+  position: relative;
+  transform: translateY(50%);
+}
+/* line 54, ../sass/layout/_form.scss */
+.form__sign-in .form__control[type="text"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: -1px;
+}
+/* line 68, ../sass/layout/_form.scss */
+.form__sign-in .form__control[type="password"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: 10px;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__label {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  padding-bottom: 0.75rem;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+@media (max-width: 1199px) {
+  /* line 14, ../sass/abstracts/mixins/_bem.scss */
+  .form__label {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 767px) {
+  /* line 14, ../sass/abstracts/mixins/_bem.scss */
+  .form__label {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 543px) {
+  /* line 14, ../sass/abstracts/mixins/_bem.scss */
+  .form__label {
+    font-size: 0.75rem;
+  }
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__control {
+  background-clip: padding-box;
+  background-color: white;
+  background-image: none;
+  border-color: rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 1px;
+  color: #3d3d3d;
+  display: block;
+  font-size: 1rem;
+  height: auto;
+  line-height: 1.5;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__control--file {
+  display: block;
+  font-size: 1.25rem;
+  margin-top: 240px;
+  overflow: hidden;
+  width: 100%;
+}
+@media (max-width: 1199px) {
+  /* line 22, ../sass/abstracts/mixins/_bem.scss */
+  .form__control--file {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 767px) {
+  /* line 22, ../sass/abstracts/mixins/_bem.scss */
+  .form__control--file {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 543px) {
+  /* line 22, ../sass/abstracts/mixins/_bem.scss */
+  .form__control--file {
+    font-size: 0.75rem;
+  }
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__control--standardButton {
+  width: 50%;
+  display: inline;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__control--search {
+  border-radius: 0;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  padding: 0;
+  width: auto;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__control--update {
+  height: 30px;
+}
+/* line 182, ../sass/layout/_form.scss */
+.form__control:hover, .form__control:focus {
+  border-color: #3d3d3d;
+  outline: none;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__message {
+  color: #3d3d3d;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  /* line 14, ../sass/abstracts/mixins/_bem.scss */
+  .form__message {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 543px) {
+  /* line 14, ../sass/abstracts/mixins/_bem.scss */
+  .form__message {
+    font-size: 0.75rem;
+  }
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__message--danger {
+  color: #ca202b;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__message--left {
+  margin-left: 15px;
+  margin-top: 5px;
+  text-align: left;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__link {
+  color: #1f64ae;
+}
+/* line 229, ../sass/layout/_form.scss */
+.form__link:hover, .form__link:focus {
+  color: #3A526A;
+  text-decoration: underline;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__group {
+  border-bottom-color: #e6e6e6;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
@@ -1716,129 +1909,6 @@ h6, .h6 {
   list-style-type: none;
 }
 
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.form__logo {
-  height: 75px;
-  margin-bottom: 10px;
-  position: relative;
-  width: 100%;
-}
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.form__image {
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-}
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.form__sign-in {
-  background-color: white;
-  border-color: #e6e6e6;
-  border-radius: 0.25rem;
-  border-style: solid;
-  border-width: 1px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 350px;
-  padding: 15px;
-  position: relative;
-  transform: translateY(50%);
-}
-/* line 38, ../sass/layout/_form.scss */
-.form__sign-in .form__control[type="text"] {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  margin-bottom: -1px;
-}
-/* line 52, ../sass/layout/_form.scss */
-.form__sign-in .form__control[type="password"] {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  margin-bottom: 10px;
-}
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.form__control {
-  background-clip: padding-box;
-  background-color: white;
-  background-image: none;
-  border-color: rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
-  border-style: solid;
-  border-width: 1px;
-  color: #3d3d3d;
-  display: block;
-  font-size: 1rem;
-  height: auto;
-  line-height: 1.5;
-  padding: 10px;
-  position: relative;
-  width: 100%;
-}
-/* line 22, ../sass/abstracts/mixins/_bem.scss */
-.form__control--standardButton {
-  width: 50%;
-  display: inline;
-}
-/* line 22, ../sass/abstracts/mixins/_bem.scss */
-.form__control--search {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  display: inline-block;
-  margin-bottom: 10px;
-  padding: 0;
-  width: auto;
-}
-/* line 22, ../sass/abstracts/mixins/_bem.scss */
-.form__control--update {
-  height: 30px;
-}
-/* line 113, ../sass/layout/_form.scss */
-.form__control:hover, .form__control:focus {
-  border-color: #3d3d3d;
-  outline: none;
-}
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.form__message {
-  color: #3d3d3d;
-  font-size: 1rem;
-  margin-bottom: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  text-align: center;
-  width: 100%;
-}
-@media (max-width: 767px) {
-  /* line 14, ../sass/abstracts/mixins/_bem.scss */
-  .form__message {
-    font-size: 0.875rem;
-  }
-}
-@media (max-width: 543px) {
-  /* line 14, ../sass/abstracts/mixins/_bem.scss */
-  .form__message {
-    font-size: 0.75rem;
-  }
-}
-/* line 22, ../sass/abstracts/mixins/_bem.scss */
-.form__message--danger {
-  color: #ca202b;
-}
-/* line 22, ../sass/abstracts/mixins/_bem.scss */
-.form__message--left {
-  margin-left: 15px;
-  margin-top: 5px;
-  text-align: left;
-}
-/* line 14, ../sass/abstracts/mixins/_bem.scss */
-.form__link {
-  color: #1f64ae;
-}
-/* line 160, ../sass/layout/_form.scss */
-.form__link:hover, .form__link:focus {
-  color: #3A526A;
-  text-decoration: underline;
-}
-
 /* line 7, ../sass/abstracts/mixins/_bem.scss */
 .main {
   background-color: white;
@@ -1872,6 +1942,10 @@ h6, .h6 {
   margin: 0;
   padding: 15px;
   transition: margin-left 0s;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.main--employee {
+  margin-top: 0;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .main__header {
@@ -2229,6 +2303,15 @@ h6, .h6 {
 .button--search .fa {
   font-size: 25px !important;
 }
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.button--delete {
+  padding: 0 .1rem;
+  margin-right: 15px;
+  background-color: #ca202b;
+  float: right;
+  border: #ca202b;
+  color: white;
+}
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .button__icon {
   position: relative;
@@ -2395,6 +2478,48 @@ h6, .h6 {
   visibility: hidden;
 }
 
+/* line 7, ../sass/abstracts/mixins/_bem.scss */
+.sub-menu {
+  border-bottom-color: #e6e6e6;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-top-color: #e6e6e6;
+  border-top-style: solid;
+  border-top-width: 1px;
+  height: 60px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  position: relative;
+  width: 100%;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.sub-menu--left {
+  float: left;
+  position: relative;
+  width: auto;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.sub-menu--button {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  float: left;
+  height: 26px;
+  line-height: 1px;
+  margin-bottom: 10px;
+  margin-right: -5px;
+  padding: 5px;
+  padding-right: 0;
+  position: relative;
+  top: 4px;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.sub-menu--icon {
+  margin-top: -5px;
+}
+
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__list {
   position: relative;
@@ -2425,5 +2550,6 @@ h6, .h6 {
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__message {
-  margin-left: 380px;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -12,9 +12,9 @@
 'base/typography';
 
 @import
+'layout/form',
 'layout/grid',
 'layout/list',
-'layout/form',
 'layout/main',
 'layout/image',
 'layout/header',
@@ -25,7 +25,8 @@
 @import
 'components/button',
 'components/divider',
-'components/card';
+'components/card',
+'components/sub-menu';
 
 @import
 'pages/home',

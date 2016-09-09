@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../../build/css/smoelenboek.min.css">
   </head>
   <body>
-      <div id="header">
-          <h1>Error</h1>
-      </div>
+    <div id="header">
+      <h1>Error</h1>
+    </div>
   </body>
 </html>
