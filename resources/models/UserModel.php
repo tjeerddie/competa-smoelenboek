@@ -68,17 +68,13 @@
         if($stmnt->rowCount()===1) {
            if(!empty($values['photo'])){
              $this->savePhoto($values['photo']);
-             return "user added";
            }
-    }
+         }
     }
 
         public function sendPhoto() {
-        if(empty($_FILES['photo']['tmp_name'])||empty($_FILES['photo']['type'])) {
+        if(!isset($_FILES['photo']['size'])||isset($_FILES['photo']['tmp_name'])) {
             return "no image uploaded";
-        }
-        if(empty($_FILES['photo']['size'])||empty($_FILES['photo']['tmp_name'])) {
-            return "file too big";
         }
         $finfo = new \finfo(FILEINFO_MIME_TYPE);
 
@@ -93,6 +89,8 @@
         }
         $photoName = $this->makeFileName();
         $values['photo']=$photoName;
+        $oldPhoto = $this->getEmployee()->getPhoto();
+        $this->removePhoto($oldPhoto);
         return $photoName;
       }
 
@@ -112,12 +110,12 @@
         }
         $time = getdate();
         $theHashedName = $foto_name.$foto_tmp_name.$time[0].$time['weekday'].".$ext";
-        $teller =0;
+        $counter =0;
         $photoName = md5($theHashedName).".$ext";
         while(file_exists(IMAGES_PATH . $theHashedName)){
-          $theHashedName = $teller.$theHashedName;
+          $theHashedName = $counter.$theHashedName;
           $photoName = md5($theHashedName).".$ext";
-          $teller++;
+          $counter++;
         }
         return $photoName;
       }
@@ -128,7 +126,7 @@
       }
 
       private function removePhoto($name){
-        if($name!=='default.jpg'&&  \file_exists(IMAGES_PATH.$name)){
+        if($name!=='default.jpg'&& file_exists(\IMAGES_PATH.$name)){
           unlink(IMAGES_PATH.$name);
         }
       }
