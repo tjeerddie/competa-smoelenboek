@@ -21,7 +21,7 @@
 
         public function employees () {
           $this->view->set("employees", $this->model->getEmployees());
-          $this->view->show("Visitor", "employees");
+          $this->view->show("User", "employees");
         }
 
         public function search () {
