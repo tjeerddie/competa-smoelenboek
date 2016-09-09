@@ -45,7 +45,23 @@
           return "Please fill in a working email field.";
         }
 
-        $values['photo'] = $this->sendPhoto();
+        $result = $this->sendPhoto();
+        switch($result) {
+            case 1:
+                  $values['photo'] = $this->getEmployee()->getPhoto();
+                break;
+            case 2:
+                $values['photo'] = $this->getEmployee()->getPhoto();
+                break;
+            case 3:
+                $values['photo'] = $this->getEmployee()->getPhoto();
+                break;
+            case 4:
+                $oldPhoto = $this->getEmployee()->getPhoto();
+                $photoName = $this->makeFileName();
+                $values['photo'] = $photoName;
+                break;
+        }
 
         $employee_id = $this->getEmployee()->getId();
         $sql = 'UPDATE `employees` SET ';
@@ -66,18 +82,21 @@
         $stmnt = $this->db->prepare($sql);
         $stmnt->execute($needles);
         if($stmnt->rowCount()===1) {
-           if(!empty($values['photo'])){
+           if(!empty($photoName)){
+             $this->removePhoto($oldPhoto);
              $this->savePhoto($values['photo']);
            }
          }
-    }
+       }
 
         public function sendPhoto() {
-        if(!isset($_FILES['photo']['size'])||isset($_FILES['photo']['tmp_name'])) {
-            return "no image uploaded";
+        if(empty($_FILES['photo']['tmp_name'])||empty($_FILES['photo']['type'])) {
+            return 1;
+        }
+        if(empty($_FILES['photo']['size'])||empty($_FILES['photo']['tmp_name'])) {
+            return 2;
         }
         $finfo = new \finfo(FILEINFO_MIME_TYPE);
-
         $ext = $finfo->file($_FILES['photo']['tmp_name']);
         $allowed = array(
             'image/jpeg',
@@ -85,13 +104,9 @@
             'image/gif',
         );
         if(!in_array($ext, $allowed)) {
-            return "wrong image type";
+            return 3;
         }
-        $photoName = $this->makeFileName();
-        $values['photo']=$photoName;
-        $oldPhoto = $this->getEmployee()->getPhoto();
-        $this->removePhoto($oldPhoto);
-        return $photoName;
+        return 4;
       }
 
       private function makeFileName(){
@@ -125,9 +140,9 @@
         return \move_uploaded_file($photo_tmp_name, IMAGES_PATH.$photoName);
       }
 
-      private function removePhoto($name){
-        if($name!=='default.jpg'&& file_exists(\IMAGES_PATH.$name)){
-          unlink(IMAGES_PATH.$name);
+      private function removePhoto($photoName){
+        if($photoName!=='default.jpg' && file_exists(IMAGES_PATH . $photoName)){
+          unlink(IMAGES_PATH . $photoName);
         }
       }
   }
