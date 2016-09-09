@@ -10,8 +10,10 @@
       <p class="card__text">Click to edit or see more about</p>
       <p class="card__text"><?= $employee->getfirstName() . ' ' . $employee->getlastName() ?></p>
     </a>
-    <a class="button button--delete" href="?control=User&action=delete&id=<?= $employee->getId()?>" type="submit" name="delete" role="button">
-      <i class="fa fa-user-times"></i>
-    </a>
+    <?php if($_GET['control'] === "User"):?>
+      <a class="button button--delete" href="?control=User&action=delete&id=<?= $employee->getId()?>" type="submit" name="delete" role="button">
+        <i class="fa fa-user-times"></i>
+      </a>
+    <?php endif;?>
   </figure>
 <?php endforeach; ?>

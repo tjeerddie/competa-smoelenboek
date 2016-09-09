@@ -25,12 +25,10 @@
         }
 
         public function search () {
-          if(isset($_GET['name'])){
-            $employees = $this->model->search();
-            $this->view->set("employees", $employees);
-            require_once(INCLUDES_PATH . 'employees.php');
-            return;
-          }
+          $employees = $this->model->search();
+          $this->view->set("employees", $employees);
+          require_once(INCLUDES_PATH . 'employees.php');
+          return;
         }
 
         public function employee () {
