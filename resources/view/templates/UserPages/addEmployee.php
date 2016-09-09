@@ -49,8 +49,7 @@
                     <textarea class="form-control grid__column-md-10" id="inputDescription" name="description" rows="3" placeholder="Write here your description..."></textarea>
                   </div>
                   <div class="form__group grid__row grid__column-md-6 grid__column--offset-md-3">
-                    <button class="button button--primary grid__column-md-5" type="submit" name="update" role="button">add</button>
-                    <button class="button button--delete grid__column-md-5" type="reset" value="Reset">reset</button>
+                    <button class="button button--primary grid__column-md-5 block--center" type="submit" name="add" role="button">add</button>
                   </div>
                 </div>
               </form>
