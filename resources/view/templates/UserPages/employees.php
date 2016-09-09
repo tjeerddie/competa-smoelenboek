@@ -10,7 +10,6 @@
       <div class="divider__block divider__block--absolute divider__block--red"></div>
     </div>
     <?php require_once(INCLUDES_PATH . 'search.php') ?>
-    <a class="fa fa-user-plus" href="?control=User&action=addEmployee"></a>
     <div class="grid__row">
       <?php foreach ($employees as $employee): ?>
         <figure class="figure grid__column-xl-3 grid__column-lg-3 grid__column-md-4 grid__column-sm-2 grid__column-xs-1 card">

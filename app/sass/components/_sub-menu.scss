@@ -1,0 +1,53 @@
+@include block(sub-menu) {
+  @extend %clearfix;
+  @include modifier(left) {
+    float: left;
+    position: relative;
+    width: auto;
+  }
+
+  @include modifier(button) {
+    border: {
+      bottom-right-radius: 0;
+      top-right-radius: 0;
+    }
+    float: left;
+    height: 26px;
+    line-height: 1px;
+    margin: {
+      bottom: 10px;
+      right: -5px;
+    }
+    padding: 5px;
+    padding-right: 0;
+    position: relative;
+    top: 4px;
+  }
+
+  @include modifier(icon) {
+    margin-top: -5px;
+  }
+
+  border: {
+    bottom: {
+      color: $border-color;
+      style: $border-style;
+      width: $border-width;
+    }
+    top: {
+      color: $border-color;
+      style: $border-style;
+      width: $border-width;
+    }
+  }
+  height: 60px;
+  margin-bottom: 15px;
+  padding: {
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    top: 15px;
+  }
+  position: relative;
+  width: 100%;
+}
