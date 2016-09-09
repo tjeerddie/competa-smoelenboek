@@ -36,6 +36,10 @@
     transition: margin-left 0s;
   }
 
+  @include modifier(employee) {
+    margin-top: 0;
+  }
+
   @include element(header) {
     padding-top: 15px;
     position: relative;
