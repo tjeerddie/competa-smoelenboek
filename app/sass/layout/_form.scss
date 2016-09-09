@@ -1,5 +1,21 @@
 @include block(form) {
   @include element(logo) {
+    @include modifier(photo) {
+      border: {
+        bottom: {
+          color: $border-color;
+          style: $border-style;
+          width: $border-width;
+        }
+      }
+      height: 308px;
+      margin-bottom: 0;
+      padding: {
+        bottom: 15px;
+        top: 15px;
+      }
+    }
+
     height: 75px;
     margin: {
       bottom: 10px;
@@ -66,7 +82,60 @@
     }
   }
 
+  @include element(label) {
+    @include media-breakpoint-down(lg) {
+      font: {
+        size: $font-size-base;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      font: {
+        size: $font-size-sm;
+      }
+    }
+    @include media-breakpoint-down(xs) {
+      font: {
+        size: $font-size-xs;
+      }
+    }
+
+    font: {
+      size: $font-size-lg;
+    }
+    margin-bottom: 0;
+    padding: {
+      bottom: $input-padding-x;
+      top: $input-padding-y;
+    }
+    text-align: center;
+  }
+
   @include element(control) {
+
+    @include modifier(file) {
+      @include media-breakpoint-down(lg) {
+        font: {
+          size: $font-size-base;
+        }
+      }
+      @include media-breakpoint-down(sm) {
+        font: {
+          size: $font-size-sm;
+        }
+      }
+      @include media-breakpoint-down(xs) {
+        font: {
+          size: $font-size-xs;
+        }
+      }
+      display: block;
+      font: {
+        size: $font-size-lg;
+      }
+      margin-top: 240px;
+      overflow: hidden;
+      width: 100%;
+    }
 
     @include modifier(standardButton){
       width: 50%;
@@ -161,6 +230,20 @@
     &:focus {
       color: $dark-blue;
       text-decoration: underline;
+    }
+  }
+
+  @include element(group) {
+    border: {
+      bottom: {
+        color: $border-color;
+        style: $border-style;
+        width: $border-width;
+      }
+    }
+    padding: {
+      bottom: 15px;
+      top: 15px;
     }
   }
 }
