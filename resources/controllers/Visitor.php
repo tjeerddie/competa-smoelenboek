@@ -22,7 +22,7 @@
               $this->view->set("message", $this->messages[0]);
             } else {
                 if($this->model->login()){
-                    header('Location: ' ."http://localhost:8080/competa-smoelenboek/?control=User&action=home");
+                    header('Location:?control=User&action=home');
                 } else {
                     $this->view->set("message", $this->messages[1]);
                     $this->view->set("failedToSignIn", true);
@@ -40,7 +40,7 @@
           if(isset($_GET['name'])){
             $employees = $this->model->search();
             $this->view->set("employees", $employees);
-            echo require_once(INCLUDES_PATH . 'employees.php');
+            require_once(INCLUDES_PATH . 'employees.php');
             return;
           }
         }
