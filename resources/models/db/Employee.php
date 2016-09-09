@@ -2,14 +2,10 @@
     class Employee {
         private $id;
         private $first_name;
-        private $middle_name;
         private $last_name;
         private $email;
         private $phone_number;
         private $photo;
-        private $description;
-        private $address;
-        private $City;
         private $group_id;
         private $category_id;
 
@@ -27,16 +23,12 @@
             return $this->first_name;
         }
 
-        public function getMiddleName () {
-            return $this->middle_name;
-        }
-
         public function getLastName () {
             return $this->last_name;
         }
 
         public function getFullName () {
-            return $this->first_name ." " . $this->middle_name . " " . $this->last_name;
+            return $this->first_name . " " . $this->last_name;
         }
 
         public function getEmail () {
@@ -49,18 +41,6 @@
 
         public function getPhoto () {
             return $this->photo;
-        }
-
-        public function getDescription () {
-            return $this->description;
-        }
-
-        public function getAddress () {
-            return $this->address;
-        }
-
-        public function getCity () {
-            return $this->City;
         }
 
         public function getGroupId () {
