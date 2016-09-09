@@ -1,6 +1,6 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Roboto:100,300,400,500,700,900";
 /* line 2, ../sass/abstracts/placeholders/_clearfix.scss */
-.grid__container::after, .grid__row::after, .header::after, .card__block::after {
+.grid__container::after, .grid__row::after, .header::after, .card__block::after, .sub-menu::after {
   content: "";
   display: table;
   clear: both;
@@ -707,10 +707,10 @@ h6, .h6 {
 }
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .form__control--search {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
+  border-radius: 0;
   display: inline-block;
   margin-bottom: 10px;
+  margin-left: 5px;
   padding: 0;
   width: auto;
 }
@@ -1945,7 +1945,7 @@ h6, .h6 {
 }
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .main--employee {
-  margin-top: -16px;
+  margin-top: 0;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .main__header {
@@ -2478,6 +2478,48 @@ h6, .h6 {
   visibility: hidden;
 }
 
+/* line 7, ../sass/abstracts/mixins/_bem.scss */
+.sub-menu {
+  border-bottom-color: #e6e6e6;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-top-color: #e6e6e6;
+  border-top-style: solid;
+  border-top-width: 1px;
+  height: 60px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  position: relative;
+  width: 100%;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.sub-menu--left {
+  float: left;
+  position: relative;
+  width: auto;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.sub-menu--button {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  float: left;
+  height: 26px;
+  line-height: 1px;
+  margin-bottom: 10px;
+  margin-right: -5px;
+  padding: 5px;
+  padding-right: 0;
+  position: relative;
+  top: 4px;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.sub-menu--icon {
+  margin-top: -5px;
+}
+
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__list {
   position: relative;
@@ -2508,5 +2550,6 @@ h6, .h6 {
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__message {
-  margin-left: 380px;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -3,14 +3,7 @@
         <main class="main main--employee">
             <?php require_once(INCLUDES_PATH . "hamburger.php");?>
             <div class="grid__container">
-              <!--<header class="main__header">
-                  <h1 class="main__heading"><?= $employee->getFullName();?></h1>
-              </header>
-              <div class="divider">
-                  <div class="divider__block divider__block--absolute divider__block--red"></div>
-              </div>-->
               <form method="post" enctype="multipart/form-data" autocomplete="off">
-                <p class="employee__message"><?= isset($message) ? $message : ""?></p>
                 <div class="form__group grid__row">
                   <figure class="figure form__logo form__logo--photo grid__column-md-5">
                     <img class="figure__image form__image employee--image" src="app/img/content/<?= $employee->getPhoto();?>" alt="Photo of <?= $employee->getFullName();?>" />
@@ -38,35 +31,35 @@
                   <div class="form__group grid__column-md-5 grid__row">
                     <label class="form__label grid__column-md-4" for="inputJob">job*</label>
                     <?php foreach ($jobs as $job) :
-                        if ($employee->getCategoryId() === $job->getId()) :?>
-                            <select class="form__control grid__column-md-8" id="inputJob" name="job">
-                              <?php foreach ($jobs as $job) :
-                                if($employee->getCategoryId() === $job->getId()) {
-                                  echo '<option selected value="'. $job->getId() .'" >',$job->getType(),'</option>';
-                                }
-                                else{
-                                  echo '<option value="'. $job->getId() .'" >',$job->getType(),'</option>';
-                                }
-                                endforeach;?>
-                            </select>
-                        <?php endif;
+                      if ($employee->getCategoryId() === $job->getId()) :?>
+                        <select class="form__control grid__column-md-8" id="inputJob" name="job_id">
+                        <?php foreach ($jobs as $job) :
+                          if($employee->getCategoryId() === $job->getId()) {
+                            echo '<option selected value="'. $job->getId() .'" >',$job->getType(),'</option>';
+                          }
+                          else{
+                            echo '<option value="'. $job->getId() .'" >',$job->getType(),'</option>';
+                          }
+                          endforeach;?>
+                        </select>
+                      <?php endif;
                     endforeach;?>
                   </div>
                   <div class="form__group grid__column-md-7 grid__row">
                     <label class="form__label grid__column-md-4" for="selectGroupName">group</label>
                     <?php foreach ($groups as $group) :
-                        if ($employee->getGroupId() === $group->getId()) :?>
-                            <select class="form__control grid__column-md-8" id="selectGroupName" name="group_name" value="<?= $group->getName();?>">
-                              <?php foreach ($groups as $group) :
-                                if($employee->getGroupId() === $group->getId()) {
-                                  echo '<option selected value="'. $group->getId() .'" >',$group->getName(),'</option>';
-                                }
-                                else{
-                                  echo '<option value="'. $group->getId() .'" >',$group->getName(),'</option>';
-                                }
-                                endforeach;?>
-                            </select>
-                        <?php endif;
+                      if ($employee->getGroupId() === $group->getId()) :?>
+                        <select class="form__control grid__column-md-8" id="selectGroupName" name="group_id" value="<?= $group->getName();?>">
+                          <?php foreach ($groups as $group) :
+                            if($employee->getGroupId() === $group->getId()) {
+                              echo '<option selected value="'. $group->getId() .'" >',$group->getName(),'</option>';
+                            }
+                            else{
+                              echo '<option value="'. $group->getId() .'" >',$group->getName(),'</option>';
+                            }
+                            endforeach;?>
+                        </select>
+                      <?php endif;
                     endforeach;?>
                   </div>
                   <div class="form__group grid__column-xs-12 grid__row">
@@ -79,8 +72,7 @@
                   </div>
                 </div>
               </form>
+              <p class="employee__message"><?= isset($message) ? $message : ""?></p>
             </div>
         </main>
-
-
 <?php    require_once(INCLUDES_PATH . "footer.php");?>

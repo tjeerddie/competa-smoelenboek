@@ -32,7 +32,8 @@
   }
   @include element(message) {
     margin: {
-      left: 380px;
+      left: auto;
+      right: auto;
     }
   }
 }

@@ -37,7 +37,7 @@
   }
 
   @include modifier(employee) {
-    margin-top: -16px;
+    margin-top: 0;
   }
 
   @include element(header) {
