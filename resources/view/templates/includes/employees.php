@@ -6,7 +6,7 @@
       <h4 class="card__title"><?= $employee->getfirstName() ?></h4>
       <h4 class="card__title"><?= $employee->getlastName() ?></h4>
     </figcaption>
-    <a class="card__overlay" href="?control=User&action=employee&id=<?= $employee->getId()?>">
+    <a class="card__overlay" href="?control=<?= $_GET['control']?>&action=employee&id=<?= $employee->getId()?>">
       <p class="card__text">Click to edit or see more about</p>
       <p class="card__text"><?= $employee->getfirstName() . ' ' . $employee->getlastName() ?></p>
     </a>
