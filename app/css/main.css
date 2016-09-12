@@ -2613,6 +2613,10 @@ h6, .h6 {
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .employee__message {
+  border: 1px solid #1f64ae;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  text-align: center;
+  width: 30%;
 }

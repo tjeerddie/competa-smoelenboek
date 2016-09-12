@@ -31,9 +31,13 @@
     font-weight: normal;
   }
   @include element(message) {
+    border: 1px solid $blue;
     margin: {
       left: auto;
       right: auto;
     }
+    position: relative;
+    text-align: center;
+    width: 30%;
   }
 }
