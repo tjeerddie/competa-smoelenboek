@@ -106,12 +106,6 @@
                 $values['photo'] = $this->getEmployee()->getPhoto();
                 break;
             case 2:
-                $values['photo'] = $this->getEmployee()->getPhoto();
-                break;
-            case 3:
-                $values['photo'] = $this->getEmployee()->getPhoto();
-                break;
-            case 4:
                 $oldPhoto = $this->getEmployee()->getPhoto();
                 $photoName = $this->makeFileName();
                 $values['photo'] = $photoName;
@@ -162,7 +156,7 @@
           return 1;
         }
         if(empty($_FILES['photo']['size'])||empty($_FILES['photo']['tmp_name'])) {
-          return 2;
+          return 1;
         }
         $finfo = new \finfo(FILEINFO_MIME_TYPE);
         $ext = $finfo->file($_FILES['photo']['tmp_name']);
@@ -172,9 +166,9 @@
           'image/gif',
         );
         if(!in_array($ext, $allowed)) {
-          return 3;
+          return 1;
         }
-        return 4;
+        return 2;
       }
 
       private function makeFileName(){
