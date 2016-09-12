@@ -8,11 +8,22 @@
           width: $border-width;
         }
       }
-      height: 308px;
+      height: 324px;
       margin-bottom: 0;
       padding: {
         bottom: 15px;
         top: 15px;
+      }
+      @include media-breakpoint-down(lg) {
+        height: 308px;
+        padding-top: 0px;
+      }
+      @include media-breakpoint-down(md) {
+        height: 275px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        height: 200px;
       }
     }
 
@@ -107,11 +118,16 @@
       bottom: $input-padding-x;
       top: $input-padding-y;
     }
-    text-align: center;
   }
 
   @include element(control) {
 
+    @include modifier(textarea) {
+      @include media-breakpoint-between(sm, md) {
+        width: 100%;
+        margin-left: -15px;
+      }
+    }
     @include modifier(file) {
       @include media-breakpoint-down(lg) {
         font: {
@@ -233,7 +249,27 @@
     }
   }
 
+  @include element(margin) {
+    padding: {
+      top: 15px;
+    }
+  }
+
   @include element(group) {
+
+    @include media-breakpoint-down(xs) {
+      margin-left: 15px !important;
+    }
+
+    @include modifier(lastRows) {
+      margin-left: 15px !important;
+    }
+
+    @include media-breakpoint-between(sm,md) {
+      width: 90%;
+      margin-left: 10px !important;
+    }
+
     border: {
       bottom: {
         color: $border-color;
