@@ -72,7 +72,6 @@
                   </div>
                 </div>
               </form>
-              <p class="employee__message"><?= isset($message) ? $message : ""?></p>
             </div>
         </main>
 <?php    require_once(INCLUDES_PATH . "footer.php");?>
