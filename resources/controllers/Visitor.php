@@ -18,26 +18,28 @@
       }
 
       public function login () {
-        if($this->model->postEmpty()) {
-          $this->view->set("message", $this->messages[0]);
-        } else {
-          if($this->model->login()){
-            header('Location: ' ."http://localhost:8080/competa-smoelenboek/?control=User&action=home");
+          if($this->model->postEmpty()) {
+            $this->view->set("message", $this->messages[0]);
           } else {
-            $this->view->set("message", $this->messages[1]);
-            $this->view->set("failedToSignIn", true);
+              if($this->model->login()){
+                  header('Location:?control=User&action=home');
+              } else {
+                  $this->view->set("message", $this->messages[1]);
+                  $this->view->set("failedToSignIn", true);
+              }
           }
-        }
-        $this->view->show("Visitor", "login");
+          $this->view->show("Visitor", "login");
+      }
+
+      public function search () {
+        $employees = $this->model->search();
+        $this->view->set("employees", $employees);
+        require_once(INCLUDES_PATH . 'employees.php');
+        return;
       }
 
       public function employees () {
-        $employees = $this->model->search();
-        if(isset($employees)){
-          $this->view->set("employees" , $employees);
-        } else {
-          $this->view->set("employees", $this->model->getEmployees());
-        }
+        $this->view->set("employees", $this->model->getEmployees());
         $this->view->show("Visitor", "employees");
       }
 

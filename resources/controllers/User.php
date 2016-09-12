@@ -20,13 +20,15 @@
         }
 
         public function employees () {
-          $employees = $this->model->search();
-          if(isset($employees)){
-            $this->view->set("employees" , $employees);
-          } else {
-            $this->view->set("employees", $this->model->getEmployees());
-          }
+          $this->view->set("employees", $this->model->getEmployees());
           $this->view->show("User", "employees");
+        }
+
+        public function search () {
+          $employees = $this->model->search();
+          $this->view->set("employees", $employees);
+          require_once(INCLUDES_PATH . 'employees.php');
+          return;
         }
 
         public function employee () {
