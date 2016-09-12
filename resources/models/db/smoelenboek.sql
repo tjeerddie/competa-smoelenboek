@@ -60,8 +60,8 @@ INSERT INTO `job_categories` (`id`, `type`) VALUES
 (1, 'Frontend'),
 (2, 'Backend'),
 (3, 'Fullstack'),
-(5, 'Designer'),
-(4, 'Intern');
+(4, 'Intern'),
+(5, 'Designer');
 
 CREATE TABLE IF NOT EXISTS `users`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
