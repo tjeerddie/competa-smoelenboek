@@ -24,7 +24,8 @@ INSERT INTO `groups` (`id`, `name`) VALUES
 (1, 'Inprogess'),
 (2, 'Conflict'),
 (3, 'Onwijs Koel'),
-(4, 'Flying Potatoes');
+(4, 'Flying Potatoes'),
+(5, 'None');
 
 CREATE TABLE IF NOT EXISTS `employees` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
