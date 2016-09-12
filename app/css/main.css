@@ -692,6 +692,15 @@ h6, .h6 {
   position: relative;
   width: 100%;
 }
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__control--no-border {
+  border: 0;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__control--textarea {
+  overflow: hidden;
+  top: 13px;
+}
 @media (min-width: 544px) and (max-width: 991px) {
   /* line 22, ../sass/abstracts/mixins/_bem.scss */
   .form__control--textarea {
@@ -743,7 +752,7 @@ h6, .h6 {
 .form__control--update {
   height: 30px;
 }
-/* line 198, ../sass/layout/_form.scss */
+/* line 204, ../sass/layout/_form.scss */
 .form__control:hover, .form__control:focus {
   border-color: #3d3d3d;
   outline: none;
@@ -785,7 +794,7 @@ h6, .h6 {
 .form__link {
   color: #1f64ae;
 }
-/* line 245, ../sass/layout/_form.scss */
+/* line 251, ../sass/layout/_form.scss */
 .form__link:hover, .form__link:focus {
   color: #3A526A;
   text-decoration: underline;

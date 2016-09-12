@@ -122,7 +122,13 @@
 
   @include element(control) {
 
+    @include modifier(no-border) {
+      border: 0;
+    }
+
     @include modifier(textarea) {
+      overflow: hidden;
+      top: 13px;
       @include media-breakpoint-between(sm, md) {
         width: 100%;
         margin-left: -15px;
