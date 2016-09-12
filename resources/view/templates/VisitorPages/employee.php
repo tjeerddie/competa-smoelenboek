@@ -4,7 +4,7 @@
         <?php require_once(INCLUDES_PATH . "hamburger.php");?>
         <div class="grid__container">
           <form method="post" enctype="multipart/form-data" autocomplete="off">
-            <div class="form__group grid__row">
+            <div class="grid__row">
               <figure class="figure form__logo form__logo--photo grid__column-lg-5">
                 <img class="figure__image form__image employee--image" src="app/img/content/<?= $employee->getPhoto();?>" alt="Photo of <?= $employee->getFullName();?>" />
               </figure>
@@ -46,7 +46,6 @@
               </div>
             </div>
           </form>
-          <p class="employee__message"><?= isset($message) ? $message : ""?></p>
         </div>
     </main>
 <?php    require_once(INCLUDES_PATH . "footer.php");?>
