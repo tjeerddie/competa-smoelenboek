@@ -8,7 +8,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Databank: `smoelenboek`
+-- Database: `smoelenboek`
 --
 CREATE DATABASE IF NOT EXISTS `smoelenboek` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `smoelenboek`;
@@ -29,27 +29,24 @@ INSERT INTO `groups` (`id`, `name`) VALUES
 CREATE TABLE IF NOT EXISTS `employees` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(30) CHARACTER SET utf8 NOT NULL,
-  `middle_name` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `last_name` varchar(30) CHARACTER SET utf8 NOT NULL,
   `email` varchar(50) CHARACTER SET utf8 NOT NULL,
   `phone_number` varchar(15) NOT NULL,
   `photo` varchar(80) CHARACTER SET utf8 NOT NULL DEFAULT 'default.jpg',
   `description` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
-  `address` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `city` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `group_id` int(11) DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
-INSERT INTO `employees` (`id`, `first_name`, `middle_name`, `last_name`, `email`, `phone_number`, `photo`, `description`, `address`, `city`, `group_id`, `category_id`) VALUES
-(1, 'Test', NULL, 'de Tester', 'tester@competa.com', '0652415964', 'default.jpg', 'Test mannetje', 'Teststraat 11', 'Test City', 1, 1),
-(2, 'Ruben', NULL, 'van der Knaap', 'ruben@competa.com', '0614526545', 'default.jpg', '1 + 1 = geen 3', 'Binnenhof 1', 'Den Haag', 2, 4),
-(3, 'Nigel', 'Ryan', 'Hoegee', 'nigel@competa.com', '0645617535', 'default.jpg', 'Wit is niet zwart en ook niet paars', 'Binnenhof 2', 'Delft', 1, 4),
-(4, 'Jonathan', NULL, 'Kerkhoven', 'jonathan@competa.com', '0654241413', 'default.jpg', 'Paarden zijn andere dieren dan honden', 'Binnenhof 3', 'Rijswijk', 1, 4),
-(5, 'Tjeerd', NULL, 'Verschragen', 'tjeerd@competa.com', '0687475661', 'default.jpg', 'Rugzakken hoor je niet op je buik te dragen', 'Binnenhof 4', 'Wateringen', 1, 4),
-(6, 'Michael', NULL, 'Netelenbos', 'michael@competa.com', '0678788008', 'default.jpg', 'Michael spel je met ae zoals te zien is, niet met ea', 'Binnenhof 5', 'Amsterdam', 3, 4),
-(7, 'Ted', NULL, 'van Riel', 'ted@competa.com', '0641563481', 'default.jpg', 'Battlefield 1 is een money grab', 'Binnenhof 6', 'Rotterdam', 3, 4);
+INSERT INTO `employees` (`id`, `first_name`, `last_name`, `email`, `phone_number`, `photo`, `description`, `group_id`, `category_id`) VALUES
+(1, 'Mandy', 'van Zetten', 'mandy@competa.com', '0652415964', 'default.jpg', 'Dummy description, insert some text here', 1, 1),
+(2, 'Ruben', 'van der Knaap', 'ruben@competa.com', '0614526545', 'default.jpg', 'Dummy description, insert some text here', 2, 4),
+(3, 'Nigel', 'Hoegee', 'nigel@competa.com', '0645617535', 'default.jpg', 'Dummy description, insert some text here', 1, 4),
+(4, 'Jonathan', 'Kerkhoven', 'jonathan@competa.com', '0654241413', 'default.jpg', 'Dummy description, insert some text here', 1, 4),
+(5, 'Tjeerd', 'Verschragen', 'tjeerd@competa.com', '0687475661', 'default.jpg', 'Dummy description, insert some text here', 1, 4),
+(6, 'Michael', 'Netelenbos', 'michael@competa.com', '0678788008', 'default.jpg', 'Dummy description, insert some text here', 3, 4),
+(7, 'Ted', 'van Riel', 'ted@competa.com', '0641563481', 'default.jpg', 'Dummy description, insert some text here', 3, 4);
 
 CREATE TABLE IF NOT EXISTS `job_categories`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -77,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `users`(
 )ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `permission`) VALUES
-(1, 'testUser', '$2y$09$OVlPJVfuzUENJUuPTDUqNeGmsIpTOy5yT1D5b9RDI47jjosgB2W/u', 'email', 'admin');
+(1, 'admin', '$2y$09$OVlPJVfuzUENJUuPTDUqNeGmsIpTOy5yT1D5b9RDI47jjosgB2W/u', 'email', 'admin');
 
 ALTER TABLE `employees`
   ADD CONSTRAINT `group_lid` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
