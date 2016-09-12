@@ -38,12 +38,6 @@
                   $values['photo'] = "default.jpg";
                   break;
               case 2:
-                  $values['photo'] = "default.jpg";
-                  break;
-              case 3:
-                  $values['photo'] = "default.jpg";
-                  break;
-              case 4:
                   $photoName = $this->makeFileName();
                   $values['photo'] = $photoName;
                   break;
