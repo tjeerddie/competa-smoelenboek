@@ -257,6 +257,10 @@
 
   @include element(group) {
 
+    @include media-breakpoint-down(xs) {
+      margin-left: 15px !important;
+    }
+
     @include modifier(lastRows) {
       margin-left: 15px !important;
     }

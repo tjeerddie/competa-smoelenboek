@@ -593,10 +593,29 @@ h6, .h6 {
   border-bottom-color: #e6e6e6;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  height: 308px;
+  height: 324px;
   margin-bottom: 0;
   padding-bottom: 15px;
   padding-top: 15px;
+}
+@media (max-width: 1199px) {
+  /* line 22, ../sass/abstracts/mixins/_bem.scss */
+  .form__logo--photo {
+    height: 308px;
+    padding-top: 0px;
+  }
+}
+@media (max-width: 991px) {
+  /* line 22, ../sass/abstracts/mixins/_bem.scss */
+  .form__logo--photo {
+    height: 275px;
+  }
+}
+@media (max-width: 543px) {
+  /* line 22, ../sass/abstracts/mixins/_bem.scss */
+  .form__logo--photo {
+    height: 200px;
+  }
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .form__image {
@@ -618,13 +637,13 @@ h6, .h6 {
   position: relative;
   transform: translateY(50%);
 }
-/* line 54, ../sass/layout/_form.scss */
+/* line 65, ../sass/layout/_form.scss */
 .form__sign-in .form__control[type="text"] {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   margin-bottom: -1px;
 }
-/* line 68, ../sass/layout/_form.scss */
+/* line 79, ../sass/layout/_form.scss */
 .form__sign-in .form__control[type="password"] {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -636,7 +655,6 @@ h6, .h6 {
   margin-bottom: 0;
   padding-bottom: 0.75rem;
   padding-top: 0.5rem;
-  text-align: center;
 }
 @media (max-width: 1199px) {
   /* line 14, ../sass/abstracts/mixins/_bem.scss */
@@ -673,6 +691,13 @@ h6, .h6 {
   padding: 10px;
   position: relative;
   width: 100%;
+}
+@media (min-width: 544px) and (max-width: 991px) {
+  /* line 22, ../sass/abstracts/mixins/_bem.scss */
+  .form__control--textarea {
+    width: 100%;
+    margin-left: -15px;
+  }
 }
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .form__control--file {
@@ -718,7 +743,7 @@ h6, .h6 {
 .form__control--update {
   height: 30px;
 }
-/* line 182, ../sass/layout/_form.scss */
+/* line 198, ../sass/layout/_form.scss */
 .form__control:hover, .form__control:focus {
   border-color: #3d3d3d;
   outline: none;
@@ -760,10 +785,14 @@ h6, .h6 {
 .form__link {
   color: #1f64ae;
 }
-/* line 229, ../sass/layout/_form.scss */
+/* line 245, ../sass/layout/_form.scss */
 .form__link:hover, .form__link:focus {
   color: #3A526A;
   text-decoration: underline;
+}
+/* line 14, ../sass/abstracts/mixins/_bem.scss */
+.form__margin {
+  padding-top: 15px;
 }
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
 .form__group {
@@ -772,6 +801,23 @@ h6, .h6 {
   border-bottom-width: 1px;
   padding-bottom: 15px;
   padding-top: 15px;
+}
+@media (max-width: 543px) {
+  /* line 14, ../sass/abstracts/mixins/_bem.scss */
+  .form__group {
+    margin-left: 15px !important;
+  }
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.form__group--lastRows {
+  margin-left: 15px !important;
+}
+@media (min-width: 544px) and (max-width: 991px) {
+  /* line 14, ../sass/abstracts/mixins/_bem.scss */
+  .form__group {
+    width: 90%;
+    margin-left: 10px !important;
+  }
 }
 
 /* line 14, ../sass/abstracts/mixins/_bem.scss */
@@ -2306,6 +2352,14 @@ h6, .h6 {
 /* line 22, ../sass/abstracts/mixins/_bem.scss */
 .button--delete {
   padding: 0 .1rem;
+  margin-right: 15px;
+  background-color: #ca202b;
+  float: right;
+  border: #ca202b;
+  color: white;
+}
+/* line 22, ../sass/abstracts/mixins/_bem.scss */
+.button--reset {
   margin-right: 15px;
   background-color: #ca202b;
   float: right;

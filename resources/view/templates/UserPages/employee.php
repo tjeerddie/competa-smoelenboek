@@ -63,8 +63,8 @@
                     endforeach;?>
                   </div>
                   <div class="form__group grid__column-xs-12 grid__row">
-                    <label class="form__label form__control--textarea grid__column-lg-4" for="inputDescription">description</label>
-                    <textarea class="form-control form__control--textarea grid__column-lg-8" id="inputDescription" name="description" rows="3" value="<?= $employee->getDescription();?>" placeholder="Write here your description..."><?= $employee->getDescription(); ?></textarea>
+                    <label class="form__label form__control--textarea grid__column-lg-2" for="inputDescription">description</label>
+                    <textarea class="form-control form__control--textarea grid__column-lg-10" id="inputDescription" name="description" rows="3" value="<?= $employee->getDescription();?>" placeholder="Write here your description..."><?= $employee->getDescription(); ?></textarea>
                   </div>
                   <div class="form__margin grid__row grid__column-sm-6 grid__column--offset-sm-3">
                     <button class="button button--primary grid__column-sm-5  grid__column-sm-3" type="submit" name="update" role="button">update</button>
