@@ -36,7 +36,7 @@
                       }?>
                     </select>
                   </div>
-                  <div class="form__group grid__column-md-7 grid__row">
+                  <div class="form__group form__group--lastRows grid__column-md-7 grid__row">
                     <label class="form__label grid__column-md-4" for="selectGroupName">group</label>
                     <select class="form__control grid__column-md-8" id="selectGroupName" name="group_id">
                       <?php foreach ($groups as $group) {
@@ -48,7 +48,7 @@
                     <label class="form__label grid__column-md-2" for="inputDescription">description</label>
                     <textarea class="form-control grid__column-md-10" id="inputDescription" name="description" rows="3" placeholder="Write here your description..."></textarea>
                   </div>
-                  <div class="form__group grid__row grid__column-md-6 grid__column--offset-md-3">
+                  <div class="form__margin grid__row grid__column-md-6 grid__column--offset-md-3">
                     <button class="button button--primary grid__column-md-5 block--center" type="submit" name="add" role="button">add</button>
                   </div>
                 </div>

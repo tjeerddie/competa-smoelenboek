@@ -8,7 +8,7 @@
           width: $border-width;
         }
       }
-      height: 308px;
+      height: 324px;
       margin-bottom: 0;
       padding: {
         bottom: 15px;
@@ -107,7 +107,6 @@
       bottom: $input-padding-x;
       top: $input-padding-y;
     }
-    text-align: center;
   }
 
   @include element(control) {
@@ -233,7 +232,18 @@
     }
   }
 
+  @include element(margin) {
+    padding: {
+      top: 15px;
+    }
+  }
+
   @include element(group) {
+
+    @include modifier(lastRows) {
+      margin-left: 15px !important;
+    }
+
     border: {
       bottom: {
         color: $border-color;

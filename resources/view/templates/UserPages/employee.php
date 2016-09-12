@@ -28,7 +28,7 @@
                     <label class="form__label grid__column-md-4" for="inputPhone">phone</label>
                     <input class="form__control grid__column-md-8" type="tel" id="inputPhone" name="phone_number" value="<?= $employee->getPhoneNumber();?>" placeholder="Phone number">
                   </div>
-                  <div class="form__group grid__column-md-5 grid__row">
+                  <div class="form__group grid__row form__group--lastRows grid__column-md-5">
                     <label class="form__label grid__column-md-4" for="inputJob">job*</label>
                     <?php foreach ($jobs as $job) :
                       if ($employee->getCategoryId() === $job->getId()) :?>
@@ -66,9 +66,9 @@
                     <label class="form__label grid__column-md-2" for="inputDescription">description</label>
                     <textarea class="form-control grid__column-md-10" id="inputDescription" name="description" rows="3" value="<?= $employee->getDescription();?>" placeholder="Write here your description..."><?= $employee->getDescription(); ?></textarea>
                   </div>
-                  <div class="form__group grid__row grid__column-md-6 grid__column--offset-md-3">
+                  <div class="form__margin grid__row grid__column-md-6 grid__column--offset-md-3">
                     <button class="button button--primary grid__column-md-5" type="submit" name="update" role="button">update</button>
-                    <button class="button button--delete grid__column-md-5" type="reset" value="Reset">reset</button>
+                    <button class="button button--reset grid__column-md-5" type="reset" value="Reset">reset</button>
                   </div>
                 </div>
               </form>

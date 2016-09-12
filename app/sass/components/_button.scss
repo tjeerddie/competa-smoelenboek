@@ -158,6 +158,16 @@
     color: $white;
   }
 
+  @include modifier(reset) {
+    margin:  {
+      right: 15px;
+    }
+    background-color: $red;
+    float: right;
+    border: $red;
+    color: $white;
+  }
+
   @include element(icon) {
     position: relative;
     top: 3px;
