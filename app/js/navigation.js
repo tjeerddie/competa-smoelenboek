@@ -19,12 +19,12 @@ $(document).ready(function () {
     $navigationLinkTitle.addClass('is-ensmalled');
   }
 
-  if ($(window).width() <= 544){
+  if ($(window).width() <= 768){
     add();
   }
 
   $(window).resize(function(){
-     if ($(window).width() <= 544){
+     if ($(window).width() <= 768){
        add();
      } else {
        $header.removeClass('is-enlarged');
